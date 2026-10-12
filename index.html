@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERANGKAT PEMBELAJARAN AI - PRO V3.2 WORD EDITOR</title>
+    <title>PERANGKAT PEMBELAJARAN AI - PRO V3.3 WORD EDITOR</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -32,7 +32,7 @@
                 </div>
                 <div class="flex items-center space-x-2">
                     <span class="font-extrabold text-slate-900 tracking-tight text-base sm:text-lg">PERANGKAT PEMBELAJARAN AI</span>
-                    <span class="bg-amber-400 text-amber-950 text-[10px] font-black px-2 py-0.5 rounded shadow-sm tracking-wide">PRO V3.2 WORD EDITOR</span>
+                    <span class="bg-amber-400 text-amber-950 text-[10px] font-black px-2 py-0.5 rounded shadow-sm tracking-wide">PRO V3.3 WORD EDITOR</span>
                 </div>
             </div>
             <div class="flex items-center space-x-4">
@@ -255,20 +255,18 @@
             <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
                 <div id="paperSheet" contenteditable="true" class="bg-white w-[800px] min-h-[1000px] p-12 shadow-md rounded-lg text-slate-800 text-sm leading-relaxed focus:outline-none border border-slate-200">
                     <div class="text-center space-y-2 mb-8 border-b pb-6">
-                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">CAPAIAN PEMBELAJARAN (CP)</h2>
+                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">MODUL AJAR KURIKULUM MERDEKA</h2>
                         <h3 id="previewSub" class="text-base font-semibold text-emerald-700">Mata Pelajaran: Aqidah Akhlak (Kelas 7 (Fase D))</h3>
                         <p class="text-xs text-slate-500">Satuan Pendidikan: <span id="previewSchool">MTs Persatuan Islam Kadipaten</span> | Tahun Ajaran <span id="previewYear">2026/2027</span> [<span id="previewPeriod">Semester Ganjil</span>]</p>
                     </div>
 
                     <div id="previewBody" class="space-y-6 text-xs text-slate-700">
                         <div>
-                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. MATERI POKOK & SUB-BAB PEMBELAJARAN</h4>
-                            <p id="bodyMateri" class="leading-relaxed font-bold text-emerald-800 text-sm mb-1">Materi Pembahasan: Hakikat Akidah Islam, Rukun Iman & Tauhid</p>
-                            <p class="leading-relaxed text-slate-600">Dokumen perangkat pembelajaran mata pelajaran ini disusun secara komprehensif untuk mendukung pencapaian kompetensi siswa.</p>
+                            <p class="italic text-slate-500 text-center">Silakan pilih modul di atas dan klik tombol "Generate Dokumen + Materi" untuk menyusun seluruh perangkat pembelajaran lengkap multi-pertemuan.</p>
                         </div>
                     </div>
 
-                    <div class="mt-16 pt-8 flex justify-between text-xs">
+                    <div class="mt-16 pt-8 flex justify-between text-xs border-t border-slate-200">
                         <div class="text-center space-y-12">
                             <p>Mengetahui,<br>Kepala Madrasah</p>
                             <p class="font-bold underline">Itang Iskandar, S.Pd.I</p>
@@ -393,63 +391,63 @@
 
         const databaseMateri = {
             "Aqidah Akhlak": {
-                "Semester Ganjil": "Bab 1-3: Hakikat Akidah Islam, Sifat Wajib Allah SWT & Akhlak Mahmudah (Taat & Ikhlas)",
-                "Semester Genap": "Bab 4-6: Menghindari Akhlak Tercela (Mazmumah), Adab Pergaulan & Kisah Keteladanan Sahabat",
+                "Semester Ganjil": "Bab 1: Akidah Islam & Tauhid | Bab 2: Sifat-Sifat Allah SWT | Bab 3: Taat, Ikhlas, Khauf & Raja'",
+                "Semester Genap": "Bab 4: Adab Shalat dan Zikir | Bab 5: Menghindari Akhlak Tercela (Riya' & Nifak) | Bab 6: Kisah Keteladanan Nabi Sulaiman A.S.",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Fase D (Materi Ganjil & Genap Terintegrasi)"
             },
             "Al-Qur'an Hadis": {
-                "Semester Ganjil": "Bab 1-3: Keutamaan Belajar Al-Qur'an, Hukum Bacaan Mad Thabi'i & Hadis tentang Menuntut Ilmu",
-                "Semester Genap": "Bab 4-6: Toleransi Beragama, Pelestarian Lingkungan dalam Al-Qur'an & Hadis tentang Amal Sholeh",
+                "Semester Ganjil": "Bab 1: Kedudukan Al-Qur'an & Hadis | Bab 2: Hukum Bacaan Mad Thabi'i & Mad Far'i | Bab 3: Hadis tentang Menuntut Ilmu",
+                "Semester Genap": "Bab 4: Sikap Toleransi dan Menghargai | Bab 5: Menjaga Kelestarian Alam | Bab 6: Hadis tentang Kebersihan & Kesehatan",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Al-Qur'an Hadis Kelas 7-9"
             },
             "Fiqih": {
-                "Semester Ganjil": "Bab 1-3: Ketentuan Taharah (Bersuci), Salat Fardu Lima Waktu & Salat Berjamaah",
-                "Semester Genap": "Bab 4-6: Salat Jamak & Qasar, Salat bagi Orang Sakit, Ketentuan Puasa Sunnah & Zakat",
+                "Semester Ganjil": "Bab 1: Ketentuan Taharah (Bersuci) | Bab 2: Salat Fardu & Berjamaah | Bab 3: Zikir dan Doa Setelah Salat",
+                "Semester Genap": "Bab 4: Salat Jamak & Qasar | Bab 5: Salat dalam Keadaan Darurat | Bab 6: Ketentuan Puasa Wajib & Sunnah",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Fiqih Ibadah Madrasah"
             },
             "Sejarah Kebudayaan Islam (SKI)": {
-                "Semester Ganjil": "Bab 1-3: Kondisi Masyarakat Makkah Sebelum Islam & Misi Dakwah Rasulullah SAW Periode Makkah",
-                "Semester Genap": "Bab 4-6: Hijrah ke Madinah, Piagam Madinah, & Perkembangan Peradaban Islam Masa Khulafaur Rasyidin",
+                "Semester Ganjil": "Bab 1: Kebudayaan Masyarakat Makkah Sebelum Islam | Bab 2: Dakwah Nabi Muhammad SAW Periode Makkah | Bab 3: Peristiwa Isra' Mi'raj",
+                "Semester Genap": "Bab 4: Hijrah ke Madinah & Piagam Madinah | Bab 5: Suburnya Peradaban Islam Madinah | Bab 6: Khulafaur Rasyidin Pembawa Kemajuan",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Sejarah Peradaban Islam"
             },
             "Bahasa Arab": {
-                "Semester Ganjil": "Bab 1-3: At-Ta'aruf (Perkenalan), Al-Marofiq Al-Madrasiyyah (Fasilitas Sekolah) & Al-Adawat (Peralatan)",
-                "Semester Genap": "Bab 4-6: Al-Usrah (Keluarga), Al-Bait (Rumah) & Percakapan Sehari-hari (Hiwar)",
+                "Semester Ganjil": "Bab 1: At-Ta'aruf (Perkenalan) | Bab 2: Al-Marofiq Al-Madrasiyyah (Fasilitas Sekolah) | Bab 3: Al-Adawat Al-Madrasiyyah (Peralatan)",
+                "Semester Genap": "Bab 4: Al-Usrah wal Bait (Keluarga & Rumah) | Bab 5: Al-Yaumiyyat (Aktivitas Sehari-hari) | Bab 6: Al-Hiwar wal Qira'ah",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Bahasa Arab Madrasah"
             },
             "Matematika": {
-                "Semester Ganjil": "Bab 1-3: Bilangan Bulat & Pecahan, Aljabar Dasar, serta Persamaan & Pertidaksamaan Linear",
-                "Semester Genap": "Bab 4-6: Perbandingan Senilai & Berbalik Nilai, Garis & Sudut, serta Keliling & Luas Bangun Datar",
+                "Semester Ganjil": "Bab 1: Bilangan Bulat dan Pecahan | Bab 2: Bentuk Aljabar | Bab 3: Persamaan & Pertidaksamaan Linear Satu Variabel",
+                "Semester Genap": "Bab 4: Rasio dan Perbandingan | Bab 5: Bangun Datar dan Geometri | Bab 6: Penyajian Data & Statistik Dasar",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Matematika Fase D"
             },
             "Bahasa Indonesia": {
-                "Semester Ganjil": "Bab 1-3: Menulis Teks Deskripsi, Memahami Teks Narasi/Cerita Fantasi & Menyusun Teks Prosedur",
-                "Semester Genap": "Bab 4-6: Mengulas Buku Fiksi/Nonfiksi, Menulis Surat Resmi/Pribadi & Berdiskusi Kritis",
+                "Semester Ganjil": "Bab 1: Jelajah Nusantara (Teks Deskripsi) | Bab 2: Pengembaraan di Dunia Imajinasi (Teks Cerita Fantasi) | Bab 3: Hal yang Baik Bagi Tubuh (Teks Prosedur)",
+                "Semester Genap": "Bab 4: Aksi Nyata Pelestarian Lingkungan (Teks Laporan Hasil Observasi) | Bab 5: Menulis Rangkuman & Ulasan Buku | Bab 6: Surat Resmi & Pribadi",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Bahasa Indonesia Kurikulum Merdeka"
             },
             "Bahasa Inggris": {
-                "Semester Ganjil": "Bab 1-3: Greetings & Leave-takings, Introducing Self/Others, & Descriptive Text (People & Things)",
-                "Semester Genap": "Bab 4-6: Special Days, Procedures (Recipes/Manuals), & Simple Past Tense Stories",
+                "Semester Ganjil": "Unit 1: About Me (Greetings & Introductions) | Unit 2: Culinary and Me (Describing Food & Recipes) | Unit 3: Home Life (Descriptive Text & House Activities)",
+                "Semester Genap": "Unit 4: My School Activities | Unit 5: This is My School | Unit 6: Digital Literacy & Simple Past Tense",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Bahasa Inggris SMP/MTs"
             },
             "Ilmu Pengetahuan Alam (IPA)": {
-                "Semester Ganjil": "Bab 1-3: Hakikat Ilmu Sains & Pengukuran, Zat dan Perubahannya, serta Suhu, Kalor dan Pemuaian",
-                "Semester Genap": "Bab 4-6: Gerak dan Gaya, Klasifikasi Makhluk Hidup, Ekologi & Pelestarian Lingkungan",
+                "Semester Ganjil": "Bab 1: Hakikat Sains dan Pengukuran | Bab 2: Zat dan Perubahannya | Bab 3: Suhu, Kalor, dan Pemuaian",
+                "Semester Genap": "Bab 4: Gerak dan Gaya | Bab 5: Klasifikasi Makhluk Hidup | Bab 6: Ekologi dan Keanekaragaman Hayati Indonesia",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh IPA Terpadu"
             },
             "Ilmu Pengetahuan Sosial (IPS)": {
-                "Semester Ganjil": "Bab 1-3: Keluarga Awal Kehidupan, Keberagaman Lingkungan Sekitar & Potensi Sumber Daya Alam",
-                "Semester Genap": "Bab 4-6: Pemberdayaan Masyarakat, Aktivitas Ekonomi & Sejarah Masuknya Hindu-Buddha di Nusantara",
+                "Semester Ganjil": "Tema 01: Kehidupan Manusia dan Lingkungan | Tema 02: Keberagaman Lingkungan Sekitar & Potensi Alam",
+                "Tema 03: Potensi Ekonomi Lingkungan | Tema 04: Pemberdayaan Masyarakat & Perkembangan Kerajaan Islam",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh IPS Terpadu"
             },
             "Pendidikan Pancasila (PPKn)": {
-                "Semester Ganjil": "Bab 1-3: Kelahiran Pancasila, Norma dan UUD 1945, serta Hak dan Kewajiban Warga Negara",
-                "Semester Genap": "Bab 4-6: Menghargai Lingkungan & Budaya Lokal, Keberagaman Suku, Agama, Ras & Antargolongan",
+                "Semester Ganjil": "Bab 1: Sejarah Kelahiran Pancasila | Bab 2: Penerapan Norma dan UUD NRI Tahun 1945 | Bab 3: Hak dan Kewajiban Warga Negara",
+                "Semester Genap": "Bab 4: Kebhinnekaan Indonesia & Budaya Lokal | Bab 5: Keutuhan Wilayah NKRI & Gotong Royong",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Pendidikan Pancasila"
             },
             "Informatika": {
-                "Semester Ganjil": "Bab 1-3: Berpikir Komputasional, Analisis Data Sederhana & Pengenalan Perangkat Keras/Lunak",
-                "Semester Genap": "Bab 4-6: Algoritma & Pemrograman Blok Visual (Scratch), Dampak Sosial Informatika & Praktik Lintas Bidang",
+                "Semester Ganjil": "Bab 1: Informatika dan Keterampilan Generik | Bab 2: Berpikir Komputasional | Bab 3: Teknologi Informasi dan Komunikasi | Bab 4: Sistem Komputer",
+                "Semester Genap": "Bab 5: Jaringan Komputer dan Internet | Bab 6: Analisis Data | Bab 7: Algoritma dan Pemrograman Visual (Scratch) | Bab 8: Dampak Sosial Informatika",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Informatika SMP/MTs"
             }
         };
@@ -497,121 +495,195 @@
 
             const bodyContainer = document.getElementById('previewBody');
             
-            // Logika Pengecekan Modul yang Lebih Spesifik
             let dynamicHTML = '';
 
             if (currentSelectedMenu.includes('Modul Ajar')) {
                 dynamicHTML = `
-                    <div>
-                        <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-2 text-sm">I. INFORMASI UMUM</h4>
-                        <p class="mb-1"><b>Nama Penyusun:</b> ${guru}</p>
-                        <p class="mb-1"><b>Satuan Pendidikan:</b> ${sekolah}</p>
-                        <p class="mb-1"><b>Mata Pelajaran & Fase/Kelas:</b> ${mapel} / ${fase}</p>
-                        <p class="mb-1"><b>Materi Pokok:</b> ${materi}</p>
-                        <p class="mb-1"><b>Alokasi Waktu:</b> 2 Jam Pelajaran (2 x 40 Menit)</p>
-                        <p class="mb-1"><b>Profil Pelajar Pancasila:</b> Beriman, Bertaqwa kepada Tuhan YME, Bergotong Royong, & Bernalar Kritis.</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-2 text-sm">II. KOMPONEN INTI & LANGKAH PEMBELAJARAN</h4>
-                        <p class="mb-2"><b>Tujuan Pembelajaran:</b> Melalui model pembelajaran berbasis masalah (Problem Based Learning), peserta didik mampu memahami dan menganalisis materi <b>"${materi}"</b> dengan baik.</p>
-                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 my-2 space-y-2">
-                            <p class="font-semibold text-slate-800">Sintaks Kegiatan Pembelajaran:</p>
-                            <p><b>1. Pendahuluan (10 Menit):</b> Guru membuka dengan salam, berdoa, memeriksa kehadiran, apersepsi, dan menyampaikan tujuan pembelajaran.</p>
-                            <p><b>2. Kegiatan Inti (60 Menit):</b> Peserta didik dibagi ke dalam kelompok kecil untuk mengkaji materi ${materi}, melakukan diskusi kelompok, dan mempresentasikan hasil kerja.</p>
-                            <p><b>3. Penutup (10 Menit):</b> Guru bersama siswa menyimpulkan materi pembelajaran, melaksanakan refleksi, dan menutup dengan doa.</p>
+                    <div class="space-y-6">
+                        <!-- BAGIAN I -->
+                        <div class="border-b pb-4 border-slate-200">
+                            <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-3 text-sm uppercase">I. INFORMASI UMUM DOKUMEN</h4>
+                            <table class="w-full text-xs border-collapse">
+                                <tr class="border-b border-slate-100 py-1"><td class="w-1/3 font-semibold py-1">Nama Penyusun</td><td>: ${guru}</td></tr>
+                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
+                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Mata Pelajaran & Jenjang</td><td>: ${mapel} / ${fase}</td></tr>
+                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Tahun Ajaran & Semester</td><td>: ${tahun} (${cakupan})</td></tr>
+                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Cakupan Bab / Sub-Bab</td><td>: <b>${materi}</b></td></tr>
+                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Alokasi Waktu Total</td><td>: 16 Jam Pelajaran (8 Pertemuan Tatap Muka)</td></tr>
+                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Target Peserta Didik</td><td>: Peserta Didik Reguler / Tipikal (32 Siswa)</td></tr>
+                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Model & Pendekatan Pembelajaran</td><td>: Problem Based Learning (PBL) & Differentiation Learning (KBC)</td></tr>
+                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Profil Pelajar Pancasila & Rahmatan Lil 'Alamin</td><td>: Beriman, Bertaqwa kepada Tuhan YME, Bergotong Royong, Bernalar Kritis, Kreatif, & Beradab (Ta'addub)</td></tr>
+                            </table>
                         </div>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-2 text-sm">III. ASESMEN / PENILAIAN</h4>
-                        <p class="mb-1"><b>Asesmen Formatif:</b> Observasi keaktifan diskusi kelompok dan lembar kerja peserta didik.</p>
-                        <p><b>Asesmen Sumatif:</b> Tes tertulis berbentuk soal pilihan ganda / uraian pada akhir bab.</p>
+
+                        <!-- BAGIAN II: RINCIAN PERTEMUAN -->
+                        <div class="border-b pb-4 border-slate-200 space-y-4">
+                            <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-3 text-sm uppercase">II. SKENARIO PEMBELAJARAN LENGKAP PER PERTEMUAN</h4>
+                            
+                            <!-- PERTEMUAN 1-2 -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                <p class="font-bold text-rose-800 text-xs">A. PERTEMUAN 1 & 2 (4 x 40 MENIT) - PENGENALAN KONSEP & ANALISIS MASALAH</p>
+                                <p><b>Tujuan Spesifik:</b> Peserta didik mampu mengidentifikasi esensi dari sub-bab pertama materi <i>"${materi}"</i> serta menyusun argumen pemikiran kritikal.</p>
+                                <div class="pl-3 border-l-2 border-rose-300 space-y-1 mt-2 text-slate-700">
+                                    <p><b>1. Kegiatan Pendahuluan (15 Menit):</b> Guru membuka kelas dengan salam, tadarus ringkas, apersepsi interaktif, dan menyampaikan tujuan pembelajaran harian.</p>
+                                    <p><b>2. Kegiatan Inti (130 Menit):</b> Orientasi peserta didik pada masalah nyata, pembentukan kelompok diskusi diferensiasi, mengkaji materi literasi, mengumpulkan informasi dari buku & media digital, serta menyusun paparan kelompok.</p>
+                                    <p><b>3. Kegiatan Penutup (15 Menit):</b> Guru memfasilitasi refleksi belajar, memberikan penguatan konsep, merencanakan tugas baca mandiri, dan mengakhiri dengan doa.</p>
+                                </div>
+                            </div>
+
+                            <!-- PERTEMUAN 3-4 -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                <p class="font-bold text-rose-800 text-xs">B. PERTEMUAN 3 & 4 (4 x 40 MENIT) - DISKUSI MENDALAM & PRESENTASI KELOMPOK</p>
+                                <p><b>Tujuan Spesifik:</b> Peserta didik mampu menganalisis hubungan sebab-akibat serta menyajikan hasil studi kasus materi <i>"${materi}"</i> secara tertulis dan lisan.</p>
+                                <div class="pl-3 border-l-2 border-rose-300 space-y-1 mt-2 text-slate-700">
+                                    <p><b>1. Kegiatan Pendahuluan (15 Menit):</b> Review materi pekan lalu, ice breaking motivasi, dan penjelasan teknis gelaran presentasi interaktif.</p>
+                                    <p><b>2. Kegiatan Inti (130 Menit):</b> Setiap kelompok mempresentasikan karya poster/infografis/slide materi, kelompok lain memberikan tanggapan/pertanyaan, dan guru membimbing jalannya diskusi panel.</p>
+                                    <p><b>3. Kegiatan Penutup (15 Menit):</b> Evaluasi jalannya presentasi, pemberian apresiasi kelompok terbaik, dan penyimpulan nilai-nilai positif pembelajaran.</p>
+                                </div>
+                            </div>
+
+                            <!-- PERTEMUAN 5-6 -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                <p class="font-bold text-rose-800 text-xs">C. PERTEMUAN 5 & 6 (4 x 40 MENIT) - APLIKASI PRAKTIS & AKHLAK PEMBIASAAN</p>
+                                <p><b>Tujuan Spesifik:</b> Peserta didik mampu merancang langkah nyata penerapan nilai-nilai <i>"${materi}"</i> dalam kehidupan sehari-hari di madrasah dan rumah.</p>
+                                <div class="pl-3 border-l-2 border-rose-300 space-y-1 mt-2 text-slate-700">
+                                    <p><b>1. Kegiatan Pendahuluan (15 Menit):</b> Pemutaran video/studi kasus nyata pembiasaan akhlak, apersepsi, dan pembagian lembar kerja tindak lanjut.</p>
+                                    <p><b>2. Kegiatan Inti (130 Menit):</b> Penyusunan jurnal pembiasaan karakter mandiri, peragaan/simulasi nilai positif di dalam kelas, dan umpan balik antar teman sebaya (peer-assessment).</p>
+                                    <p><b>3. Kegiatan Penutup (15 Menit):</b> Penilaian mandiri, penyusunan komitmen bersama kelas, serta doa penutup.</p>
+                                </div>
+                            </div>
+
+                            <!-- PERTEMUAN 7-8 -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                <p class="font-bold text-rose-800 text-xs">D. PERTEMUAN 7 & 8 (4 x 40 MENIT) - REKAPITULASI, EVALUASI SUMATIF & REMEDIAL/PENGAYAAN</p>
+                                <p><b>Tujuan Spesifik:</b> Mengukur tingkat ketercapaian kompetensi peserta didik melalui tes tes tulis sumatif dan memberikan intervensi pembelajaran yang sesuai.</p>
+                                <div class="pl-3 border-l-2 border-rose-300 space-y-1 mt-2 text-slate-700">
+                                    <p><b>1. Kegiatan Pendahuluan (10 Menit):</b> Pengkondisian suasana ruang ujian dan penyampaian tata tertib asesmen sumatif bab.</p>
+                                    <p><b>2. Kegiatan Inti (140 Menit):</b> Pelaksanaan Asesmen Sumatif Bab (25 Soal HOTS PG & Uraian), pemeriksaan hasil secara sistematis, serta pelaksanaan kegiatan pengayaan bagi yang tuntas dan remedial bagi yang belum tuntas.</p>
+                                    <p><b>3. Kegiatan Penutup (10 Menit):</b> Refleksi akhir bab, penyampaian nilai rekapitulasi, dan arahan menyambut materi bab berikutnya.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BAGIAN III: LAMPIRAN & ASESMEN -->
+                        <div>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-3 text-sm uppercase">III. LAMPIRAN DOKUMEN & ASESMEN</h4>
+                            <p class="mb-2"><b>1. Asesmen Diagnostik:</b> Pertanyaan pemantik pada awal bab untuk mengukur kemampuan awal siswa.</p>
+                            <p class="mb-2"><b>2. Asesmen Formatif:</b> Lembar Observasi Sikap Profil Lulusan & Rubrik Penilaian Presentasi Kelompok.</p>
+                            <p class="mb-2"><b>3. Asesmen Sumatif:</b> Kisi-kisi soal, naskah soal HOTS, dan kunci jawaban rekapitulasi nilai.</p>
+                            <p><b>4. Media & Bahan Ajar:</b> Buku Siswa Kementerian Agama / Kemendikbudristek, Slide Presentasi, LCD Projector, & Lembar Kerja Peserta Didik (LKPD).</p>
+                        </div>
                     </div>
                 `;
             } else if (currentSelectedMenu.includes('Bank Soal') || currentSelectedMenu.includes('Soal')) {
                 dynamicHTML = `
-                    <div>
-                        <h4 class="font-bold text-slate-900 border-l-4 border-orange-600 pl-2 mb-2 text-sm">A. NASKAH EVALUASI SUMATIF (25 BUTIR SOAL HOTS)</h4>
-                        <p class="mb-3"><b>Mata Pelajaran:</b> ${mapel} | <b>Materi:</b> ${materi} | <b>Waktu:</b> 90 Menit</p>
-                        <div class="space-y-4">
-                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                                <p class="font-bold text-slate-800 mb-1">1. Perhatikan ilustrasi berikut dengan cermat!</p>
-                                <p class="mb-2">Dalam konteks pembelajaran <b>${materi}</b>, perilaku yang mencerminkan pemahaman mendalam adalah...</p>
-                                <div class="grid grid-cols-2 gap-2 text-slate-700">
-                                    <p>A. Mengamalkan nilai positif secara konsisten</p>
-                                    <p>B. Memahami teori tanpa mempraktikkan</p>
-                                    <p>C. Mengabaikan ketentuan yang berlaku</p>
-                                    <p>D. Mengerjakan tugas seadanya</p>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-orange-600 pl-2 mb-2 text-sm uppercase">KISI-KISI & NASKAH BANK SOAL EVALUASI HOTS (25 BUTIR PILIHAN GANDA & URAIAN)</h4>
+                            <p class="mb-3 text-slate-600"><b>Mata Pelajaran:</b> ${mapel} | <b>Materi:</b> ${materi} | <b>Waktu:</b> 90 Menit</p>
+                            
+                            <div class="space-y-4">
+                                <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                                    <p class="font-bold text-slate-800 mb-1">1. Perhatikan ilustrasi narasi berikut dengan cermat!</p>
+                                    <p class="mb-2">Dalam kehidupan sehari-hari, penerapan materi <b>${materi}</b> menjadi pondasi utama pembentukan karakter siswa. Berdasarkan hal tersebut, tindakan yang paling mencerminkan pengamalan konsisten adalah...</p>
+                                    <div class="grid grid-cols-2 gap-2 text-slate-700">
+                                        <p>A. Mengamalkan nilai-nilai positif secara ikhlas dan berkelanjutan</p>
+                                        <p>B. Hanya bertindak baik saat diperhatikan oleh guru dan orang tua</p>
+                                        <p>C. Memahami teori tanpa mengaplikasikannya dalam kehidupan</p>
+                                        <p>D. Mengabaikan aturan serta etika yang telah disepakati</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                                <p class="font-bold text-slate-800 mb-1">2. Dampak positif penguasaan materi ${materi} terhadap pembentukan karakter peserta didik adalah...</p>
-                                <div class="grid grid-cols-2 gap-2 text-slate-700">
-                                    <p>A. Meningkatkan kedisiplinan dan akhlak mulia</p>
-                                    <p>B. Menumbuhkan sikap individualis</p>
-                                    <p>C. Mengurangi interaksi sosial di sekolah</p>
-                                    <p>D. Membatasi kreativitas belajar</p>
+                                <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                                    <p class="font-bold text-slate-800 mb-1">2. Salah satu hikmah utama mempelajari materi ${materi} adalah...</p>
+                                    <div class="grid grid-cols-2 gap-2 text-slate-700">
+                                        <p>A. Terwujudnya ketentraman, kedamaian, dan keberkahan hidup</p>
+                                        <p>B. Mendapatkan sanjungan serta rasa hormat berlebihan</p>
+                                        <p>C. Menjadi pribadi yang selalu ingin menguasai orang lain</p>
+                                        <p>D. Memperoleh keuntungan material belaka</p>
+                                    </div>
                                 </div>
+                                <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                                    <p class="font-bold text-slate-800 mb-1">3. Bagaimanakah tantangan terbesar dalam menjaga konsistensi pelaksanaan nilai ${materi} di era digital?</p>
+                                    <div class="grid grid-cols-2 gap-2 text-slate-700">
+                                        <p>A. Pengaruh informasi negatif yang tidak tersaring dengan bijak</p>
+                                        <p>B. Ketersediaan media pembelajaran yang semakin melimpah</p>
+                                        <p>C. Dukungan fasilitator dan guru yang sangat kuat</p>
+                                        <p>D. Kemudahan dalam mengakses bahan bacaan agama dan sains</p>
+                                    </div>
+                                </div>
+                                <p class="text-slate-500 italic text-[11px] font-semibold text-center py-2">* (Butir Soal Nomor 4 s.d. 25 tersusun lengkap dengan standar analisis Bloom C4-C6 / HOTS)</p>
                             </div>
-                            <p class="text-slate-500 italic text-[11px]">* (Butir Soal 3 s.d. 25 lengkap dengan kunci jawaban dan rubrik penilaian)</p>
                         </div>
                     </div>
                 `;
             } else if (currentSelectedMenu.includes('Lembar Kerja') || currentSelectedMenu.includes('LKPD')) {
                 dynamicHTML = `
-                    <div>
-                        <h4 class="font-bold text-slate-900 border-l-4 border-pink-600 pl-2 mb-2 text-sm">LEMBAR KERJA PESERTA DIDIK (LKPD)</h4>
-                        <p class="mb-1"><b>Nama Kelompok:</b> ........................ | <b>Kelas:</b> ${fase}</p>
-                        <p class="mb-3"><b>Topik Kajian:</b> ${materi}</p>
-                        <div class="p-4 bg-pink-50/40 rounded-xl border border-pink-200 space-y-3">
-                            <p class="font-bold text-slate-800">Petunjuk Pengerjaan:</p>
-                            <p>1. Diskusikan materi <b>${materi}</b> bersama anggota kelompok Anda!</p>
-                            <p>2. Analisis studi kasus yang diberikan lalu tuliskan hasil kesimpulan pada lembar ini.</p>
-                            <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-2 mt-2">
-                                <p class="font-semibold text-slate-800">Pertanyaan Diskusi:</p>
-                                <p class="text-slate-600">Bagaimanakah implementasi nyata dari materi <b>${materi}</b> dalam kehidupan sehari-hari di lingkungan madrasah?</p>
-                                <div class="border-b border-dashed border-slate-300 h-20 w-full mt-2"></div>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-pink-600 pl-2 mb-2 text-sm uppercase">LEMBAR KERJA PESERTA DIDIK (LKPD) INTERAKTIF</h4>
+                            <p class="mb-1"><b>Nama Kelompok:</b> ..................................................... | <b>Kelas / Semester:</b> ${fase} (${cakupan})</p>
+                            <p class="mb-3"><b>Mata Pelajaran & Topik:</b> ${mapel} - ${materi}</p>
+                            
+                            <div class="p-4 bg-pink-50/40 rounded-xl border border-pink-200 space-y-4">
+                                <div>
+                                    <p class="font-bold text-slate-800 mb-1">A. PETUNJUK KERJA KELOMPOK:</p>
+                                    <ol class="list-decimal pl-4 space-y-1 text-slate-700">
+                                        <li>Bacalah ringkasan materi bab <b>"${materi}"</b> pada buku cetak Anda!</li>
+                                        <li>Diskusikan studi kasus di bawah ini bersama seluruh anggota kelompok!</li>
+                                        <li>Tuliskan hasil keputusan diskusi pada kolom yang telah disediakan!</li>
+                                    </ol>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3">
+                                    <p class="font-bold text-slate-800">B. STUDI KASUS & LEMBAR ANALISIS:</p>
+                                    <p class="text-slate-600 leading-relaxed">Amatilah fenomena sosial di sekitar lingkungan sekolah dan media sosial terkait topik <b>${materi}</b>. Identifikasi 3 permasalahan utama yang sering timbul beserta solusi konkret berbasis ajaran moral dan sains!</p>
+                                    <div class="border border-slate-200 rounded-lg p-3 min-h-[120px] bg-slate-50 text-slate-400 italic">
+                                        Kolom Lembar Jawaban Diskusi Siswa...
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 `;
             } else {
                 dynamicHTML = `
-                    <div>
-                        <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. MATERI POKOK & SUB-BAB PEMBELAJARAN</h4>
-                        <p class="leading-relaxed font-bold text-emerald-800 text-sm mb-1">Materi Pembahasan: ${materi}</p>
-                        <p class="leading-relaxed text-slate-600">Dokumen perangkat pembelajaran mata pelajaran <b>${mapel}</b> (${cakupan}) disusun secara komprehensif untuk tingkat <b>${fase}</b>.</p>
-                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm uppercase">A. MATERI POKOK & SUB-BAB PEMBELAJARAN</h4>
+                            <p class="leading-relaxed font-bold text-emerald-800 text-sm mb-1">Materi Pembahasan: ${materi}</p>
+                            <p class="leading-relaxed text-slate-600">Dokumen perangkat pembelajaran mata pelajaran <b>${mapel}</b> (${cakupan}) disusun secara komprehensif untuk tingkat <b>${fase}</b> pada tahun ajaran <b>${tahun}</b> di <b>${sekolah}</b>.</p>
+                        </div>
 
-                    <div>
-                        <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">B. RINCIAN CAPAIAN PEMBELAJARAN (CP) & INDIKATOR</h4>
-                        <table class="w-full border-collapse border border-slate-300 text-xs my-3">
-                            <thead>
-                                <tr class="bg-slate-100 text-slate-800">
-                                    <th class="border border-slate-300 p-2 text-left">Elemen / Aspek</th>
-                                    <th class="border border-slate-300 p-2 text-left">Capaian Pembelajaran Khusus Materi</th>
-                                    <th class="border border-slate-300 p-2 text-left">Tujuan & Indikator Ketercapaian</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="border border-slate-300 p-2 font-semibold">Pemahaman Konsep</td>
-                                    <td class="border border-slate-300 p-2">Peserta didik mampu memahami, menganalisis, dan menyimpulkan esensi dari materi <b>${materi}</b>.</td>
-                                    <td class="border border-slate-300 p-2">Siswa mampu menyebutkan fakta, prinsip utama, dan mendeskripsikan solusinya secara mandiri.</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-2 font-semibold">Penerapan Sikap & Praktik</td>
-                                    <td class="border border-slate-300 p-2">Peserta didik mempraktikkan serta membiasakan nilai positif materi dalam kehidupan sehari-hari.</td>
-                                    <td class="border border-slate-300 p-2">Menunjukkan sikap bernalar kritis, disiplin, dan berakhlak mulia saat kegiatan belajar.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm uppercase">B. RINCIAN CAPAIAN PEMBELAJARAN (CP) & INDIKATOR SPESIFIK</h4>
+                            <table class="w-full border-collapse border border-slate-300 text-xs my-3">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-800">
+                                        <th class="border border-slate-300 p-2 text-left">Elemen / Aspek</th>
+                                        <th class="border border-slate-300 p-2 text-left">Capaian Pembelajaran Khusus Materi</th>
+                                        <th class="border border-slate-300 p-2 text-left">Tujuan & Indikator Ketercapaian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-slate-300 p-2 font-semibold">Pemahaman Konsep</td>
+                                        <td class="border border-slate-300 p-2">Peserta didik mampu memahami, menganalisis, dan menyimpulkan esensi dari materi <b>${materi}</b> secara komprehensif.</td>
+                                        <td class="border border-slate-300 p-2">Siswa mampu menyebutkan fakta, prinsip utama, dan mendeskripsikan solusinya secara mandiri.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-slate-300 p-2 font-semibold">Penerapan Sikap & Praktik</td>
+                                        <td class="border border-slate-300 p-2">Peserta didik mempraktikkan serta membiasakan nilai positif materi dalam kehidupan sehari-hari.</td>
+                                        <td class="border border-slate-300 p-2">Menunjukkan sikap bernalar kritis, disiplin, dan berakhlak mulia saat kegiatan belajar.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                    <div>
-                        <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">C. METODE, MODEL & ASESMEN PEMBELAJARAN</h4>
-                        <p class="mb-1"><b>Pendekatan:</b> Student-Centered Learning & Diferensiasi (Kurikulum Merdeka).</p>
-                        <p class="mb-1"><b>Model Pembelajaran:</b> Problem Based Learning (PBL) / Inquiry Learning.</p>
-                        <p><b>Rencana Asesmen:</b> Asesmen Formatif (Diskusi & Tanya Jawab) serta Asesmen Sumatif (Tes Tulis/Soal HOTS).</p>
+                        <div>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm uppercase">C. METODE, MODEL & ASESMEN PEMBELAJARAN</h4>
+                            <p class="mb-1"><b>Pendekatan:</b> Student-Centered Learning & Diferensiasi (Kurikulum Merdeka / KBC).</p>
+                            <p class="mb-1"><b>Model Pembelajaran:</b> Problem Based Learning (PBL) / Inquiry Learning.</p>
+                            <p><b>Rencana Asesmen:</b> Asesmen Formatif (Diskusi & Tanya Jawab) serta Asesmen Sumatif (Tes Tulis/Soal HOTS).</p>
+                        </div>
                     </div>
                 `;
             }
@@ -621,7 +693,7 @@
             closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
 
-            alert('Dokumen "' + currentSelectedMenu + '" berhasil digenerate untuk ' + mapel + '!');
+            alert('Dokumen "' + currentSelectedMenu + '" lengkap multi-pertemuan berhasil digenerate untuk ' + mapel + '!');
         }
 
         function formatText(command) {
