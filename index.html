@@ -246,7 +246,7 @@
                 </div>
                 <div class="flex items-center space-x-2">
                     <button onclick="copyDocContent()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-slate-200"><i class="fa-solid fa-copy mr-1"></i> Copy Text</button>
-                    <button onclick="alert('Mencetak dokumen...')" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-emerald-200"><i class="fa-solid fa-print mr-1"></i> Print</button>
+                    <button onclick="alert('Mencetak dokumen...')" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-slate-200"><i class="fa-solid fa-print mr-1"></i> Print</button>
                     <button onclick="alert('Mengunduh file Word (.docx)...')" class="bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-2 rounded-xl text-xs font-semibold transition shadow-sm"><i class="fa-solid fa-file-word mr-1"></i> Download Word</button>
                 </div>
             </div>
@@ -261,7 +261,11 @@
                     </div>
 
                     <div id="previewBody" class="space-y-6 text-xs text-slate-700">
-                        <!-- Teks materi pembelajaran spesifik masuk ke sini -->
+                        <div>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. MATERI POKOK / SUB-BAB PEMBELAJARAN</h4>
+                            <p class="leading-relaxed font-semibold text-slate-800 mb-2">Materi Utama: Hakikat Akidah Islam & Rukun Iman</p>
+                            <p class="leading-relaxed text-slate-600">Silakan klik salah satu kartu menu di atas untuk menyusun dan menyesuaikan perangkat pembelajaran berbasis Kurikulum Merdeka.</p>
+                        </div>
                     </div>
 
                     <div class="mt-16 pt-8 flex justify-between text-xs">
@@ -283,7 +287,7 @@
     <!-- MODAL SUB-MENU / PARAMETER DOKUMEN -->
     <div id="subMenuModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-slate-100">
-            <button onclick="closeMenuModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
+            <button type="button" onclick="closeMenuModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             
@@ -293,7 +297,7 @@
                 </div>
                 <div>
                     <h3 id="modalMenuTitle" class="text-lg font-bold text-slate-900">Parameter Dokumen</h3>
-                    <p class="text-xs text-slate-500">Pilih mata pelajaran dan ketik materi spesifik yang ingin dimuat</p>
+                    <p class="text-xs text-slate-500">Pilih mata pelajaran lengkap dan atur parameter dokumen</p>
                 </div>
             </div>
 
@@ -356,156 +360,4 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Satuan Pendidikan</label>
-                        <input type="text" id="paramSekolah" value="MTs Persatuan Islam Kadipaten" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Guru Pembuat</label>
-                    <input type="text" id="paramGuru" value="M. Jihad Fakhrul Islam" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                </div>
-
-                <div class="pt-4 flex justify-end space-x-3">
-                    <button type="button" onclick="closeMenuModal()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition">Batal</button>
-                    <button type="submit" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-600/20 transition flex items-center space-x-2">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span>Generate Dokumen + Materi</span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 mt-12 py-6">
-        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">
-            <p>&copy; 2026 PERANGKAT PEMBELAJARAN AI. Hak cipta dilindungi undang-undang.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript Interaktif dengan Database Materi Spesifik -->
-    <script>
-        let currentSelectedMenu = 'Capaian Pembelajaran (CP)';
-
-        // Database Contoh Materi Otomatis per Mapel
-        const databaseMateri = {
-            "Aqidah Akhlak": "Hakikat Akidah Islam, Rukun Iman & Penguatan Tauhid Dalam Kehidupan",
-            "Al-Qur'an Hadis": "Pengertian Al-Qur'an dan Hadis, Hukum Bacaan Mad, & Keutamaan Menuntut Ilmu",
-            "Fiqih": "Ketentuan Taharah, Tata Cara Salat Fardu, Jamak, Qasar & Hikmah Ibadah",
-            "Sejarah Kebudayaan Islam (SKI)": "Misi Makkah Rasulullah SAW, Strategi Dakwah Madina & Khulafaur Rasyidin",
-            "Bahasa Arab": "At-Ta'aruf (Perkenalan), Al-Adawatul Madrasiyyah (Peralatan Sekolah) & Tarkib Fi'il",
-            "Matematika": "Operasi Bilangan Bulat, Persamaan Linear Satu Variabel & Geometri Bangun Datar",
-            "Bahasa Indonesia": "Menganalisis Teks Teks Deskripsi, Teks Prosedur, & Struktur Cerita Fantasi",
-            "Bahasa Inggris": "Greeting and Parting, Descriptive Text, & Present Simple Tense in Context",
-            "Ilmu Pengetahuan Alam (IPA)": "Hakikat Sains, Pengukuran, Klasifikasi Makhluk Hidup, & Struktur Sel",
-            "Ilmu Pengetahuan Sosial (IPS)": "Interaksi Sosial, Keruangan Ruang Bumi, & Aktivitas Ekonomi Masyarakat",
-            "Pendidikan Pancasila (PPKn)": "Penerapan Nilai-Nilai Pancasila Dalam Kehidupan & Hak Serta Kewajiban Warga Negara",
-            "Informatika": "Berpikir Komputasional, Algoritma Pemrograman Dasar, & Etika Kewargaan Digital"
-        };
-
-        function autoFillMateri() {
-            const mapel = document.getElementById('paramMapel').value;
-            if(databaseMateri[mapel]){
-                document.getElementById('paramMateri').value = databaseMateri[mapel];
-            }
-        }
-
-        function openMenuModal(menuName, code) {
-            currentSelectedMenu = menuName;
-            document.getElementById('modalMenuTitle').innerText = 'Sub-Menu Parameter: ' + menuName;
-            document.getElementById('subMenuModal').classList.remove('hidden');
-            document.getElementById('subMenuModal').classList.add('flex');
-            autoFillMateri(); // Otomatis mengaktifkan isi materi saat dibuka
-        }
-
-        function closeMenuModal() {
-            document.getElementById('subMenuModal').classList.add('hidden');
-            document.getElementById('subMenuModal').classList.remove('flex');
-        }
-
-        function applySubMenuParameters(e) {
-            e.preventDefault();
-
-            const mapel = document.getElementById('paramMapel').value;
-            const materi = document.getElementById('paramMateri').value || databaseMateri[mapel] || 'Materi Pokok Pembelajaran';
-            const cakupan = document.getElementById('paramCakupan').value;
-            const tahun = document.getElementById('paramTahun').value;
-            const fase = document.getElementById('paramFase').value;
-            const sekolah = document.getElementById('paramSekolah').value;
-            const guru = document.getElementById('paramGuru').value;
-
-            document.getElementById('previewTitle').innerText = currentSelectedMenu.toUpperCase();
-            document.getElementById('previewSub').innerText = 'Mata Pelajaran: ' + mapel + ' (' + fase + ')';
-            document.getElementById('previewSchool').innerText = sekolah;
-            document.getElementById('previewYear').innerText = tahun;
-            document.getElementById('previewPeriod').innerText = cakupan;
-            document.getElementById('previewSign2').innerText = guru;
-
-            const bodyContainer = document.getElementById('previewBody');
-            
-            // Format Dokumen Lengkap dengan Materi Spesifik
-            let htmlContent = `
-                <div>
-                    <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. MATERI POKOK & SUB-BAB PEMBELAJARAN</h4>
-                    <p class="leading-relaxed font-bold text-emerald-800 text-sm mb-1">Materi Pembahasan: ${materi}</p>
-                    <p class="leading-relaxed text-slate-600">Dokumen perangkat pembelajaran mata pelajaran <b>${mapel}</b> ini disusun secara komprehensif untuk mendukung pencapaian kompetensi siswa pada bab <b>"${materi}"</b> untuk tingkat <b>${fase}</b>.</p>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">B. RINCIAN CAPAIAN PEMBELAJARAN (CP) & INDIKATOR SPESIFIK</h4>
-                    <table class="w-full border-collapse border border-slate-300 text-xs my-3">
-                        <thead>
-                            <tr class="bg-slate-100 text-slate-800">
-                                <th class="border border-slate-300 p-2 text-left">Elemen / Aspek</th>
-                                <th class="border border-slate-300 p-2 text-left">Capaian Pembelajaran Khusus Materi</th>
-                                <th class="border border-slate-300 p-2 text-left">Tujuan & Indikator (${cakupan})</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="border border-slate-300 p-2 font-semibold">Pemahaman Konsep</td>
-                                <td class="border border-slate-300 p-2">Peserta didik mampu memahami, menganalisis, dan menyimpulkan esensi dari materi <b>${materi}</b>.</td>
-                                <td class="border border-slate-300 p-2">Siswa mampu menyebutkan fakta, dalil/prinsip utama, dan mendeskripsikan solusinya secara mandiri.</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 p-2 font-semibold">Penerapan Sikap & Praktik</td>
-                                <td class="border border-slate-300 p-2">Peserta didik mempraktikkan serta membiasakan nilai positif dari materi <b>${materi}</b> dalam kehidupan sehari-hari.</td>
-                                <td class="border border-slate-300 p-2">Menunjukkan sikap bernalar kritis, disiplin, dan berakhlak mulia saat kegiatan belajar.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">C. METODE, MODEL & ASESMEN PEMBELAJARAN</h4>
-                    <p class="mb-1"><b>Pendekatan:</b> Student-Centered Learning & Diferensiasi (Kurikulum Merdeka).</p>
-                    <p class="mb-1"><b>Model Pembelajaran:</b> Problem Based Learning (PBL) / Inquiry Learning.</p>
-                    <p><b>Rencana Asesmen:</b> Asesmen Formatif (Diskusi & Tanya Jawab) serta Asesmen Sumatif (Tes Tulis/Soal HOTS).</p>
-                </div>
-            `;
-
-            bodyContainer.innerHTML = htmlContent;
-            closeMenuModal();
-            document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
-
-            alert('Dokumen berhasil digenerate! Materi "' + materi + '" untuk ' + mapel + ' kini telah aktif.');
-        }
-
-        function formatText(command) {
-            document.execCommand(command, false, null);
-        }
-
-        function copyDocContent() {
-            const content = document.getElementById('paperSheet').innerText;
-            navigator.clipboard.writeText(content).then(() => {
-                alert('Teks dokumen berhasil disalin!');
-            });
-        }
-
-        // Tampilkan isi awal secara otomatis saat pertama kali dibuka
-        window.onload = function() {
-            applySubMenuParameters({ preventDefault: () => {} });
-        };
-    </script>
-</body>
-</html>
+                        <input type="text" id="paramSekolah" value="MTs Persatuan Islam Kadipaten" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300
