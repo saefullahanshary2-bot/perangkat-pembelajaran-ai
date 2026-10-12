@@ -246,7 +246,7 @@
                 </div>
                 <div class="flex items-center space-x-2">
                     <button onclick="copyDocContent()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-slate-200"><i class="fa-solid fa-copy mr-1"></i> Copy Text</button>
-                    <button onclick="alert('Mencetak dokumen...')" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-emerald-200"><i class="fa-solid fa-print mr-1"></i> Print</button>
+                    <button onclick="alert('Mencetak dokumen...')" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-slate-200"><i class="fa-solid fa-print mr-1"></i> Print</button>
                     <button onclick="downloadWordDoc()" class="bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-2 rounded-xl text-xs font-semibold transition shadow-sm flex items-center space-x-1.5"><i class="fa-solid fa-file-word"></i><span>Download Word</span></button>
                 </div>
             </div>
@@ -263,8 +263,40 @@
                     <div id="previewBody" class="space-y-6 text-xs text-slate-700">
                         <div>
                             <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. MATERI POKOK & SUB-BAB PEMBELAJARAN</h4>
-                            <p id="bodyMateri" class="leading-relaxed font-semibold text-slate-800 mb-2">Materi Pembahasan: Hakikat Akidah Islam, Rukun Iman & Tauhid</p>
+                            <p id="bodyMateri" class="leading-relaxed font-bold text-emerald-800 text-sm mb-1">Materi Pembahasan: Hakikat Akidah Islam, Rukun Iman & Tauhid</p>
                             <p class="leading-relaxed text-slate-600">Dokumen perangkat pembelajaran mata pelajaran ini disusun secara komprehensif untuk mendukung pencapaian kompetensi siswa.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">B. RINCIAN CAPAIAN PEMBELAJARAN (CP) & INDIKATOR</h4>
+                            <table class="w-full border-collapse border border-slate-300 text-xs my-3">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-800">
+                                        <th class="border border-slate-300 p-2 text-left">Elemen / Aspek</th>
+                                        <th class="border border-slate-300 p-2 text-left">Capaian Pembelajaran Khusus Materi</th>
+                                        <th class="border border-slate-300 p-2 text-left">Tujuan & Indikator Ketercapaian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-slate-300 p-2 font-semibold">Pemahaman Konsep</td>
+                                        <td class="border border-slate-300 p-2">Peserta didik mampu memahami, menganalisis, dan menyimpulkan esensi dari materi bab terkait.</td>
+                                        <td class="border border-slate-300 p-2">Siswa mampu menyebutkan fakta, prinsip utama, dan mendeskripsikan solusinya secara mandiri.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-slate-300 p-2 font-semibold">Penerapan Sikap & Praktik</td>
+                                        <td class="border border-slate-300 p-2">Peserta didik mempraktikkan serta membiasakan nilai positif materi dalam kehidupan sehari-hari.</td>
+                                        <td class="border border-slate-300 p-2">Menunjukkan sikap bernalar kritis, disiplin, dan berakhlak mulia saat kegiatan belajar.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">C. METODE, MODEL & ASESMEN PEMBELAJARAN</h4>
+                            <p class="mb-1"><b>Pendekatan:</b> Student-Centered Learning & Diferensiasi (Kurikulum Merdeka).</p>
+                            <p class="mb-1"><b>Model Pembelajaran:</b> Problem Based Learning (PBL) / Inquiry Learning.</p>
+                            <p><b>Rencana Asesmen:</b> Asesmen Formatif (Diskusi & Tanya Jawab) serta Asesmen Sumatif (Tes Tulis/Soal HOTS).</p>
                         </div>
                     </div>
 
@@ -391,7 +423,6 @@
     <script>
         let currentSelectedMenu = 'Capaian Pembelajaran (CP)';
 
-        // Database Materi Terpisah Berdasarkan Semester (Ganjil & Genap)
         const databaseMateri = {
             "Aqidah Akhlak": {
                 "Semester Ganjil": "Bab 1-3: Hakikat Akidah Islam, Sifat Wajib Allah SWT & Akhlak Mahmudah (Taat & Ikhlas)",
@@ -414,7 +445,7 @@
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Sejarah Peradaban Islam"
             },
             "Bahasa Arab": {
-                "Semester Ganjil": "Bab 1-3: At-Ta'aruf (Perkenalan), Al-Marofiq Al-Madrasiyyah (Fasilitas Sekolah) & Al-Atsاث (Peralatan)",
+                "Semester Ganjil": "Bab 1-3: At-Ta'aruf (Perkenalan), Al-Marofiq Al-Madrasiyyah (Fasilitas Sekolah) & Al-Adawat (Peralatan)",
                 "Semester Genap": "Bab 4-6: Al-Usrah (Keluarga), Al-Bait (Rumah) & Percakapan Sehari-hari (Hiwar)",
                 "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Bahasa Arab Madrasah"
             },
@@ -460,7 +491,6 @@
             const cakupan = document.getElementById('paramCakupan').value;
             
             if (databaseMateri[mapel]) {
-                // Pilih materi sesuai semester yang dipilih
                 let materiPilihan = databaseMateri[mapel][cakupan] || databaseMateri[mapel]["Semester Ganjil"];
                 document.getElementById('paramMateri').value = materiPilihan;
             }
