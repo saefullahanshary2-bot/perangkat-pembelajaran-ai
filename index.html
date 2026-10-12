@@ -57,7 +57,7 @@
                 <i class="fa-solid fa-layer-group text-emerald-600 text-xl"></i>
                 <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">PILIH MODUL DOKUMEN KURIKULUM MERDEKA</h2>
             </div>
-            <p class="text-slate-500 text-sm mb-6">Klik pada salah satu modul untuk langsung menyusun dokumen AI <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i></p>
+            <p class="text-slate-500 text-sm mb-6">Klik pada salah satu modul untuk langsung membuka parameter & menyusun dokumen AI <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i></p>
 
             <!-- Grid 12 Modul Kurikulum Merdeka -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -243,7 +243,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 
-                <!-- Admin 1: Kalender Pendidikan -->
+                <!-- Admin 1 -->
                 <div onclick="openMenuModal('Kalender Pendidikan', 'kalender')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -255,7 +255,7 @@
                     </div>
                 </div>
 
-                <!-- Admin 2: Jadwal Mengajar -->
+                <!-- Admin 2 -->
                 <div onclick="openMenuModal('Jadwal Mengajar', 'jadwal')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -267,7 +267,7 @@
                     </div>
                 </div>
 
-                <!-- Admin 3: Daftar Nilai -->
+                <!-- Admin 3 -->
                 <div onclick="openMenuModal('Daftar Nilai', 'nilai')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -279,7 +279,7 @@
                     </div>
                 </div>
 
-                <!-- Admin 4: Buku Pedoman Guru -->
+                <!-- Admin 4 -->
                 <div onclick="openMenuModal('Buku Pedoman Guru', 'pedoman')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -291,7 +291,7 @@
                     </div>
                 </div>
 
-                <!-- Admin 5: Analisis Hasil Belajar -->
+                <!-- Admin 5 -->
                 <div onclick="openMenuModal('Analisis Hasil Belajar', 'analisis')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -303,7 +303,7 @@
                     </div>
                 </div>
 
-                <!-- Admin 6: Absensi Siswa -->
+                <!-- Admin 6 -->
                 <div onclick="openMenuModal('Absensi Siswa', 'absensi')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -315,7 +315,7 @@
                     </div>
                 </div>
 
-                <!-- Admin 7: Jurnal Mindset KBC -->
+                <!-- Admin 7 -->
                 <div onclick="openMenuModal('Jurnal Mindset KBC', 'jurnal')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-teal-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -365,46 +365,21 @@
                 <div id="paperSheet" contenteditable="true" class="bg-white w-[800px] min-h-[1000px] p-12 shadow-md rounded-lg text-slate-800 text-sm leading-relaxed focus:outline-none border border-slate-200">
                     <div class="text-center space-y-2 mb-8 border-b pb-6">
                         <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">CAPAIAN PEMBELAJARAN (CP)</h2>
-                        <h3 id="previewSub" class="text-base font-semibold text-emerald-700">Mata Pelajaran: Aqidah Akhlak</h3>
-                        <p class="text-xs text-slate-500">Satuan Pendidikan: <span id="previewSchool">MTs Persatuan Islam Kadipaten</span> | <span id="previewPeriod">Tahun Ajaran 2026/2027 (Per Tahun/Fase)</span></p>
+                        <h3 id="previewSub" class="text-base font-semibold text-emerald-700">Mata Pelajaran: Aqidah Akhlak (Kelas 7 (Fase D))</h3>
+                        <p class="text-xs text-slate-500">Satuan Pendidikan: <span id="previewSchool">MTs Persatuan Islam Kadipaten</span> | Tahun Ajaran <span id="previewYear">2026/2027</span> [<span id="previewPeriod">Per Tahun (Fase Penuh)</span>]</p>
                     </div>
 
                     <div id="previewBody" class="space-y-6 text-xs text-slate-700">
-                        <div>
-                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. RASIONAL & TENTANG DOKUMEN</h4>
-                            <p class="leading-relaxed mb-2">Dokumen ini merupakan bagian dari kelengkapan perangkat pembelajaran dan administrasi akademik terstruktur berbasis Kurikulum Merdeka.</p>
-                        </div>
-
-                        <div>
-                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">B. DETAIL ISI & MATRIKS TABEL</h4>
-                            <table class="w-full border-collapse border border-slate-300 text-xs my-3">
-                                <thead>
-                                    <tr class="bg-slate-100 text-slate-800">
-                                        <th class="border border-slate-300 p-2 text-left">Aspek / Elemen</th>
-                                        <th class="border border-slate-300 p-2 text-left">Uraian / Capaian Pembelajaran</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="border border-slate-300 p-2 font-semibold">Kompetensi Utama</td>
-                                        <td class="border border-slate-300 p-2">Memahami hakikat materi secara komprehensif serta mampu mengaplikasikannya dalam kehidupan sehari-hari.</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="border border-slate-300 p-2 font-semibold">Karakter & Nilai</td>
-                                        <td class="border border-slate-300 p-2">Membiasakan sikap terpuji, religius, serta bernalar kritis sesuai Profil Pelajar Pancasila.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <!-- Konten dinamis akan masuk ke sini -->
                     </div>
 
                     <div class="mt-16 pt-8 flex justify-between text-xs">
                         <div class="text-center space-y-12">
                             <p>Mengetahui,<br>Kepala Madrasah</p>
-                            <p id="previewSign1" class="font-bold underline">Itang Iskandar, S.Pd.I</p>
+                            <p class="font-bold underline">Itang Iskandar, S.Pd.I</p>
                         </div>
                         <div class="text-center space-y-12">
-                            <p id="previewDate">Tasikmalaya, September 2026<br>Guru Mata Pelajaran</p>
+                            <p>Tasikmalaya, September 2026<br>Guru Mata Pelajaran</p>
                             <p id="previewSign2" class="font-bold underline">M. Jihad Fakhrul Islam</p>
                         </div>
                     </div>
@@ -432,16 +407,14 @@
             </div>
 
             <form onsubmit="applySubMenuParameters(event)" class="space-y-4">
-                
-                <!-- Sub Menu 1: Cakupan & Periode -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Cakupan Periode / Semester *</label>
                         <select id="paramCakupan" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                             <option value="Per Tahun (Fase Penuh)">Per Tahun (Fase Penuh)</option>
-                            <option value="Semester Ganjil">Semester Ganjil saja</option>
-                            <option value="Semester Genap">Semester Genap saja</option>
-                            <option value="Per Elemen Materi">Per Elemen / Sub-Materi</option>
+                            <option value="Semester Ganjil">Semester Ganjil</option>
+                            <option value="Semester Genap">Semester Genap</option>
+                            <option value="Per Elemen Materi">Per Elemen Materi</option>
                         </select>
                     </div>
                     <div>
@@ -453,7 +426,6 @@
                     </div>
                 </div>
 
-                <!-- Sub Menu 2: Mapel & Jenjang/Fase -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mata Pelajaran (Mapel) *</label>
@@ -479,7 +451,6 @@
                     </div>
                 </div>
 
-                <!-- Sub Menu 3: Nama Sekolah & Guru -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Satuan Pendidikan</label>
@@ -491,7 +462,6 @@
                     </div>
                 </div>
 
-                <!-- Sub Menu 4: Instruksi Tambahan -->
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Instruksi Khusus AI (Opsional)</label>
                     <textarea id="paramInstruksi" rows="2" placeholder="Contoh: Sesuaikan dengan format tabel Excel real dan karakter KBC..." class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
@@ -534,7 +504,6 @@
         function applySubMenuParameters(e) {
             e.preventDefault();
 
-            // Ambil data dari form sub-menu
             const cakupan = document.getElementById('paramCakupan').value;
             const tahun = document.getElementById('paramTahun').value;
             const mapel = document.getElementById('paramMapel').value;
@@ -542,19 +511,119 @@
             const sekolah = document.getElementById('paramSekolah').value;
             const guru = document.getElementById('paramGuru').value;
 
-            // Update Lembar Kertas Preview secara instan
+            // Update Header Preview
             document.getElementById('previewTitle').innerText = currentSelectedMenu.toUpperCase();
             document.getElementById('previewSub').innerText = 'Mata Pelajaran: ' + mapel + ' (' + fase + ')';
             document.getElementById('previewSchool').innerText = sekolah;
-            document.getElementById('previewPeriod').innerText = 'Tahun Ajaran ' + tahun + ' [' + cakupan + ']';
+            document.getElementById('previewYear').innerText = tahun;
+            document.getElementById('previewPeriod').innerText = cakupan;
             document.getElementById('previewSign2').innerText = guru;
 
-            closeMenuModal();
+            // Update Konten & Tabel Sesuai Menu yang Dipilih
+            const bodyContainer = document.getElementById('previewBody');
+            let contentHTML = '';
 
-            // Scroll otomatis ke area dokumen editor
+            if (currentSelectedMenu.includes('Capaian Pembelajaran')) {
+                contentHTML = `
+                    <div>
+                        <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. RASIONAL & CAPAIAN FASE</h4>
+                        <p class="leading-relaxed mb-2">Capaian Pembelajaran (CP) untuk mata pelajaran ${mapel} pada ${fase} dirancang untuk mengarahkan peserta didik menguasai kompetensi esensial.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">B. MATRIKS ELEMEN & KOMPETENSI</h4>
+                        <table class="w-full border-collapse border border-slate-300 text-xs my-3">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-800">
+                                    <th class="border border-slate-300 p-2 text-left">Elemen Pembelajaran</th>
+                                    <th class="border border-slate-300 p-2 text-left">Uraian Capaian (${cakupan})</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 font-semibold">Pemahaman Konsep</td>
+                                    <td class="border border-slate-300 p-2">Peserta didik memahami konsep dasar ${mapel} secara mendalam sesuai standar Kurikulum Merdeka.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 font-semibold">Keterampilan Proses</td>
+                                    <td class="border border-slate-300 p-2">Mampu menganalisis, bernalar kritis, dan menyajikan laporan hasil pemahaman materi.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>`;
+            } else if (currentSelectedMenu.includes('Modul Ajar')) {
+                contentHTML = `
+                    <div>
+                        <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-2 text-sm">A. INFORMASI UMUM</h4>
+                        <p class="mb-1"><b>Penyusun:</b> ${guru}</p>
+                        <p class="mb-1"><b>Alokasi Waktu:</b> 2 JP x 45 Menit (${cakupan})</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-2 text-sm">B. KEGIATAN INTI PEMBELAJARAN</h4>
+                        <p class="mb-2"><b>1. Pendahuluan:</b> Apersepsi, motivasi, dan asesmen diagnostik singkat.</p>
+                        <p class="mb-2"><b>2. Kegiatan Inti:</b> Model Pembelajaran Berbasis Masalah (PBL) / Diskusi Kelompok interaktif.</p>
+                        <p><b>3. Penutup:</b> Refleksi pembelajaran dan penarikan kesimpulan bersama.</p>
+                    </div>`;
+            } else if (currentSelectedMenu.includes('Bank Soal')) {
+                contentHTML = `
+                    <div>
+                        <h4 class="font-bold text-slate-900 border-l-4 border-orange-600 pl-2 mb-2 text-sm">A. KISI-KISI & INSTRUMEN SOAL HOTS</h4>
+                        <p class="mb-3">Mata Pelajaran: <b>${mapel}</b> | Periode: <b>${cakupan}</b></p>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-slate-50 border rounded-lg">
+                                <p class="font-semibold mb-1">1. Perhatikan pernyataan berikut dengan cermat...</p>
+                                <p class="text-slate-600 text-[11px]">A. Pilihan jawaban pertama<br>B. Pilihan jawaban kedua<br>C. Pilihan jawaban ketiga<br>D. Pilihan jawaban keempat</p>
+                            </div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">
+                                <p class="font-semibold mb-1">2. Analisis kasus berikut terkait penerapan nilai-nilai...</p>
+                                <p class="text-slate-600 text-[11px]">A. Pilihan jawaban pertama<br>B. Pilihan jawaban kedua<br>C. Pilihan jawaban ketiga<br>D. Pilihan jawaban keempat</p>
+                            </div>
+                        </div>
+                    </div>`;
+            } else if (currentSelectedMenu.includes('Kalender Pendidikan')) {
+                contentHTML = `
+                    <div>
+                        <h4 class="font-bold text-slate-900 border-l-4 border-blue-600 pl-2 mb-2 text-sm">A. MATRIKS MINGGU EFEKTIF (${tahun})</h4>
+                        <table class="w-full border-collapse border border-slate-300 text-xs my-3">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border border-slate-300 p-2">Bulan</th>
+                                    <th class="border border-slate-300 p-2">Jml Minggu</th>
+                                    <th class="border border-slate-300 p-2">Minggu Efektif</th>
+                                    <th class="border border-slate-300 p-2">Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border border-slate-300 p-2">Juli</td><td class="border border-slate-300 p-2">4</td><td class="border border-slate-300 p-2">2</td><td class="border border-slate-300 p-2">MPLS & Awal Masuk</td></tr>
+                                <tr><td class="border border-slate-300 p-2">Agustus</td><td class="border border-slate-300 p-2">5</td><td class="border border-slate-300 p-2">4</td><td class="border border-slate-300 p-2">Efektif KBM</td></tr>
+                            </tbody>
+                        </table>
+                    </div>`;
+            } else {
+                contentHTML = `
+                    <div>
+                        <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. DOKUMEN ADMINISTRASI ${currentSelectedMenu.toUpperCase()}</h4>
+                        <p class="leading-relaxed mb-3">Dokumen ini disusun otomatis berdasarkan parameter ${mapel} untuk ${fase} tahun ajaran ${tahun} (${cakupan}).</p>
+                        <table class="w-full border-collapse border border-slate-300 text-xs my-3">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="border border-slate-300 p-2 text-left">No</th>
+                                    <th class="border border-slate-300 p-2 text-left">Komponen Administrasi</th>
+                                    <th class="border border-slate-300 p-2 text-left">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="border border-slate-300 p-2">1</td><td class="border border-slate-300 p-2">Penyusunan Format Standar</td><td class="border border-slate-300 p-2 text-emerald-600 font-bold">Valid & Terverifikasi</td></tr>
+                                <tr><td class="border border-slate-300 p-2">2</td><td class="border border-slate-300 p-2">Sinkronisasi Data Excel Guru</td><td class="border border-slate-300 p-2 text-emerald-600 font-bold">Terhubung</td></tr>
+                            </tbody>
+                        </table>
+                    </div>`;
+            }
+
+            bodyContainer.innerHTML = contentHTML;
+            closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
 
-            alert('Dokumen ' + currentSelectedMenu + ' berhasil diperbarui sesuai sub-menu pilihan Anda!');
+            alert('Dokumen ' + currentSelectedMenu + ' berhasil digenerate secara spesifik!');
         }
 
         function formatText(command) {
