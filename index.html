@@ -263,28 +263,8 @@
                     <div id="previewBody" class="space-y-6 text-xs text-slate-700">
                         <div>
                             <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. MATERI POKOK & SUB-BAB PEMBELAJARAN</h4>
-                            <p class="leading-relaxed font-semibold text-slate-800 mb-2">Materi Pembahasan: Hakikat Akidah Islam, Rukun Iman & Tauhid</p>
-                            <p class="leading-relaxed text-slate-600">Dokumen perangkat pembelajaran mata pelajaran <b>Aqidah Akhlak</b> ini disusun secara komprehensif untuk mendukung pencapaian kompetensi siswa.</p>
-                        </div>
-
-                        <div>
-                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">B. RINCIAN CAPAIAN PEMBELAJARAN (CP) & INDIKATOR</h4>
-                            <table class="w-full border-collapse border border-slate-300 text-xs my-3">
-                                <thead>
-                                    <tr class="bg-slate-100 text-slate-800">
-                                        <th class="border border-slate-300 p-2 text-left">Elemen / Aspek</th>
-                                        <th class="border border-slate-300 p-2 text-left">Capaian Pembelajaran Khusus Materi</th>
-                                        <th class="border border-slate-300 p-2 text-left">Tujuan & Indikator (Semester Ganjil)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="border border-slate-300 p-2 font-semibold">Pemahaman Konsep</td>
-                                        <td class="border border-slate-300 p-2">Peserta didik mampu memahami, menganalisis, dan menyimpulkan esensi dari materi.</td>
-                                        <td class="border border-slate-300 p-2">Siswa mampu menyebutkan fakta, prinsip utama, dan mendeskripsikan solusinya secara mandiri.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <p id="bodyMateri" class="leading-relaxed font-semibold text-slate-800 mb-2">Materi Pembahasan: Hakikat Akidah Islam, Rukun Iman & Tauhid</p>
+                            <p class="leading-relaxed text-slate-600">Dokumen perangkat pembelajaran mata pelajaran ini disusun secara komprehensif untuk mendukung pencapaian kompetensi siswa.</p>
                         </div>
                     </div>
 
@@ -317,7 +297,7 @@
                 </div>
                 <div>
                     <h3 id="modalMenuTitle" class="text-lg font-bold text-slate-900">Parameter Dokumen</h3>
-                    <p class="text-xs text-slate-500">Pilih mata pelajaran lengkap dan atur parameter dokumen</p>
+                    <p class="text-xs text-slate-500">Pilih mata pelajaran dan semester untuk menyesuaikan materi otomatis</p>
                 </div>
             </div>
 
@@ -346,20 +326,21 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Materi Pokok / Bab Pembelajaran *</label>
-                        <input type="text" id="paramMateri" value="Hakikat Akidah Islam, Rukun Iman & Tauhid" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Cakupan Periode / Semester *</label>
-                        <select id="paramCakupan" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                        <select id="paramCakupan" onchange="autoFillMateri()" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                             <option value="Semester Ganjil">Semester Ganjil</option>
                             <option value="Semester Genap">Semester Genap</option>
                             <option value="Per Tahun (Fase Penuh)">Per Tahun (Fase Penuh)</option>
                         </select>
                     </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Materi Pokok / Bab Pembelajaran (Otomatis / Bisa Diedit) *</label>
+                    <input type="text" id="paramMateri" value="Hakikat Akidah Islam, Rukun Iman & Tauhid" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Tahun Ajaran *</label>
                         <select id="paramTahun" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
@@ -367,9 +348,6 @@
                             <option value="2025/2026">2025/2026</option>
                         </select>
                     </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Fase / Kelas *</label>
                         <select id="paramFase" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
@@ -378,15 +356,17 @@
                             <option value="Kelas 9 (Fase D)">Kelas 9 (Fase D)</option>
                         </select>
                     </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Satuan Pendidikan</label>
                         <input type="text" id="paramSekolah" value="MTs Persatuan Islam Kadipaten" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                     </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Guru Pembuat</label>
-                    <input type="text" id="paramGuru" value="M. Jihad Fakhrul Islam" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Guru Pembuat</label>
+                        <input type="text" id="paramGuru" value="M. Jihad Fakhrul Islam" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    </div>
                 </div>
 
                 <div class="pt-4 flex justify-end space-x-3">
@@ -411,25 +391,78 @@
     <script>
         let currentSelectedMenu = 'Capaian Pembelajaran (CP)';
 
+        // Database Materi Terpisah Berdasarkan Semester (Ganjil & Genap)
         const databaseMateri = {
-            "Aqidah Akhlak": "Hakikat Akidah Islam, Rukun Iman & Penguatan Tauhid",
-            "Al-Qur'an Hadis": "Kandungan Al-Qur'an dan Hadis serta Hukum Bacaan Mad",
-            "Fiqih": "Ketentuan Taharah, Salat Fardu, Jamak, dan Qasar",
-            "Sejarah Kebudayaan Islam (SKI)": "Misi Dakwah Rasulullah SAW di Makkah & Madinah",
-            "Bahasa Arab": "At-Ta'aruf (Perkenalan) & Al-Adawatul Madrasiyyah",
-            "Matematika": "Operasi Bilangan Bulat & Persamaan Linear Satu Variabel",
-            "Bahasa Indonesia": "Menganalisis Teks Deskripsi & Teks Prosedur",
-            "Bahasa Inggris": "Greeting, Parting, & Descriptive Text",
-            "Ilmu Pengetahuan Alam (IPA)": "Objek Ilmu Pengetahuan Alam & Pengukuran",
-            "Ilmu Pengetahuan Sosial (IPS)": "Interaksi Sosial & Aktivitas Ekonomi Masyarakat",
-            "Pendidikan Pancasila (PPKn)": "Penerapan Nilai-Nilai Pancasila Dalam Kehidupan Sehari-hari",
-            "Informatika": "Berpikir Komputasional & Algoritma Dasar"
+            "Aqidah Akhlak": {
+                "Semester Ganjil": "Bab 1-3: Hakikat Akidah Islam, Sifat Wajib Allah SWT & Akhlak Mahmudah (Taat & Ikhlas)",
+                "Semester Genap": "Bab 4-6: Menghindari Akhlak Tercela (Mazmumah), Adab Pergaulan & Kisah Keteladanan Sahabat",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Fase D (Materi Ganjil & Genap Terintegrasi)"
+            },
+            "Al-Qur'an Hadis": {
+                "Semester Ganjil": "Bab 1-3: Keutamaan Belajar Al-Qur'an, Hukum Bacaan Mad Thabi'i & Hadis tentang Menuntut Ilmu",
+                "Semester Genap": "Bab 4-6: Toleransi Beragama, Pelestarian Lingkungan dalam Al-Qur'an & Hadis tentang Amal Sholeh",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Al-Qur'an Hadis Kelas 7-9"
+            },
+            "Fiqih": {
+                "Semester Ganjil": "Bab 1-3: Ketentuan Taharah (Bersuci), Salat Fardu Lima Waktu & Salat Berjamaah",
+                "Semester Genap": "Bab 4-6: Salat Jamak & Qasar, Salat bagi Orang Sakit, Ketentuan Puasa Sunnah & Zakat",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Fiqih Ibadah Madrasah"
+            },
+            "Sejarah Kebudayaan Islam (SKI)": {
+                "Semester Ganjil": "Bab 1-3: Kondisi Masyarakat Makkah Sebelum Islam & Misi Dakwah Rasulullah SAW Periode Makkah",
+                "Semester Genap": "Bab 4-6: Hijrah ke Madinah, Piagam Madinah, & Perkembangan Peradaban Islam Masa Khulafaur Rasyidin",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Sejarah Peradaban Islam"
+            },
+            "Bahasa Arab": {
+                "Semester Ganjil": "Bab 1-3: At-Ta'aruf (Perkenalan), Al-Marofiq Al-Madrasiyyah (Fasilitas Sekolah) & Al-Atsاث (Peralatan)",
+                "Semester Genap": "Bab 4-6: Al-Usrah (Keluarga), Al-Bait (Rumah) & Percakapan Sehari-hari (Hiwar)",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Bahasa Arab Madrasah"
+            },
+            "Matematika": {
+                "Semester Ganjil": "Bab 1-3: Bilangan Bulat & Pecahan, Aljabar Dasar, serta Persamaan & Pertidaksamaan Linear",
+                "Semester Genap": "Bab 4-6: Perbandingan Senilai & Berbalik Nilai, Garis & Sudut, serta Keliling & Luas Bangun Datar",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Matematika Fase D"
+            },
+            "Bahasa Indonesia": {
+                "Semester Ganjil": "Bab 1-3: Menulis Teks Deskripsi, Memahami Teks Narasi/Cerita Fantasi & Menyusun Teks Prosedur",
+                "Semester Genap": "Bab 4-6: Mengulas Buku Fiksi/Nonfiksi, Menulis Surat Resmi/Pribadi & Berdiskusi Kritis",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Bahasa Indonesia Kurikulum Merdeka"
+            },
+            "Bahasa Inggris": {
+                "Semester Ganjil": "Bab 1-3: Greetings & Leave-takings, Introducing Self/Others, & Descriptive Text (People & Things)",
+                "Semester Genap": "Bab 4-6: Special Days, Procedures (Recipes/Manuals), & Simple Past Tense Stories",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Bahasa Inggris SMP/MTs"
+            },
+            "Ilmu Pengetahuan Alam (IPA)": {
+                "Semester Ganjil": "Bab 1-3: Hakikat Ilmu Sains & Pengukuran, Zat dan Perubahannya, serta Suhu, Kalor dan Pemuaian",
+                "Semester Genap": "Bab 4-6: Gerak dan Gaya, Klasifikasi Makhluk Hidup, Ekologi & Pelestarian Lingkungan",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh IPA Terpadu"
+            },
+            "Ilmu Pengetahuan Sosial (IPS)": {
+                "Semester Ganjil": "Bab 1-3: Keluarga Awal Kehidupan, Keberagaman Lingkungan Sekitar & Potensi Sumber Daya Alam",
+                "Semester Genap": "Bab 4-6: Pemberdayaan Masyarakat, Aktivitas Ekonomi & Sejarah Masuknya Hindu-Buddha di Nusantara",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh IPS Terpadu"
+            },
+            "Pendidikan Pancasila (PPKn)": {
+                "Semester Ganjil": "Bab 1-3: Kelahiran Pancasila, Norma dan UUD 1945, serta Hak dan Kewajiban Warga Negara",
+                "Semester Genap": "Bab 4-6: Menghargai Lingkungan & Budaya Lokal, Keberagaman Suku, Agama, Ras & Antargolongan",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Pendidikan Pancasila"
+            },
+            "Informatika": {
+                "Semester Ganjil": "Bab 1-3: Berpikir Komputasional, Analisis Data Sederhana & Pengenalan Perangkat Keras/Lunak",
+                "Semester Genap": "Bab 4-6: Algoritma & Pemrograman Blok Visual (Scratch), Dampak Sosial Informatika & Praktik Lintas Bidang",
+                "Per Tahun (Fase Penuh)": "Capaian Pembelajaran Penuh Informatika SMP/MTs"
+            }
         };
 
         function autoFillMateri() {
             const mapel = document.getElementById('paramMapel').value;
-            if(databaseMateri[mapel]){
-                document.getElementById('paramMateri').value = databaseMateri[mapel];
+            const cakupan = document.getElementById('paramCakupan').value;
+            
+            if (databaseMateri[mapel]) {
+                // Pilih materi sesuai semester yang dipilih
+                let materiPilihan = databaseMateri[mapel][cakupan] || databaseMateri[mapel]["Semester Ganjil"];
+                document.getElementById('paramMateri').value = materiPilihan;
             }
         }
 
@@ -463,53 +496,12 @@
             document.getElementById('previewYear').innerText = tahun;
             document.getElementById('previewPeriod').innerText = cakupan;
             document.getElementById('previewSign2').innerText = guru;
-
-            const bodyContainer = document.getElementById('previewBody');
-            
-            bodyContainer.innerHTML = `
-                <div>
-                    <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. MATERI POKOK & SUB-BAB PEMBELAJARAN</h4>
-                    <p class="leading-relaxed font-bold text-emerald-800 text-sm mb-1">Materi Pembahasan: ${materi}</p>
-                    <p class="leading-relaxed text-slate-600">Dokumen perangkat pembelajaran mata pelajaran <b>${mapel}</b> ini disusun secara komprehensif untuk mendukung pencapaian kompetensi siswa pada bab <b>"${materi}"</b> untuk tingkat <b>${fase}</b>.</p>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">B. RINCIAN CAPAIAN PEMBELAJARAN (CP) & INDIKATOR</h4>
-                    <table class="w-full border-collapse border border-slate-300 text-xs my-3">
-                        <thead>
-                            <tr class="bg-slate-100 text-slate-800">
-                                <th class="border border-slate-300 p-2 text-left">Elemen / Aspek</th>
-                                <th class="border border-slate-300 p-2 text-left">Capaian Pembelajaran Khusus Materi</th>
-                                <th class="border border-slate-300 p-2 text-left">Tujuan & Indikator (${cakupan})</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="border border-slate-300 p-2 font-semibold">Pemahaman Konsep</td>
-                                <td class="border border-slate-300 p-2">Peserta didik mampu memahami, menganalisis, dan menyimpulkan esensi dari materi <b>${materi}</b>.</td>
-                                <td class="border border-slate-300 p-2">Siswa mampu menyebutkan fakta, prinsip utama, dan mendeskripsikan solusinya secara mandiri.</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 p-2 font-semibold">Penerapan Sikap & Praktik</td>
-                                <td class="border border-slate-300 p-2">Peserta didik mempraktikkan serta membiasakan nilai positif dari materi <b>${materi}</b> dalam kehidupan sehari-hari.</td>
-                                <td class="border border-slate-300 p-2">Menunjukkan sikap bernalar kritis, disiplin, dan berakhlak mulia saat kegiatan belajar.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">C. METODE, MODEL & ASESMEN PEMBELAJARAN</h4>
-                    <p class="mb-1"><b>Pendekatan:</b> Student-Centered Learning & Diferensiasi (Kurikulum Merdeka).</p>
-                    <p class="mb-1"><b>Model Pembelajaran:</b> Problem Based Learning (PBL) / Inquiry Learning.</p>
-                    <p><b>Rencana Asesmen:</b> Asesmen Formatif (Diskusi & Tanya Jawab) serta Asesmen Sumatif (Tes Tulis/Soal HOTS).</p>
-                </div>
-            `;
+            document.getElementById('bodyMateri').innerText = 'Materi Pembahasan: ' + materi;
 
             closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
 
-            alert('Dokumen berhasil digenerate! Materi "' + materi + '" untuk ' + mapel + ' kini telah aktif.');
+            alert('Dokumen berhasil digenerate untuk ' + cakupan + ' dengan materi: ' + materi);
         }
 
         function formatText(command) {
