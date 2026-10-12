@@ -49,20 +49,20 @@
     </header>
 
     <!-- Main Content Wrapper -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-10">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-12">
 
-        <!-- SECTION 1: KATALOG MODUL DOKUMEN -->
+        <!-- SECTION 1: PILIH MODUL DOKUMEN KURIKULUM MERDEKA -->
         <section>
             <div class="flex items-center space-x-2.5 mb-2">
                 <i class="fa-solid fa-layer-group text-emerald-600 text-xl"></i>
                 <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">PILIH MODUL DOKUMEN KURIKULUM MERDEKA</h2>
             </div>
-            <p class="text-slate-500 text-sm mb-6">Klik pada salah satu kartu modul di bawah untuk langsung membuka parameter & menyusun dokumen AI <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i></p>
+            <p class="text-slate-500 text-sm mb-6">Klik pada salah satu modul untuk langsung menyusun dokumen AI <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i></p>
 
-            <!-- Grid Modul Kurikulum Merdeka -->
+            <!-- Grid 12 Modul Kurikulum Merdeka -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 
-                <!-- 1. Capaian Pembelajaran (CP) -->
+                <!-- 1. CP -->
                 <div onclick="openMenuModal('Capaian Pembelajaran (CP)', 'cp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Pemetaan CP & KBC -->
+                <!-- 2. PEMETAAN -->
                 <div onclick="openMenuModal('Pemetaan CP & KBC', 'pemetaan')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Tujuan Pembelajaran (TP) -->
+                <!-- 3. TP -->
                 <div onclick="openMenuModal('Tujuan Pembelajaran (TP)', 'tp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -104,7 +104,7 @@
                     </div>
                 </div>
 
-                <!-- 4. Alur Tujuan Pembelajaran (ATP) -->
+                <!-- 4. ATP -->
                 <div onclick="openMenuModal('Alur Tujuan (ATP)', 'atp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -118,7 +118,7 @@
                     </div>
                 </div>
 
-                <!-- 5. Kriteria Ketuntasan (KKTP) -->
+                <!-- 5. KKTP -->
                 <div onclick="openMenuModal('Kriteria Ketuntasan (KKTP)', 'kktp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -132,7 +132,49 @@
                     </div>
                 </div>
 
-                <!-- 6. Modul Ajar -->
+                <!-- 6. RPE -->
+                <div onclick="openMenuModal('Rincian Pekan Efektif (RPE)', 'rpe')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">RPE</span>
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-calendar-days text-lg"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Rincian Pekan Efektif</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Hitung minggu efektif dan waktu pembelajaran.</p>
+                    </div>
+                </div>
+
+                <!-- 7. PROTA -->
+                <div onclick="openMenuModal('Program Tahunan (PROTA)', 'prota')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-purple-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">PROTA</span>
+                            <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-calendar-check text-lg"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Program Tahunan</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Rencanakan alokasi waktu selama satu tahun pelajaran.</p>
+                    </div>
+                </div>
+
+                <!-- 8. PROMES -->
+                <div onclick="openMenuModal('Program Semester (PROMES)', 'promes')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-fuchsia-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">PROMES</span>
+                            <div class="w-10 h-10 rounded-xl bg-fuchsia-50 text-fuchsia-600 flex items-center justify-center group-hover:bg-fuchsia-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-calendar-week text-lg"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Program Semester</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Susun distribusi materi untuk setiap semester.</p>
+                    </div>
+                </div>
+
+                <!-- 9. MODUL AJAR -->
                 <div onclick="openMenuModal('Modul Ajar', 'modul_ajar')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -146,7 +188,21 @@
                     </div>
                 </div>
 
-                <!-- 7. Bank Soal (25 Butir) -->
+                <!-- 10. BAHAN AJAR -->
+                <div onclick="openMenuModal('Bahan Ajar', 'bahan_ajar')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">BAHAN</span>
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-book-open-reader text-lg"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Bahan Ajar</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Kembangkan materi bacaan & panduan ringkas.</p>
+                    </div>
+                </div>
+
+                <!-- 11. BANK SOAL -->
                 <div onclick="openMenuModal('Bank Soal (25 Butir)', 'bank_soal')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -160,7 +216,7 @@
                     </div>
                 </div>
 
-                <!-- 8. Lembar Kerja (LKPD) -->
+                <!-- 12. LKPD -->
                 <div onclick="openMenuModal('Lembar Kerja (LKPD)', 'lkpd')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -177,7 +233,104 @@
             </div>
         </section>
 
-        <!-- SECTION 2: WORD EDITOR & PREVIEW DOKUMEN -->
+        <!-- SECTION 2: ADMINISTRASI GURU & AKADEMIK (DATA REAL) -->
+        <section class="pt-6 border-t border-slate-200">
+            <div class="flex items-center space-x-2.5 mb-2">
+                <i class="fa-solid fa-folder-open text-blue-600 text-xl"></i>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">ADMINISTRASI GURU & AKADEMIK (DATA REAL)</h2>
+            </div>
+            <p class="text-slate-500 text-sm mb-6">Buat dokumen administrasi dengan data tabel asli dari file Excel Anda <i class="fa-solid fa-file-excel text-emerald-600"></i></p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <!-- Admin 1: Kalender Pendidikan -->
+                <div onclick="openMenuModal('Kalender Pendidikan', 'kalender')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span>
+                            <i class="fa-solid fa-calendar-days text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Kalender Pendidikan</h3>
+                        <p class="text-slate-500 text-xs">Matriks kegiatan akademik dan minggu efektif.</p>
+                    </div>
+                </div>
+
+                <!-- Admin 2: Jadwal Mengajar -->
+                <div onclick="openMenuModal('Jadwal Mengajar', 'jadwal')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span>
+                            <i class="fa-solid fa-chalkboard-user text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Jadwal Mengajar</h3>
+                        <p class="text-slate-500 text-xs">Tabel roster jadwal tatap muka di kelas.</p>
+                    </div>
+                </div>
+
+                <!-- Admin 3: Daftar Nilai -->
+                <div onclick="openMenuModal('Daftar Nilai', 'nilai')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span>
+                            <i class="fa-solid fa-list-ol text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Daftar Nilai</h3>
+                        <p class="text-slate-500 text-xs">Rekapitulasi nilai formatif, sumatif, dan akhir.</p>
+                    </div>
+                </div>
+
+                <!-- Admin 4: Buku Pedoman Guru -->
+                <div onclick="openMenuModal('Buku Pedoman Guru', 'pedoman')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span>
+                            <i class="fa-solid fa-book text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Buku Pedoman Guru</h3>
+                        <p class="text-slate-500 text-xs">Dokumen pedoman pelaksanaan kerja tahunan.</p>
+                    </div>
+                </div>
+
+                <!-- Admin 5: Analisis Hasil Belajar -->
+                <div onclick="openMenuModal('Analisis Hasil Belajar', 'analisis')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span>
+                            <i class="fa-solid fa-chart-line text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Analisis Hasil Belajar</h3>
+                        <p class="text-slate-500 text-xs">Ketuntasan klasikal dan program perbaikan/pengayaan.</p>
+                    </div>
+                </div>
+
+                <!-- Admin 6: Absensi Siswa -->
+                <div onclick="openMenuModal('Absensi Siswa', 'absensi')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span>
+                            <i class="fa-solid fa-id-card-clip text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Absensi Siswa</h3>
+                        <p class="text-slate-500 text-xs">Format daftar kehadiran (presensi) peserta didik.</p>
+                    </div>
+                </div>
+
+                <!-- Admin 7: Jurnal Mindset KBC -->
+                <div onclick="openMenuModal('Jurnal Mindset KBC', 'jurnal')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-teal-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-teal-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">JURNAL KBC</span>
+                            <i class="fa-solid fa-heart-circle-check text-teal-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Jurnal Mindset KBC</h3>
+                        <p class="text-slate-500 text-xs">Jurnal harian Guru Madrasah dengan 25 Mindset KBC.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: WORD EDITOR & PREVIEW DOKUMEN -->
         <section id="editorSection" class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
             <!-- Toolbar Dokumen -->
             <div class="flex flex-wrap items-center justify-between pb-4 mb-6 border-b border-slate-200 gap-4">
@@ -213,32 +366,32 @@
                     <div class="text-center space-y-2 mb-8 border-b pb-6">
                         <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">CAPAIAN PEMBELAJARAN (CP)</h2>
                         <h3 id="previewSub" class="text-base font-semibold text-emerald-700">Mata Pelajaran: Aqidah Akhlak</h3>
-                        <p class="text-xs text-slate-500">Satuan Pendidikan: <span id="previewSchool">MTs Persatuan Islam Kadipaten</span> | <span id="previewPeriod">Tahun Ajaran 2026/2027 (Semester Ganjil & Genap)</span></p>
+                        <p class="text-xs text-slate-500">Satuan Pendidikan: <span id="previewSchool">MTs Persatuan Islam Kadipaten</span> | <span id="previewPeriod">Tahun Ajaran 2026/2027 (Per Tahun/Fase)</span></p>
                     </div>
 
                     <div id="previewBody" class="space-y-6 text-xs text-slate-700">
                         <div>
-                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. RASIONAL & TENTANG CAPAIAN PEMBELAJARAN</h4>
-                            <p class="leading-relaxed mb-2">Capaian Pembelajaran (CP) merupakan kompetensi pembelajaran yang harus dicapai peserta didik pada setiap fase perkembangan, dimulai dari fase Fondasi hingga Fase F.</p>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">A. RASIONAL & TENTANG DOKUMEN</h4>
+                            <p class="leading-relaxed mb-2">Dokumen ini merupakan bagian dari kelengkapan perangkat pembelajaran dan administrasi akademik terstruktur berbasis Kurikulum Merdeka.</p>
                         </div>
 
                         <div>
-                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">B. ELEMEN & CAPAIAN FASE</h4>
+                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm">B. DETAIL ISI & MATRIKS TABEL</h4>
                             <table class="w-full border-collapse border border-slate-300 text-xs my-3">
                                 <thead>
                                     <tr class="bg-slate-100 text-slate-800">
-                                        <th class="border border-slate-300 p-2 text-left">Elemen</th>
-                                        <th class="border border-slate-300 p-2 text-left">Capaian Pembelajaran</th>
+                                        <th class="border border-slate-300 p-2 text-left">Aspek / Elemen</th>
+                                        <th class="border border-slate-300 p-2 text-left">Uraian / Capaian Pembelajaran</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="border border-slate-300 p-2 font-semibold">Akidah</td>
-                                        <td class="border border-slate-300 p-2">Peserta didik mampu memahami hakikat Akidah Islam, rukun iman, serta mengaplikasikannya dalam kehidupan sehari-hari.</td>
+                                        <td class="border border-slate-300 p-2 font-semibold">Kompetensi Utama</td>
+                                        <td class="border border-slate-300 p-2">Memahami hakikat materi secara komprehensif serta mampu mengaplikasikannya dalam kehidupan sehari-hari.</td>
                                     </tr>
                                     <tr>
-                                        <td class="border border-slate-300 p-2 font-semibold">Akhlak</td>
-                                        <td class="border border-slate-300 p-2">Peserta didik membiasakan akhlak terpuji (Mahmudah) dan menjauhi akhlak tercela (Mazmumah).</td>
+                                        <td class="border border-slate-300 p-2 font-semibold">Karakter & Nilai</td>
+                                        <td class="border border-slate-300 p-2">Membiasakan sikap terpuji, religius, serta bernalar kritis sesuai Profil Pelajar Pancasila.</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -273,7 +426,7 @@
                     <i class="fa-solid fa-sliders"></i>
                 </div>
                 <div>
-                    <h3 id="modalMenuTitle" class="text-lg font-bold text-slate-900">Parameter Capaian Pembelajaran (CP)</h3>
+                    <h3 id="modalMenuTitle" class="text-lg font-bold text-slate-900">Parameter Dokumen</h3>
                     <p class="text-xs text-slate-500">Pilih sub-menu dan atur detail dokumen yang ingin dihasilkan AI</p>
                 </div>
             </div>
@@ -283,7 +436,7 @@
                 <!-- Sub Menu 1: Cakupan & Periode -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Cakupan Periode *</label>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Cakupan Periode / Semester *</label>
                         <select id="paramCakupan" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                             <option value="Per Tahun (Fase Penuh)">Per Tahun (Fase Penuh)</option>
                             <option value="Semester Ganjil">Semester Ganjil saja</option>
@@ -341,7 +494,7 @@
                 <!-- Sub Menu 4: Instruksi Tambahan -->
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Instruksi Khusus AI (Opsional)</label>
-                    <textarea id="paramInstruksi" rows="2" placeholder="Contoh: Fokuskan pada pengembangan karakter Pancacita KBC dan HOTS..." class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
+                    <textarea id="paramInstruksi" rows="2" placeholder="Contoh: Sesuaikan dengan format tabel Excel real dan karakter KBC..." class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
                 </div>
 
                 <div class="pt-4 flex justify-end space-x-3">
