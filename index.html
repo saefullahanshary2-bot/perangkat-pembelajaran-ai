@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERANGKAT PEMBELAJARAN AI - PRO V3.6 FOKUS BAB & SUB-BAB</title>
+    <title>PERANGKAT PEMBELAJARAN AI - KMA 1503 TAHUN 2025</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -32,7 +32,7 @@
                 </div>
                 <div class="flex items-center space-x-2">
                     <span class="font-extrabold text-slate-900 tracking-tight text-base sm:text-lg">PERANGKAT PEMBELAJARAN AI</span>
-                    <span class="bg-amber-400 text-amber-950 text-[10px] font-black px-2 py-0.5 rounded shadow-sm tracking-wide">PRO V3.6 PER BAB</span>
+                    <span class="bg-amber-400 text-amber-950 text-[10px] font-black px-2 py-0.5 rounded shadow-sm tracking-wide">KMA 1503/2025</span>
                 </div>
             </div>
             <div class="flex items-center space-x-4">
@@ -51,145 +51,79 @@
     <!-- Main Content Wrapper -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-12">
 
-        <!-- SECTION 1: PILIH MODUL DOKUMEN KURIKULUM MERDEKA -->
+        <!-- SECTION 1: PILIH MODUL DOKUMEN KURIKULUM MADRASAH -->
         <section>
             <div class="flex items-center space-x-2.5 mb-2">
                 <i class="fa-solid fa-layer-group text-emerald-600 text-xl"></i>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">PILIH MODUL DOKUMEN KURIKULUM MERDEKA</h2>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">PILIH MODUL DOKUMEN KURIKULUM MADRASAH (KMA 1503/2025)</h2>
             </div>
-            <p class="text-slate-500 text-sm mb-6">Klik pada salah satu modul untuk menyusun dokumen spesifik per bab & sub-bab pembelajaran <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i></p>
+            <p class="text-slate-500 text-sm mb-6">Pilih jenis modul untuk menyusun dokumen perangkat pembelajaran berbasis Deep Learning (Mindful, Meaningful, Joyful & KBC) <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i></p>
 
-            <!-- Grid 12 Modul Kurikulum Merdeka -->
+            <!-- Grid Modul Kurikulum Merdeka / KMA 1503 -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div onclick="openMenuModal('Capaian Pembelajaran (CP)', 'cp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Modul Ajar', 'modul_ajar')" class="bg-white p-5 rounded-2xl border-2 border-emerald-500 shadow-md hover:shadow-lg transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-rose-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">MODUL AJAR</span>
+                            <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition"><i class="fa-solid fa-file-contract text-lg"></i></div>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Modul Ajar Per Tema (KMA 1503)</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Format Deep Learning: Mindful, Meaningful, Joyful & KBC per Tema Spesifik.</p>
+                    </div>
+                </div>
+
+                <div onclick="openMenuModal('Capaian Pembelajaran (CP)', 'cp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-blue-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">CP</span>
                             <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition"><i class="fa-solid fa-bullseye text-lg"></i></div>
                         </div>
                         <h3 class="font-bold text-slate-900 text-sm mb-1">Capaian Pembelajaran (CP)</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Uraikan kompetensi dan karakter yang ingin dicapai setelah menyelesaikan fase.</p>
+                        <p class="text-slate-500 text-xs leading-relaxed">Kompetensi dan elemen mata pelajaran sesuai KMA 1503 Tahun 2025.</p>
                     </div>
                 </div>
 
-                <div onclick="openMenuModal('Pemetaan CP & KBC', 'pemetaan')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-indigo-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">PEMETAAN</span>
-                            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition"><i class="fa-solid fa-network-wired text-lg"></i></div>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-sm mb-1">Pemetaan CP & KBC</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Petakan CP dengan dimensi Profil Lulusan dan Pancacita KBC.</p>
-                    </div>
-                </div>
-
-                <div onclick="openMenuModal('Tujuan Pembelajaran (TP)', 'tp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Tujuan Pembelajaran (TP)', 'tp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-sky-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">TP</span>
                             <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center group-hover:bg-sky-600 group-hover:text-white transition"><i class="fa-solid fa-sliders text-lg"></i></div>
                         </div>
-                        <h3 class="font-bold text-slate-900 text-sm mb-1">Tujuan Pembelajaran</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Rumuskan tujuan pembelajaran yang spesifik dan terukur.</p>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Tujuan Pembelajaran (TP)</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Rumusan TP berbasis KBC per Tema Pembelajaran.</p>
                     </div>
                 </div>
 
-                <div onclick="openMenuModal('Alur Tujuan (ATP)', 'atp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Alur Tujuan Pembelajaran (ATP)', 'atp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-cyan-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">ATP</span>
                             <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition"><i class="fa-solid fa-route text-lg"></i></div>
                         </div>
                         <h3 class="font-bold text-slate-900 text-sm mb-1">Alur Tujuan (ATP)</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Susun alur ketercapaian tujuan pembelajaran secara logis.</p>
+                        <p class="text-slate-500 text-xs leading-relaxed">Alur ketercapaian urutan tema per semester.</p>
                     </div>
                 </div>
 
-                <div onclick="openMenuModal('Kriteria Ketuntasan (KKTP)', 'kktp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-amber-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">KKTP</span>
-                            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition"><i class="fa-solid fa-envelope-open-text text-lg"></i></div>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-sm mb-1">Kriteria Ketuntasan</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Tentukan kriteria ketuntasan belajar peserta didik (Rubrik).</p>
-                    </div>
-                </div>
-
-                <div onclick="openMenuModal('Rincian Pekan Efektif (RPE)', 'rpe')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">RPE</span>
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition"><i class="fa-solid fa-calendar-days text-lg"></i></div>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-sm mb-1">Rincian Pekan Efektif</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Hitung minggu efektif dan waktu pembelajaran.</p>
-                    </div>
-                </div>
-
-                <div onclick="openMenuModal('Program Tahunan (PROTA)', 'prota')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-purple-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">PROTA</span>
-                            <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition"><i class="fa-solid fa-calendar-check text-lg"></i></div>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-sm mb-1">Program Tahunan</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Rencanakan alokasi waktu selama satu tahun pelajaran.</p>
-                    </div>
-                </div>
-
-                <div onclick="openMenuModal('Program Semester (PROMES)', 'promes')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-fuchsia-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">PROMES</span>
-                            <div class="w-10 h-10 rounded-xl bg-fuchsia-50 text-fuchsia-600 flex items-center justify-center group-hover:bg-fuchsia-600 group-hover:text-white transition"><i class="fa-solid fa-calendar-week text-lg"></i></div>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-sm mb-1">Program Semester</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Susun distribusi materi untuk setiap semester.</p>
-                    </div>
-                </div>
-
-                <div onclick="openMenuModal('Modul Ajar', 'modul_ajar')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-rose-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">MODUL AJAR</span>
-                            <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition"><i class="fa-solid fa-file-contract text-lg"></i></div>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-sm mb-1">Modul Ajar (Per Bab Spesifik)</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Susun rencana pembelajaran fokus 1 Bab lengkap dengan Sub-Bab per pertemuan.</p>
-                    </div>
-                </div>
-
-                <div onclick="openMenuModal('Bahan Ajar', 'bahan_ajar')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">BAHAN</span>
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition"><i class="fa-solid fa-book-open-reader text-lg"></i></div>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-sm mb-1">Bahan Ajar</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Kembangkan materi bacaan & panduan ringkas per Bab.</p>
-                    </div>
-                </div>
-
-                <div onclick="openMenuModal('Bank Soal (25 Butir)', 'bank_soal')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-orange-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">SOAL</span>
-                            <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition"><i class="fa-solid fa-ticket text-lg"></i></div>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-sm mb-1">Bank Soal (25 Butir)</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Susun 25 butir soal HOTS PG berbasis indikator Bab.</p>
-                    </div>
-                </div>
-
-                <div onclick="openMenuModal('Lembar Kerja (LKPD)', 'lkpd')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Lembar Kerja (LKPD)', 'lkpd')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-pink-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">LKPD</span>
                             <div class="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center group-hover:bg-pink-600 group-hover:text-white transition"><i class="fa-solid fa-list-check text-lg"></i></div>
                         </div>
-                        <h3 class="font-bold text-slate-900 text-sm mb-1">Lembar Kerja</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Buat Lembar Kerja Peserta Didik (LKPD) berbasis studi kasus Sub-Bab.</p>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">LKPD Penyelidikan Dalil</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Lembar Kerja Penyelidikan Dalil & Konstruksi Makna.</p>
+                    </div>
+                </div>
+
+                <div onclick="openMenuModal('Bank Soal KBC', 'bank_soal')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm transition cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-orange-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">SOAL</span>
+                            <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition"><i class="fa-solid fa-ticket text-lg"></i></div>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-sm mb-1">Bank Soal & Kuis Interaktif</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed">Instrumen Asesmen HOTS & Kuis Reflektif Joyful.</p>
                     </div>
                 </div>
             </div>
@@ -213,17 +147,16 @@
 
             <!-- Tampilan Kertas Dokumen Real-Time -->
             <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
-                <div id="paperSheet" contenteditable="true" class="bg-white w-[800px] min-h-[1000px] p-12 shadow-md rounded-lg text-slate-800 text-sm leading-relaxed focus:outline-none border border-slate-200">
-                    <div class="text-center space-y-2 mb-8 border-b pb-6">
-                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">MODUL AJAR KURIKULUM MERDEKA</h2>
-                        <h3 id="previewSub" class="text-base font-semibold text-emerald-700">Mata Pelajaran: Aqidah Akhlak (Kelas 7 (Fase D))</h3>
-                        <p class="text-xs text-slate-500">Satuan Pendidikan: <span id="previewSchool">MTs Persatuan Islam Kadipaten</span> | Tahun Ajaran <span id="previewYear">2026/2027</span> [<span id="previewPeriod">Semester Genap</span>]</p>
+                <div id="paperSheet" contenteditable="true" class="bg-white w-[850px] min-h-[1050px] p-12 shadow-md rounded-lg text-slate-900 text-sm leading-relaxed focus:outline-none border border-slate-200">
+                    <div class="text-center space-y-1 mb-6 border-b pb-4">
+                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">MODUL AJAR FIKIH</h2>
+                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">KELAS 7 — Thaharah</h3>
+                        <p class="text-xs text-slate-600 font-semibold"><span id="previewSchool">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</span></p>
                     </div>
 
-                    <div id="previewBody" class="space-y-6 text-xs text-slate-700">
-                        <div>
-                            <p class="italic text-slate-500 text-center py-8">Silakan pilih salah satu modul di atas, lalu tentukan Bab Spesifik untuk menyusun dokumen pembelajaran yang rinci per Sub-Bab.</p>
-                        </div>
+                    <div id="previewBody" class="space-y-6 text-xs text-slate-800">
+                        <!-- Konten Dokumen akan ter-render otomatis -->
+                        <p class="text-center text-slate-400 py-10 italic">Silakan klik "Generate Modul Per Tema" untuk menyusun dokumen lengkap KMA 1503/2025.</p>
                     </div>
 
                     <div class="mt-16 pt-8 flex justify-between text-xs border-t border-slate-200">
@@ -242,7 +175,7 @@
 
     </main>
 
-    <!-- MODAL SUB-MENU / PARAMETER DOKUMEN -->
+    <!-- MODAL PARAMETER DOKUMEN -->
     <div id="subMenuModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-slate-100">
             <button type="button" onclick="closeMenuModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
@@ -254,8 +187,8 @@
                     <i class="fa-solid fa-sliders"></i>
                 </div>
                 <div>
-                    <h3 id="modalMenuTitle" class="text-lg font-bold text-slate-900">Parameter Dokumen</h3>
-                    <p class="text-xs text-slate-500">Pilih mata pelajaran dan Bab Pembelajaran Spesifik</p>
+                    <h3 id="modalMenuTitle" class="text-lg font-bold text-slate-900">Parameter Modul Ajar Per Tema</h3>
+                    <p class="text-xs text-slate-500">Sesuai KMA 1503 Tahun 2025 (Deep Learning & KBC)</p>
                 </div>
             </div>
 
@@ -264,11 +197,11 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mata Pelajaran *</label>
-                        <select id="paramMapel" onchange="updateBabOptions()" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                            <optgroup label="=== KELOMPOK PAI & BAHASA ARAB ===">
+                        <select id="paramMapel" onchange="updateTemaOptions()" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                            <optgroup label="=== KELOMPOK MADRASAH (KMA 1503) ===">
+                                <option value="Fikih">Fikih</option>
                                 <option value="Aqidah Akhlak">Aqidah Akhlak</option>
                                 <option value="Al-Qur'an Hadis">Al-Qur'an Hadis</option>
-                                <option value="Fiqih">Fiqih</option>
                                 <option value="Sejarah Kebudayaan Islam (SKI)">Sejarah Kebudayaan Islam (SKI)</option>
                                 <option value="Bahasa Arab">Bahasa Arab</option>
                             </optgroup>
@@ -276,57 +209,47 @@
                                 <option value="Matematika">Matematika</option>
                                 <option value="Bahasa Indonesia">Bahasa Indonesia</option>
                                 <option value="Bahasa Inggris">Bahasa Inggris</option>
-                                <option value="Ilmu Pengetahuan Alam (IPA)">Ilmu Pengetahuan Alam (IPA)</option>
-                                <option value="Ilmu Pengetahuan Sosial (IPS)">Ilmu Pengetahuan Sosial (IPS)</option>
-                                <option value="Pendidikan Pancasila (PPKn)">Pendidikan Pancasila (PPKn)</option>
-                                <option value="Informatika">Informatika</option>
+                                <option value="IPA">IPA</option>
+                                <option value="IPS">IPS</option>
+                                <option value="Pendidikan Pancasila">Pendidikan Pancasila</option>
                             </optgroup>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Cakupan Periode / Semester *</label>
-                        <select id="paramCakupan" onchange="updateBabOptions()" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                            <option value="Semester Ganjil">Semester Ganjil</option>
-                            <option value="Semester Genap">Semester Genap</option>
-                            <option value="Per Tahun (Fase Penuh)">Per Tahun (Fase Penuh)</option>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Kelas / Semester *</label>
+                        <select id="paramKelasSem" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                            <option value="VII (Tujuh) / Ganjil">VII (Tujuh) / Ganjil</option>
+                            <option value="VII (Tujuh) / Genap">VII (Tujuh) / Genap</option>
+                            <option value="VIII (Delapan) / Ganjil">VIII (Delapan) / Ganjil</option>
+                            <option value="VIII (Delapan) / Genap">VIII (Delapan) / Genap</option>
+                            <option value="IX (Sembilan) / Ganjil">IX (Sembilan) / Ganjil</option>
+                            <option value="IX (Sembilan) / Genap">IX (Sembilan) / Genap</option>
                         </select>
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Pilih Bab Pembelajaran Spesifik (Fokus Dokumen) *</label>
-                    <select id="paramBabPilihan" onchange="autoFillSubBab()" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-bold text-emerald-800 focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                        <!-- Pilihan Bab akan terisi otomatis via JS -->
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Pilih Tema / Elemen Pembelajaran Spesifik *</label>
+                    <select id="paramTemaSpesifik" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-bold text-emerald-800 focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                        <!-- Pilihan Tema terisi via JS -->
                     </select>
                 </div>
 
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Rincian Sub-Bab Pembelajaran (Terurai Otomatis) *</label>
-                    <textarea id="paramSubBab" rows="3" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none leading-relaxed"></textarea>
-                </div>
-
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Tahun Ajaran *</label>
-                        <select id="paramTahun" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                            <option value="2026/2027">2026/2027</option>
-                            <option value="2025/2026">2025/2026</option>
-                        </select>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Alokasi Waktu *</label>
+                        <input type="text" id="paramAlokasi" value="2 Jam Pelajaran (2 x 40 menit) — 1 kali pertemuan" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Fase / Kelas *</label>
-                        <select id="paramFase" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                            <option value="Kelas 7 (Fase D)">Kelas 7 (Fase D)</option>
-                            <option value="Kelas 8 (Fase D)">Kelas 8 (Fase D)</option>
-                            <option value="Kelas 9 (Fase D)">Kelas 9 (Fase D)</option>
-                        </select>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Elemen / Sub-Elemen *</label>
+                        <input type="text" id="paramElemen" value="Fikih Ibadah — Thaharah (Bersuci)" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Satuan Pendidikan</label>
-                        <input type="text" id="paramSekolah" value="MTs Persatuan Islam Kadipaten" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Satuan Pendidikan & Lokasi</label>
+                        <input type="text" id="paramSekolah" value="MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Guru Pembuat</label>
@@ -338,7 +261,7 @@
                     <button type="button" onclick="closeMenuModal()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition">Batal</button>
                     <button type="submit" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-600/20 transition flex items-center space-x-2">
                         <i class="fa-solid fa-bolt"></i>
-                        <span>Generate Modul Per Bab</span>
+                        <span>Generate Modul Per Tema</span>
                     </button>
                 </div>
             </form>
@@ -348,7 +271,7 @@
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 mt-12 py-6">
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">
-            <p>&copy; 2026 PERANGKAT PEMBELAJARAN AI. Hak cipta dilindungi undang-undang.</p>
+            <p>&copy; 2026 PERANGKAT PEMBELAJARAN AI - KMA 1503 TAHUN 2025. Hak cipta dilindungi undang-undang.</p>
         </div>
     </footer>
 
@@ -356,146 +279,65 @@
     <script>
         let currentSelectedMenu = 'Modul Ajar';
 
-        // Database Bab & Sub-Bab Rinci
-        const databaseBabSpesifik = {
-            "Aqidah Akhlak": {
-                "Semester Ganjil": [
-                    {
-                        bab: "Bab 1: Akidah Islam & Tauhid",
-                        subBab: "Sub-Bab 1: Pengertian & Dalil Akidah Islam | Sub-Bab 2: Hakikat & Tingkatan Tauhid | Sub-Bab 3: Hikmah & Implementasi Akidah dalam Kehidupan"
-                    },
-                    {
-                        bab: "Bab 2: Sifat-Sifat Allah SWT (Wajib, Mustahil & Jaiz)",
-                        subBab: "Sub-Bab 1: Sifat Wajib & Mustahil Allah (Nafsiyah, Salbiyah, Ma'ani, Ma'nawiyah) | Sub-Bab 2: Sifat Jaiz Allah | Sub-Bab 3: Pembuktian Akal & Bukti Alam Semesta"
-                    },
-                    {
-                        bab: "Bab 3: Akhlak Mahmudah (Taat, Ikhlas, Khauf & Raja')",
-                        subBab: "Sub-Bab 1: Hakikat Taat dan Ikhlas | Sub-Bab 2: Keseimbangan Khauf dan Raja' | Sub-Bab 3: Membiasakan Akhlak Terpuji dalam Keseharian"
-                    }
-                ],
-                "Semester Genap": [
-                    {
-                        bab: "Bab 4: Adab Shalat dan Zikir",
-                        subBab: "Sub-Bab 1: Pengertian & Ketentuan Adab Shalat | Sub-Bab 2: Tata Cara & Keutamaan Zikir | Sub-Bab 3: Praktik & Hikmah Khusyuk dalam Shalat dan Zikir"
-                    },
-                    {
-                        bab: "Bab 5: Menghindari Akhlak Tercela (Riya' & Nifak)",
-                        subBab: "Sub-Bab 1: Pengertian & Ciri-Ciri Riya' | Sub-Bab 2: Pengertian & Bahaya Nifak | Sub-Bab 3: Bahaya Sosial & Bentuk Pembentengan Diri"
-                    },
-                    {
-                        bab: "Bab 6: Kisah Keteladanan Nabi Sulaiman A.S.",
-                        subBab: "Sub-Bab 1: Riwayat Hidup & Mukjizat Nabi Sulaiman A.S. | Sub-Bab 2: Sikap Rendah Hati dan Rasa Syukur | Sub-Bab 3: Meneladani Kepemimpinan & Keadilan"
-                    }
-                ]
-            },
-            "Al-Qur'an Hadis": {
-                "Semester Ganjil": [
-                    {
-                        bab: "Bab 1: Kedudukan Al-Qur'an & Hadis",
-                        subBab: "Sub-Bab 1: Kedudukan Al-Qur'an sebagai Pedoman Utama | Sub-Bab 2: Kedudukan Hadis terhadap Al-Qur'an | Sub-Bab 3: Fungsi & Peran Al-Qur'an Hadis dalam Kehidupan"
-                    },
-                    {
-                        bab: "Bab 2: Hukum Bacaan Mad Thabi'i & Mad Far'i",
-                        subBab: "Sub-Bab 1: Ketentuan Mad Thabi'i | Sub-Bab 2: Rincian Pembagian Mad Far'i | Sub-Bab 3: Praktik Tajwid dalam Surah-Surah Pilihan"
-                    }
-                ],
-                "Semester Genap": [
-                    {
-                        bab: "Bab 3: Sikap Toleransi dan Menghargai",
-                        subBab: "Sub-Bab 1: Tafsir QS. Al-Kafirun & Lakum Dinukum | Sub-Bab 2: Hadis tentang Toleransi Beragama | Sub-Bab 3: Menerapkan Tasamuh di Masyarakat"
-                    }
-                ]
-            },
-            "Fiqih": {
-                "Semester Ganjil": [
-                    {
-                        bab: "Bab 1: Ketentuan Taharah (Bersuci)",
-                        subBab: "Sub-Bab 1: Jenis-Jenis Najis dan Tata Cara Menyucikannya | Sub-Bab 2: Ketentuan Wudu dan Tayamum | Sub-Bab 3: Mandi Wajib dan Hadas Besar"
-                    },
-                    {
-                        bab: "Bab 2: Salat Fardu Lima Waktu",
-                        subBab: "Sub-Bab 1: Rukun dan Syarat Sah Salat | Sub-Bab 2: Hal yang Membatalkan Salat | Sub-Bab 3: Hikmah Salat dalam Pembentukan Karakter"
-                    }
-                ],
-                "Semester Genap": [
-                    {
-                        bab: "Bab 3: Salat Jamak & Qasar",
-                        subBab: "Sub-Bab 1: Pengertian & Syarat Musafir | Sub-Bab 2: Tata Cara Salat Jamak Taqdim & Takhir | Sub-Bab 3: Ketentuan Salat Qasar & Ketentuan Darurat"
-                    }
-                ]
-            },
-            "Matematika": {
-                "Semester Ganjil": [
-                    {
-                        bab: "Bab 1: Bilangan Bulat dan Pecahan",
-                        subBab: "Sub-Bab 1: Operasi Hitung Bilangan Bulat | Sub-Bab 2: Operasi Hitung Pecahan & Urutan | Sub-Bab 3: Penerapan Soal Cerita Kehidupan Nyata"
-                    }
-                ],
-                "Semester Genap": [
-                    {
-                        bab: "Bab 2: Persamaan & Pertidaksamaan Linear Satu Variabel",
-                        subBab: "Sub-Bab 1: Konsep Variabel & Kalimat Terbuka | Sub-Bab 2: Menyelesaikan Persamaan Linear | Sub-Bab 3: Menyelesaikan Pertidaksamaan Linear"
-                    }
-                ]
-            }
+        const databaseTemaSesuaiKMA = {
+            "Fikih": [
+                { tema: "Thaharah (Bersuci dari Hadas & Najis)", elemen: "Fikih Ibadah — Thaharah (Bersuci)" },
+                { tema: "Salat Fardu Lima Waktu & Zikir", elemen: "Fikih Ibadah — Salat Fardu" },
+                { tema: "Salat Berjamaah & Masbuq", elemen: "Fikih Ibadah — Salat Berjamaah" },
+                { tema: "Salat Jamak dan Qasar", elemen: "Fikih Ibadah — Rukhsah Salat" },
+                { tema: "Salat Dalam Keadaan Darurat / Orang Sakit", elemen: "Fikih Ibadah — Rukhsah Salat" },
+                { tema: "Ketentuan Puasa Wajib & Sunnah", elemen: "Fikih Ibadah — Puasa" }
+            ],
+            "Aqidah Akhlak": [
+                { tema: "Akidah Islam & Tauhid", elemen: "Akidah — Penguatan Tauhid" },
+                { tema: "Sifat Wajib, Mustahil & Jaiz Allah SWT", elemen: "Akidah — Ma'rifatullah" },
+                { tema: "Akhlak Mahmudah: Taat, Ikhlas, Khauf & Raja'", elemen: "Akhlak Mahmudah — Akhlak Pribadi" },
+                { tema: "Adab Shalat dan Zikir Khusyuk", elemen: "Adab — Adab Ibadah" },
+                { tema: "Menghindari Akhlak Tercela: Riya' & Nifak", elemen: "Akhlak Mazmumah — Penjagaan Diri" },
+                { tema: "Kisah Keteladanan Nabi Sulaiman A.S.", elemen: "Kisah Keteladanan — Adab Kepemimpinan" }
+            ],
+            "Al-Qur'an Hadis": [
+                { tema: "Kedudukan Al-Qur'an dan Hadis", elemen: "Al-Qur'an Hadis — Pedoman Hidup" },
+                { tema: "Hukum Bacaan Mad Thabi'i & Mad Far'i", elemen: "Tajwid — Kelancaran Membaca" },
+                { tema: "Toleransi & Menghargai Sesama (QS. Al-Kafirun)", elemen: "Al-Qur'an Hadis — Tasamuh Sosial" }
+            ],
+            "Sejarah Kebudayaan Islam (SKI)": [
+                { tema: "Kebudayaan Masyarakat Makkah Sebelum Islam", elemen: "SKI — Jazirah Arab Pra-Islam" },
+                { tema: "Dakwah Nabi Muhammad SAW Periode Makkah", elemen: "SKI — Subuh Islam Makkah" },
+                { tema: "Hijrah ke Madinah & Piagam Madinah", elemen: "SKI — Pembentukan Masyarakat Madinah" }
+            ],
+            "Bahasa Arab": [
+                { tema: "At-Ta'aruf (Perkenalan Diri)", elemen: "Maharah Istima' wal Kalam — Perkenalan" },
+                { tema: "Al-Marofiq Al-Madrasiyyah (Fasilitas Sekolah)", elemen: "Maharah Qira'ah wal Kitabah — Sekolah" }
+            ]
         };
 
-        function updateBabOptions() {
+        function updateTemaOptions() {
             const mapel = document.getElementById('paramMapel').value;
-            const cakupan = document.getElementById('paramCakupan').value;
-            const selectBab = document.getElementById('paramBabPilihan');
+            const selectTema = document.getElementById('paramTemaSpesifik');
+            selectTema.innerHTML = '';
 
-            selectBab.innerHTML = '';
+            let listTema = databaseTemaSesuaiKMA[mapel] || [
+                { tema: "Tema 1: Konsep Utama & Pembiasaan " + mapel, elemen: "Elemen Pembelajaran Utama" },
+                { tema: "Tema 2: Penerapan & Kajian Praktis " + mapel, elemen: "Elemen Terapan" }
+            ];
 
-            let semesterKey = (cakupan === 'Semester Genap') ? 'Semester Genap' : 'Semester Ganjil';
+            listTema.forEach(item => {
+                let opt = document.createElement('option');
+                opt.value = item.tema;
+                opt.innerText = item.tema;
+                selectTema.appendChild(opt);
+            });
 
-            if (databaseBabSpesifik[mapel] && databaseBabSpesifik[mapel][semesterKey]) {
-                const daftarBab = databaseBabSpesifik[mapel][semesterKey];
-                daftarBab.forEach((item, index) => {
-                    let opt = document.createElement('option');
-                    opt.value = item.bab;
-                    opt.innerText = item.bab;
-                    selectBab.appendChild(opt);
-                });
-            } else {
-                let opt1 = document.createElement('option');
-                opt1.value = "Bab 1: Konsep Utama & Teori Dasar " + mapel;
-                opt1.innerText = "Bab 1: Konsep Utama & Teori Dasar " + mapel;
-                let opt2 = document.createElement('option');
-                opt2.value = "Bab 2: Penerapan & Studi Kasus " + mapel;
-                opt2.innerText = "Bab 2: Penerapan & Studi Kasus " + mapel;
-                selectBab.appendChild(opt1);
-                selectBab.appendChild(opt2);
-            }
-
-            autoFillSubBab();
-        }
-
-        function autoFillSubBab() {
-            const mapel = document.getElementById('paramMapel').value;
-            const cakupan = document.getElementById('paramCakupan').value;
-            const selectedBabText = document.getElementById('paramBabPilihan').value;
-            const areaSubBab = document.getElementById('paramSubBab');
-
-            let semesterKey = (cakupan === 'Semester Genap') ? 'Semester Genap' : 'Semester Ganjil';
-
-            if (databaseBabSpesifik[mapel] && databaseBabSpesifik[mapel][semesterKey]) {
-                const found = databaseBabSpesifik[mapel][semesterKey].find(b => b.bab === selectedBabText);
-                if (found) {
-                    areaSubBab.value = found.subBab;
-                    return;
-                }
-            }
-
-            areaSubBab.value = "Sub-Bab 1: Pengenalan Konsep | Sub-Bab 2: Analisis & Pembahasan | Sub-Bab 3: Evaluasi & Penerapan Praktis";
+            document.getElementById('paramElemen').value = listTema[0].elemen;
         }
 
         function openMenuModal(menuName, code) {
             currentSelectedMenu = menuName;
-            document.getElementById('modalMenuTitle').innerText = 'Pengaturan Parameter: ' + menuName;
+            document.getElementById('modalMenuTitle').innerText = 'Parameter ' + menuName + ' (KMA 1503/2025)';
             document.getElementById('subMenuModal').classList.remove('hidden');
             document.getElementById('subMenuModal').classList.add('flex');
-            updateBabOptions();
+            updateTemaOptions();
         }
 
         function closeMenuModal() {
@@ -507,22 +349,16 @@
             e.preventDefault();
 
             const mapel = document.getElementById('paramMapel').value;
-            const babSpesifik = document.getElementById('paramBabPilihan').value;
-            const subBabList = document.getElementById('paramSubBab').value;
-            const cakupan = document.getElementById('paramCakupan').value;
-            const tahun = document.getElementById('paramTahun').value;
-            const fase = document.getElementById('paramFase').value;
+            const kelasSem = document.getElementById('paramKelasSem').value;
+            const tema = document.getElementById('paramTemaSpesifik').value;
+            const alokasi = document.getElementById('paramAlokasi').value;
+            const elemen = document.getElementById('paramElemen').value;
             const sekolah = document.getElementById('paramSekolah').value;
             const guru = document.getElementById('paramGuru').value;
 
-            // Pecah Sub-Bab menjadi array
-            const arrSub = subBabList.split('|').map(s => s.trim());
-
-            document.getElementById('previewTitle').innerText = currentSelectedMenu.toUpperCase();
-            document.getElementById('previewSub').innerText = 'Mata Pelajaran: ' + mapel + ' (' + fase + ')';
+            document.getElementById('previewTitle').innerText = ("MODUL AJAR " + mapel).toUpperCase();
+            document.getElementById('previewSub').innerText = "KELAS " + kelasSem.split('/')[0].trim() + " — " + tema;
             document.getElementById('previewSchool').innerText = sekolah;
-            document.getElementById('previewYear').innerText = tahun;
-            document.getElementById('previewPeriod').innerText = cakupan;
             document.getElementById('previewSign2').innerText = guru;
 
             const bodyContainer = document.getElementById('previewBody');
@@ -530,118 +366,163 @@
 
             if (currentSelectedMenu.includes('Modul Ajar')) {
                 dynamicHTML = `
-                    <div class="space-y-6">
-                        <!-- BAGIAN I -->
-                        <div class="border-b pb-4 border-slate-200">
-                            <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-3 text-sm uppercase">I. INFORMASI UMUM DOKUMEN MODUL AJAR</h4>
-                            <table class="w-full text-xs border-collapse">
-                                <tr class="border-b border-slate-100 py-1"><td class="w-1/3 font-semibold py-1">Nama Penyusun / Guru</td><td>: ${guru}</td></tr>
-                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
-                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Mata Pelajaran & Kelas</td><td>: ${mapel} / ${fase}</td></tr>
-                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Tahun Ajaran & Semester</td><td>: ${tahun} (${cakupan})</td></tr>
-                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Fokus Bab Pembelajaran</td><td>: <b class="text-emerald-800">${babSpesifik}</b></td></tr>
-                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Rincian Sub-Bab Materi</td><td>: ${subBabList}</td></tr>
-                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Alokasi Waktu Pembelajaran</td><td>: 8 Jam Pelajaran (4 Pertemuan Tatap Muka)</td></tr>
-                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Model & Pendekatan</td><td>: Problem Based Learning (PBL) & Pembelajaran Diferensiasi KBC</td></tr>
-                                <tr class="border-b border-slate-100 py-1"><td class="font-semibold py-1">Profil Pelajar Pancasila</td><td>: Beriman, Bertaqwa kepada Tuhan YME, Bergotong Royong, Bernalar Kritis, Kreatif, & Beradab</td></tr>
-                            </table>
-                        </div>
+                    <!-- A. INFORMASI UMUM -->
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">A. Informasi Umum</h4>
+                        <table class="w-full text-xs border-collapse">
+                            <tr class="py-1"><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
+                            <tr class="py-1"><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
+                            <tr class="py-1"><td class="font-semibold py-1">Kelas / Semester</td><td>: ${kelasSem}</td></tr>
+                            <tr class="py-1"><td class="font-semibold py-1">Alokasi Waktu</td><td>: ${alokasi}</td></tr>
+                            <tr class="py-1"><td class="font-semibold py-1">Elemen ${mapel}</td><td>: ${elemen}</td></tr>
+                            <tr class="py-1"><td class="font-semibold py-1">Model Pembelajaran</td><td>: <b>Deep Learning: Mindful, Meaningful, Joyful Learning berbasis Knowledge-Based Construction (KBC)</b></td></tr>
+                            <tr class="py-1"><td class="font-semibold py-1">Metode</td><td>: Tanya jawab reflektif, kajian dalil (tadabbur), diskusi kelompok, demonstrasi sederhana, kuis interaktif</td></tr>
+                            <tr class="py-1"><td class="font-semibold py-1">Sumber Belajar</td><td>: Al-Qur'an dan terjemahnya, Kitab Fiqh / Buku Siswa ${mapel} MTs, LKS, media peraga interaktif</td></tr>
+                        </table>
+                    </div>
 
-                        <!-- BAGIAN II: SKENARIO PER SUB-BAB -->
-                        <div class="border-b pb-4 border-slate-200 space-y-4">
-                            <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-3 text-sm uppercase">II. SKENARIO PEMBELAJARAN DETAIL PER SUB-BAB (4 PERTEMUAN)</h4>
-                            
-                            <!-- PERTEMUAN 1 -->
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-                                <p class="font-bold text-rose-800 text-xs">PERTEMUAN 1 (2 x 40 MENIT) - KHUSUS SUBA-BAB 1: ${arrSub[0] || 'Pengenalan Konsep Dasar'}</p>
-                                <p><b>Tujuan Pembelajaran:</b> Peserta didik mampu menjelaskan konsep utama dan mendeskripsikan esensi dari <i>"${arrSub[0] || babSpesifik}"</i> secara komprehensif.</p>
-                                <div class="pl-3 border-l-2 border-rose-300 space-y-1 mt-2 text-slate-700">
-                                    <p><b>1. Pendahuluan (15 Menit):</b> Membuka kelas dengan salam, tadarus ringkas, cek kehadiran, apersepsi pemantik terkait ${arrSub[0] || 'materi'}, dan penyampaian indikator belajar.</p>
-                                    <p><b>2. Kegiatan Inti (50 Menit):</b> Orientasi siswa pada masalah, pembacaan materi literasi secara berkelompok, diskusi terarah mengidentifikasi fakta penting, dan presentasi singkat kelompok.</p>
-                                    <p><b>3. Penutup (15 Menit):</b> Refleksi konsep harian, penarikan kesimpulan oleh guru, dan pemberian tugas membaca mandiri.</p>
-                                </div>
-                            </div>
+                    <!-- B. TUJUAN PEMBELAJARAN -->
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">B. Tujuan Pembelajaran</h4>
+                        <p class="leading-relaxed">Melalui pendekatan Knowledge-Based Construction (KBC) yang memadukan kesadaran diri, kebermaknaan, dan kegembiraan belajar, peserta didik diharapkan mampu:</p>
+                        <ol class="list-decimal pl-5 space-y-1 leading-relaxed">
+                            <li>Menjelaskan pengertian <b>${tema}</b> secara lughah (bahasa) dan istilah (syara') dengan bahasa sendiri secara utuh dan mendalam.</li>
+                            <li>Mengidentifikasi dan menganalisis dalil Al-Qur'an dan Hadits shahih tentang <b>${tema}</b>, serta mengaitkan kandungan maknanya dengan kehidupan sehari-hari.</li>
+                            <li>Menunjukkan kesadaran (mindfulness) bahwa kebersihan/kebaikan lahir merupakan cerminan dan syarat kesucian batin (keimanan) sebagai hamba Allah.</li>
+                            <li>Mempraktikkan/mensimulasikan konsep <b>${tema}</b> secara benar dan menyampaikan hikmahnya dengan penuh kegembiraan dan percaya diri.</li>
+                        </ol>
+                    </div>
 
-                            <!-- PERTEMUAN 2 -->
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-                                <p class="font-bold text-rose-800 text-xs">PERTEMUAN 2 (2 x 40 MENIT) - KHUSUS SUB-BAB 2: ${arrSub[1] || 'Pendalaman & Analisis Kritis'}</p>
-                                <p><b>Tujuan Pembelajaran:</b> Peserta didik mampu menganalisis problematika serta menyusun argumen kritis tentang <i>"${arrSub[1] || babSpesifik}"</i>.</p>
-                                <div class="pl-3 border-l-2 border-rose-300 space-y-1 mt-2 text-slate-700">
-                                    <p><b>1. Pendahuluan (15 Menit):</b> Review materi Pertemuan 1, ice breaking interaktif, dan pembagian lembar kerja studi kasus.</p>
-                                    <p><b>2. Kegiatan Inti (50 Menit):</b> Pengerjaan LKPD kelompok, diskusi studi kasus fenomena nyata, debat/diskusi antar kelompok, dan klarifikasi dari guru.</p>
-                                    <p><b>3. Penutup (15 Menit):</b> Apresiasi keaktifan siswa, penguatan kesimpulan, dan doa bersama.</p>
-                                </div>
-                            </div>
-
-                            <!-- PERTEMUAN 3 -->
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-                                <p class="font-bold text-rose-800 text-xs">PERTEMUAN 3 (2 x 40 MENIT) - KHUSUS SUB-BAB 3: ${arrSub[2] || 'Aplikasi Praktis & Pembiasaan Karakter'}</p>
-                                <p><b>Tujuan Pembelajaran:</b> Peserta didik mampu merancang langkah praktis dan mendemonstrasikan pembiasaan sikap mulia terkait <i>"${arrSub[2] || babSpesifik}"</i> dalam kehidupan sehari-hari.</p>
-                                <div class="pl-3 border-l-2 border-rose-300 space-y-1 mt-2 text-slate-700">
-                                    <p><b>1. Pendahuluan (15 Menit):</b> Pemutaran video pembiasaan positif, apersepsi, dan penyampaian misi praktis harian.</p>
-                                    <p><b>2. Kegiatan Inti (50 Menit):</b> Simulasi/role-playing pembiasaan nilai positif di kelas, pengisian jurnal refleksi karakter mandiri, dan peer-assessment antar teman.</p>
-                                    <p><b>3. Penutup (15 Menit):</b> Penyusunan komitmen kelas, penguatan motivasi moral, dan penutupan.</p>
-                                </div>
-                            </div>
-
-                            <!-- PERTEMUAN 4 -->
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-                                <p class="font-bold text-rose-800 text-xs">PERTEMUAN 4 (2 x 40 MENIT) - EVALUASI SUMATIF BAB & REFLEKSI</p>
-                                <p><b>Tujuan Pembelajaran:</b> Mengukur ketercapaian kompetensi peserta didik secara menyeluruh pada <i>"${babSpesifik}"</i> melalui tes sumatif tulis dan lisan.</p>
-                                <div class="pl-3 border-l-2 border-rose-300 space-y-1 mt-2 text-slate-700">
-                                    <p><b>1. Pendahuluan (10 Menit):</b> Pengondisian kelas dan pembacaan instruksi soal evaluasi.</p>
-                                    <p><b>2. Kegiatan Inti (60 Menit):</b> Pelaksanaan Asesmen Sumatif Bab (Soal HOTS Pilihan Ganda & Uraian), penilaian langsung, serta tindak lanjut remedial & pengayaan.</p>
-                                    <p><b>3. Penutup (10 Menit):</b> Penyampaian hasil rekapitulasi dan persiapan menyambut bab berikutnya.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- BAGIAN III -->
+                    <!-- C. MATERI PEMBELAJARAN -->
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">C. Materi Pembelajaran</h4>
+                        
                         <div>
-                            <h4 class="font-bold text-slate-900 border-l-4 border-rose-600 pl-2 mb-3 text-sm uppercase">III. LAMPIRAN ASESMEN & MEDIA BAB</h4>
-                            <p class="mb-2"><b>1. Asesmen Formatif:</b> Lembar Observasi Diskusi Kelompok & Rubrik Karakter Profil Pelajar Pancasila.</p>
-                            <p class="mb-2"><b>2. Asesmen Sumatif:</b> Soal Evaluasi HOTS Bab Spesifik lengkap dengan Kunci Jawaban.</p>
-                            <p><b>3. Media Pembelajaran:</b> Buku Paket Pelajaran, Slide Presentasi Sub-Bab, & LKPD Kelompok.</p>
+                            <p class="font-bold text-slate-900">1. Pengertian ${tema}</p>
+                            <div class="pl-3 space-y-1">
+                                <p><b>a. Secara Lughah (Bahasa):</b> Berasal dari bahasa Arab yang berarti An-Nadhafah (kebersihan) dan An-Nazahah (kesucian), yaitu bersih atau suci dari kotoran/aib.</p>
+                                <p><b>b. Secara Istilah (Syara'):</b> Menurut syariat fikih, merupakan kegiatan bersuci/beramal sesuai tuntunan syariat sehingga seseorang menjadi suci dan sah untuk melaksanakan ibadah tertentu seperti shalat.</p>
+                            </div>
                         </div>
+
+                        <div>
+                            <p class="font-bold text-slate-900">2. Dalil Al-Qur'an tentang ${tema}</p>
+                            <div class="p-3 bg-slate-50 border rounded-lg space-y-2">
+                                <p class="font-bold text-right text-base text-emerald-900">إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ</p>
+                                <p class="italic text-[11px] text-slate-600">Innallāha yuḥibbut-tawwābīna wa yuḥibbul-mutaṭahhirīn</p>
+                                <p><b>"Sesungguhnya Allah menyukai orang-orang yang bertobat dan menyukai orang-orang yang menyucikan diri."</b> (QS. Al-Baqarah [2]: 222)</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="font-bold text-slate-900">3. Dalil Hadits tentang ${tema}</p>
+                            <div class="p-3 bg-slate-50 border rounded-lg space-y-2">
+                                <p class="font-bold text-right text-base text-emerald-900">الطُّهُورُ شَطْرُ الْإِيمَانِ</p>
+                                <p class="italic text-[11px] text-slate-600">Aṭ-ṭuhūru syaṭrul-īmān</p>
+                                <p><b>"Bersuci adalah sebagian dari iman."</b> (HR. Muslim, Kitab Ath-Thaharah, No. 223)</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="font-bold text-slate-900">4. Poin Penting Materi</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li><b>${tema}</b> merupakan syarat sah pelaksanaan ibadah tertentu, terutama shalat.</li>
+                                <li>Kebersihan dan kebaikan lahiriah dalam Islam selalu terhubung erat dengan kesucian batiniah (keimanan).</li>
+                                <li>Hadits 'Ath-thuhuru syathrul iman' menegaskan bahwa kebersihan adalah setengah dari nilai keimanan seseorang.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- D. KEGIATAN PEMBELAJARAN (DEEP LEARNING SCENARIO) -->
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">D. Kegiatan Pembelajaran (Skenario 2 JP / 80 Menit)</h4>
+                        
+                        <table class="w-full border-collapse border border-slate-300 text-xs">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-900">
+                                    <th class="border border-slate-300 p-2 text-left w-1/4">Tahapan / Waktu</th>
+                                    <th class="border border-slate-300 p-2 text-left">Uraian Kegiatan Deep Learning (KBC)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 font-bold text-emerald-800">Mindful Engagement (Pendahuluan) <br><span class="font-normal text-slate-600">15 Menit</span></td>
+                                    <td class="border border-slate-300 p-2 leading-relaxed">
+                                        <ul class="list-disc pl-4 space-y-1">
+                                            <li>Guru membuka pembelajaran dengan salam, doa bersama, dan mengajak santri menarik napas sejenak untuk membangun kesadaran diri (<b>mindfulness</b>) sebelum belajar.</li>
+                                            <li>Guru mengecek kerapian dan kebersihan diri serta seragam santri sebagai pijakan awal kontekstual materi.</li>
+                                            <li><b>Pertanyaan pemantik:</b> "Sebelum berangkat sekolah tadi pagi, apa saja yang kalian lakukan agar badan terasa bersih dan segar?" dan "Mengapa sebelum shalat kita diwajibkan berwudhu terlebih dahulu?"</li>
+                                            <li>Guru mengaitkan jawaban santri dengan tujuan pembelajaran hari ini tentang <b>${tema}</b>.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 font-bold text-emerald-800">Meaningful Construction / KBC (Kegiatan Inti) <br><span class="font-normal text-slate-600">50 Menit</span></td>
+                                    <td class="border border-slate-300 p-2 leading-relaxed">
+                                        <ul class="list-disc pl-4 space-y-1">
+                                            <li>Guru menyajikan teks dalil Al-Qur'an (QS. Al-Baqarah: 222) serta hadits riwayat Muslim melalui papan tulis/tayangan media.</li>
+                                            <li>Santri dibagi ke dalam kelompok kecil untuk melakukan penyelidikan (investigasi) makna lughah dan istilah <b>${tema}</b> dari dalil yang disajikan, dipandu <i>Lembar Kerja Penyelidikan Dalil</i>.</li>
+                                            <li>Setiap kelompok merekonstruksi pemahaman mereka sendiri tentang keterkaitan antara kebersihan fisik (hissiyyah) dan kesucian iman (ma'nawiyyah).</li>
+                                            <li>Perwakilan kelompok mempresentasikan hasil rekonstruksi pemahaman secara bergantian, dilanjutkan diskusi interaktif dan klarifikasi dari guru.</li>
+                                            <li>Guru menguatkan (<b>scaffolding</b>) konsep dengan meluruskan miskonsepsi dan menegaskan poin-poin penting materi <b>${tema}</b>.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 font-bold text-emerald-800">Joyful Reflection (Penutup) <br><span class="font-normal text-slate-600">15 Menit</span></td>
+                                    <td class="border border-slate-300 p-2 leading-relaxed">
+                                        <ul class="list-disc pl-4 space-y-1">
+                                            <li>Guru mengadakan <b>kuis interaktif ringan</b> (lisan/cerdas cermat singkat) seputar pengertian <b>${tema}</b> dan dalilnya untuk mengukur pemahaman secara menyenangkan.</li>
+                                            <li>Santri diajak melakukan refleksi kebermaknaan: menuliskan satu kalimat singkat tentang niat menjaga kebersihan dan kesucian diri mulai hari ini.</li>
+                                            <li>Guru menyampaikan simpulan pembelajaran dan pesan moral (hikmah) <b>${tema}</b> dalam kehidupan sehari-hari.</li>
+                                            <li>Pembelajaran ditutup dengan doa bersama dan salam.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- E. ASESMEN PEMBELAJARAN -->
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">E. Asesmen Pembelajaran</h4>
+                        
+                        <table class="w-full border-collapse border border-slate-300 text-xs">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-900">
+                                    <th class="border border-slate-300 p-2 text-left w-1/4">Ranah</th>
+                                    <th class="border border-slate-300 p-2 text-left">Aspek Deep Learning</th>
+                                    <th class="border border-slate-300 p-2 text-left">Teknik & Instrumen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 font-bold">Sikap (Mindful)</td>
+                                    <td class="border border-slate-300 p-2">Kesadaran diri terhadap kebersihan dan kesucian sebagai bagian dari keimanan</td>
+                                    <td class="border border-slate-300 p-2">Observasi sikap selama pembelajaran menggunakan lembar catatan anekdot</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 font-bold">Pengetahuan (Meaningful)</td>
+                                    <td class="border border-slate-300 p-2">Pemahaman bermakna terhadap konsep dan dalil ${tema}</td>
+                                    <td class="border border-slate-300 p-2">Tes tertulis/lisan singkat berbentuk uraian tentang pengertian dan dalil</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 font-bold">Keterampilan (Joyful)</td>
+                                    <td class="border border-slate-300 p-2">Kemampuan menyampaikan gagasan dan mensimulasikan konsep secara aktif dan menyenangkan</td>
+                                    <td class="border border-slate-300 p-2">Unjuk kerja saat presentasi kelompok dan partisipasi kuis interaktif</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 `;
             } else {
                 dynamicHTML = `
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm uppercase">A. RINCIAN MATERI FOKUS BAB</h4>
-                            <p class="leading-relaxed font-bold text-emerald-800 text-sm mb-1">${babSpesifik}</p>
-                            <p class="leading-relaxed text-slate-600">Dokumen <b>${currentSelectedMenu}</b> untuk mata pelajaran <b>${mapel}</b> (${cakupan}) disusun khusus membedah <b>${babSpesifik}</b> dengan sub-bab terurai: <i>${subBabList}</i>.</p>
-                        </div>
-
-                        <div>
-                            <h4 class="font-bold text-slate-900 border-l-4 border-emerald-600 pl-2 mb-2 text-sm uppercase">B. RINCIAN CAPAIAN & INDIKATOR SUB-BAB</h4>
-                            <table class="w-full border-collapse border border-slate-300 text-xs my-3">
-                                <thead>
-                                    <tr class="bg-slate-100 text-slate-800">
-                                        <th class="border border-slate-300 p-2 text-left">Sub-Bab Pembelajaran</th>
-                                        <th class="border border-slate-300 p-2 text-left">Tujuan Pembelajaran Spesifik</th>
-                                        <th class="border border-slate-300 p-2 text-left">Indikator Ketercapaian</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="border border-slate-300 p-2 font-semibold">${arrSub[0] || 'Sub-Bab 1'}</td>
-                                        <td class="border border-slate-300 p-2">Siswa mampu memahami konsep utama dan prinsip ${arrSub[0] || babSpesifik}.</td>
-                                        <td class="border border-slate-300 p-2">Mampu menjelaskan definisi dan menyebutkan contoh konkret.</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="border border-slate-300 p-2 font-semibold">${arrSub[1] || 'Sub-Bab 2'}</td>
-                                        <td class="border border-slate-300 p-2">Siswa mampu menganalisis problematika terkait ${arrSub[1] || babSpesifik}.</td>
-                                        <td class="border border-slate-300 p-2">Mampu menguraikan sebab-akibat dan solusi kritis.</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="border border-slate-300 p-2 font-semibold">${arrSub[2] || 'Sub-Bab 3'}</td>
-                                        <td class="border border-slate-300 p-2">Siswa mampu menerapakan nilai positif dalam kehidupan sehari-hari.</td>
-                                        <td class="border border-slate-300 p-2">Menunjukkan pembiasaan akhlak mulia dan kedisiplinan.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-900 border-b pb-1 text-sm uppercase">${currentSelectedMenu} - ${tema}</h4>
+                        <p class="text-slate-700 leading-relaxed">Dokumen <b>${currentSelectedMenu}</b> untuk mata pelajaran <b>${mapel} (${kelasSem})</b> disusun berdasarkan standar KMA 1503 Tahun 2025 dengan fokus tema <b>"${tema}"</b>.</p>
+                        <div class="p-4 bg-slate-50 border rounded-xl space-y-2">
+                            <p class="font-bold text-emerald-800">Elemen: ${elemen}</p>
+                            <p class="text-slate-600">Integrasi Pendekatan Deep Learning: Mindful Engagement, Meaningful Construction (KBC), dan Joyful Reflection.</p>
                         </div>
                     </div>
                 `;
@@ -652,7 +533,7 @@
             closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
 
-            alert('Dokumen "' + currentSelectedMenu + '" berhasil digenerate khusus untuk ' + babSpesifik + '!');
+            alert('Modul Ajar Per Tema KMA 1503/2025 berhasil digenerate!');
         }
 
         function formatText(command) {
@@ -668,7 +549,7 @@
 
         function downloadWordDoc() {
             const contentHTML = document.getElementById('paperSheet').innerHTML;
-            const header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Dokumen Perangkat AI</title></head><body>";
+            const header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Modul Ajar KMA 1503</title></head><body>";
             const footer = "</body></html>";
             const sourceHTML = header + contentHTML + footer;
 
@@ -677,11 +558,11 @@
             document.body.appendChild(fileDownload);
             
             fileDownload.href = source;
-            fileDownload.download = currentSelectedMenu.replace(/[^a-zA-Z0-9]/g, '_') + '_Perangkat_AI.doc';
+            fileDownload.download = currentSelectedMenu.replace(/[^a-zA-Z0-9]/g, '_') + '_KMA1503_2025.doc';
             fileDownload.click();
             document.body.removeChild(fileDownload);
 
-            alert('File dokumen berhasil diunduh dalam format Word (.doc)!');
+            alert('File dokumen Modul Ajar KMA 1503 berhasil diunduh dalam format Word (.doc)!');
         }
     </script>
 </body>
