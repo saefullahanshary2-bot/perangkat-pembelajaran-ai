@@ -283,7 +283,7 @@
             <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
                 <div id="paperSheet" contenteditable="true" class="bg-white w-[850px] min-h-[1050px] p-12 shadow-md rounded-lg text-slate-900 text-sm leading-relaxed focus:outline-none border border-slate-200">
                     <div class="text-center space-y-1 mb-6 border-b pb-4">
-                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">TUJUAN PEMBELAJARAN (TP)</h2>
+                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">ALUR TUJUAN PEMBELAJARAN (ATP)</h2>
                         <h3 id="previewSub" class="text-base font-bold text-emerald-800">Fase D / VII (Tujuh) — Thaharah</h3>
                         <p class="text-xs text-slate-600 font-semibold"><span id="previewSchool">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</span></p>
                     </div>
@@ -504,30 +504,6 @@
                 cp1: "Pada akhir Fase D, peserta didik mampu memahami dalil dan istidlal fuqaha dalam permasalahan thaharah, haid, nifas, salat fardu, salat berjamaah, salat jamak dan qasar, serta ketentuan puasa.",
                 elemen2: "Fikih Muamalah",
                 cp2: "Peserta didik mampu memahami ketentuan muamalah mencakup kepemilikan, transaksi ekonomi syariah, dan kerja sama dalam Islam."
-            },
-            "Aqidah Akhlak": {
-                elemen1: "Akidah",
-                cp1: "Pada akhir Fase D, peserta didik diarahkan memperkuat akidah Islam melalui pemahaman Ahl as-Sunnah wa al-Jamā‘ah pada materi akidah Islam, rukun iman, sifat-sifat Allah Swt., dan asmaulhusna.",
-                elemen2: "Akhlak & Adab",
-                cp2: "Peserta didik mampu membiasakan akhlak mahmudah serta menghindari akhlak mazmumah dalam kehidupan sehari-hari."
-            },
-            "Al-Qur'an Hadis": {
-                elemen1: "Ilmu Al-Qur'an dan Hadis",
-                cp1: "Pada akhir Fase D, peserta didik memahami kedudukan Al-Qur'an dan Hadis sebagai pedoman hidup serta menguasai ilmu tajwid.",
-                elemen2: "Pengamalan Ayat & Hadis",
-                cp2: "Peserta didik mampu menerapkan pesan moral dari ayat-ayat pilihan dan hadis dalam membangun harmoni sosial."
-            },
-            "Sejarah Kebudayaan Islam (SKI)": {
-                elemen1: "Periode Makkah & Madinah",
-                cp1: "Pada akhir Fase D, peserta didik mampu menganalisis kebudayaan masyarakat Makkah sebelum Islam, substansi dan strategi dakwah Nabi Muhammad SAW.",
-                elemen2: "Peradaban Islam Klasik",
-                cp2: "Peserta didik memahami perkembangan peradaban Islam serta mengambil hikmah kepemimpinan dan nilai perdamaian."
-            },
-            "Bahasa Arab": {
-                elemen1: "Maharah Istima' wal Kalam",
-                cp1: "Pada akhir Fase D, peserta didik mampu memahami dan merespons ungkapan komunikatif sehari-hari.",
-                elemen2: "Maharah Qira'ah wal Kitabah",
-                cp2: "Peserta didik mampu membaca, memahami, dan menulis teks bahasa Arab sederhana."
             }
         };
 
@@ -610,8 +586,92 @@
             const bodyContainer = document.getElementById('previewBody');
             let html = '';
 
-            if (currentMenuName.includes('Tujuan Pembelajaran (TP)')) {
-                // Format dokumen Tujuan Pembelajaran persis seperti file PDF yang diunggah
+            if (currentMenuName.includes('Alur Tujuan (ATP)')) {
+                // Format dokumen ATP persis seperti file PDF yang diunggah
+                html = `
+                    <div class="space-y-4">
+                        <div class="text-center pb-2 border-b">
+                            <h3 class="font-bold text-slate-900 text-sm">ALUR TUJUAN PEMBELAJARAN (ATP) — ${mapel.toUpperCase()}</h3>
+                        </div>
+                        <table class="w-full text-xs border-collapse">
+                            <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
+                            <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
+                            <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
+                            <tr><td class="font-semibold py-1">Tahun Ajaran</td><td>: ${tahun}</td></tr>
+                            <tr><td class="font-semibold py-1">Lingkup Materi</td><td>: <b>${selectionVal}</b></td></tr>
+                        </table>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">Capaian Pembelajaran (CP) Elemen ${mapel} Ibadah</h4>
+                        <p class="leading-relaxed text-slate-700">Peserta didik mampu menganalisis tata cara bersuci dari hadas dan najis, ketentuan shalat fardhu, shalat berjamaah, serta ketentuan zikir dan doa setelah shalat sesuai ketentuan syariat Islam. Peserta didik juga terbiasa mempraktikkan ketentuan bersuci dan shalat dengan baik dan benar dalam kehidupan sehari-hari[cite: 17].</p>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">MATRIKS ALUR TUJUAN PEMBELAJARAN (ATP)</h4>
+                        <table class="w-full border-collapse border border-slate-300 text-[10px] mt-2">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-900 font-bold">
+                                    <th class="border border-slate-300 p-2 text-center w-8">No[cite: 17]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Tujuan Pembelajaran (TP)[cite: 17]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Kriteria Ketercapaian (KKTP)[cite: 17]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Materi / Lingkup[cite: 17]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Alur dan Tahapan[cite: 17]</th>
+                                    <th class="border border-slate-300 p-2 text-center w-12">Waktu[cite: 17]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">1</td>
+                                    <td class="border border-slate-300 p-2 align-top">Menganalisis konsep thaharah dan kedudukannya dalam ibadah berdasarkan Al-Qur'an dan As-Sunnah[cite: 17, 18].</td>
+                                    <td class="border border-slate-300 p-2 align-top">• Menjelaskan pengertian thaharah secara bahasa dan istilah.<br>• Menunjukkan dalil naqli kewajiban bersuci.<br>• Membedakan suci dan bersih[cite: 17].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Pengantar Thaharah[cite: 18]</td>
+                                    <td class="border border-slate-300 p-2 align-top">1.1. Memahami urgensi thaharah dalam Islam sebagai syarat sah ibadah.<br>1.2. Mengidentifikasi alat-alat bersuci (air, debu, batu)[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">2 JP[cite: 18]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">2</td>
+                                    <td class="border border-slate-300 p-2 align-top">Mengklasifikasikan jenis-jenis air dan pembagiannya dalam konteks bersuci[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 align-top">• Menjelaskan jenis air (Mutlak, Musyammas, Musta'mal, Mutanajis).<br>• Menganalisis hukum penggunaan air[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Al-Miyah (Macam-macam Air)[cite: 18]</td>
+                                    <td class="border border-slate-300 p-2 align-top">2.1. Observasi visual kondisi air.<br>2.2. Diskusi kelompok hukum penggunaan air berdasarkan sifat (bau, rasa, warna)[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">2 JP[cite: 18]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">3</td>
+                                    <td class="border border-slate-300 p-2 align-top">Menganalisis jenis-jenis najis dan tata cara mensucikannya sesuai syariat[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 align-top">• Mengidentifikasi jenis najis (Mukhaffafah, Mutawassitah, Mughallazah).<br>• Mendemonstrasikan cara pensuciannya[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Najis dan Istinja'[cite: 18]</td>
+                                    <td class="border border-slate-300 p-2 align-top">3.1. Klasifikasi benda najis.<br>3.2. Simulasi praktik pensucian.<br>3.3. Adab buang air dan istinja'[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">4 JP[cite: 18]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">4</td>
+                                    <td class="border border-slate-300 p-2 align-top">Menganalisis tata cara bersuci dari hadas kecil melalui wudu dan tayammum[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 align-top">• Menjelaskan rukun dan sunnah wudu.<br>• Identifikasi pembatal wudu dan sebab tayammum.<br>• Praktik wudu & tayammum[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Hadas Kecil (Wudu & Tayammum)[cite: 18]</td>
+                                    <td class="border border-slate-300 p-2 align-top">4.1. Konsep hadas kecil.<br>4.2. Praktik mandiri wudu sesuai urutan tertib.<br>4.3. Demonstrasi tayammum rukhsah[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">6 JP[cite: 18]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">5</td>
+                                    <td class="border border-slate-300 p-2 align-top">Menganalisis tata cara bersuci dari hadas besar melalui mandi wajib (Ghusl)[cite: 18, 19].</td>
+                                    <td class="border border-slate-300 p-2 align-top">• Identifikasi sebab hadas besar (Junaub, Haid, Nifas).<br>• Rukun, sunnah, dan praktik mandi wajib[cite: 19].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Hadas Besar (Mandi Janabah)[cite: 19]</td>
+                                    <td class="border border-slate-300 p-2 align-top">5.1. Identifikasi kondisi wajib mandi.<br>5.2. Prosedur tata cara mandi Nabi SAW.<br>5.3. Internalisasi nilai kebersihan[cite: 19].</td>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">4 JP[cite: 19]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mt-2 text-right text-xs font-bold text-slate-900">
+                            Total Alokasi Waktu Materi Thaharah: 18 JP[cite: 19]
+                        </div>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">Catatan Khusus Kurikulum Madrasah</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                            <li>Penekanan pada dalil-dalil yang kuat (Shahih) dalam setiap praktik thaharah[cite: 19].</li>
+                            <li>Integrasi pembiasaan hidup bersih di lingkungan madrasah sebagai bentuk implementasi materi[cite: 19].</li>
+                            <li>Asesmen melalui tes tertulis (pemahaman konsep) dan tes unjuk kerja (praktik bersuci)[cite: 19].</li>
+                        </ul>
+                    </div>
+                `;
+            } else if (currentMenuName.includes('Tujuan Pembelajaran (TP)')) {
                 html = `
                     <div class="space-y-4">
                         <div class="text-center pb-2 border-b">
@@ -621,89 +681,6 @@
                             <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
                             <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
                             <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
-                            <tr><td class="font-semibold py-1">Materi Pokok</td><td>: <b>${selectionVal}</b></td></tr>
-                            <tr><td class="font-semibold py-1">Tahun Ajaran</td><td>: ${tahun}</td></tr>
-                        </table>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">A. Capaian Pembelajaran (CP) Fase D</h4>
-                        <p class="leading-relaxed text-slate-700">Pada akhir Fase D, peserta didik mampu menganalisis tata cara ibadah dalam Islam, memahami ketentuan bersuci, serta mampu mempraktikkannya dalam kehidupan sehari-hari secara benar sesuai ketentuan syariat Islam untuk menumbuhkan ketaatan dan kedisiplinan.</p>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">B. Tujuan Pembelajaran (TP) Materi ${selectionVal}</h4>
-                        <table class="w-full border-collapse border border-slate-300 text-[11px] mt-2">
-                            <thead>
-                                <tr class="bg-slate-100 text-slate-900 font-bold">
-                                    <th class="border border-slate-300 p-2 text-center w-12">No[cite: 16]</th>
-                                    <th class="border border-slate-300 p-2 text-left">Tujuan Pembelajaran (TP)[cite: 16]</th>
-                                    <th class="border border-slate-300 p-2 text-left w-1/3">Lingkup Materi[cite: 16]</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">1</td>
-                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu menjelaskan pengertian thaharah, dalil naqli tentang kewajiban bersuci, serta perbedaan antara najis dan hadas dengan tepat[cite: 16].</td>
-                                    <td class="border border-slate-300 p-2 align-top font-medium">Konsep Dasar Thaharah[cite: 16]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">2</td>
-                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu mengidentifikasi macam-macam air untuk bersuci (air mutlak, musyammas, musta'mal, dan mutanajjis) serta alat-alat bersuci lainnya[cite: 16].</td>
-                                    <td class="border border-slate-300 p-2 align-top font-medium">Sarana Bersuci[cite: 16]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">3</td>
-                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu menganalisis klasifikasi najis (mukhaffafah, mutawassithah, mughalladhah) dan mendemonstrasikan tata cara menyucikannya secara benar[cite: 16].</td>
-                                    <td class="border border-slate-300 p-2 align-top font-medium">Pengelolaan Najis[cite: 16]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">4</td>
-                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu memerinci rukun, sunnah, dan pembatal wudhu serta mempraktikkan prosedur wudhu secara tertib dan sempurna[cite: 16].</td>
-                                    <td class="border border-slate-300 p-2 align-top font-medium">Wudhu[cite: 16]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">5</td>
-                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu menjelaskan ketentuan mandi wajib (janabah) dan mendemonstrasikan tata caranya sesuai tuntunan syariat[cite: 16].</td>
-                                    <td class="border border-slate-300 p-2 align-top font-medium">Mandi Wajib[cite: 16]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">6</td>
-                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu menganalisis sebab-sebab dan ketentuan tayammum serta mempraktikkannya sebagai alternatif bersuci dalam kondisi darurat[cite: 16].</td>
-                                    <td class="border border-slate-300 p-2 align-top font-medium">Tayammum[cite: 16]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">7</td>
-                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu membiasakan perilaku hidup bersih dan sehat sebagai implementasi dari nilai-nilai thaharah dalam kehidupan sehari-hari[cite: 16].</td>
-                                    <td class="border border-slate-300 p-2 align-top font-medium">Internalisasi Nilai[cite: 16]</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">C. Kriteria Ketercapaian Tujuan Pembelajaran (KKTP)</h4>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-700">
-                            <li>Mampu menyebutkan pengertian thaharah menurut bahasa dan istilah[cite: 16].</li>
-                            <li>Mampu membedakan jenis-jenis air berdasarkan hukum penggunaannya[cite: 16].</li>
-                            <li>Dapat mempraktikkan cara menyucikan najis sesuai dengan tingkatannya (ringan, sedang, berat)[cite: 16].</li>
-                            <li>Dapat menghafal doa sebelum dan sesudah wudhu[cite: 16].</li>
-                            <li>Dapat mendemonstrasikan gerakan wudhu, mandi, dan tayammum dengan urutan yang benar (tertib)[cite: 16].</li>
-                            <li>Memiliki kesadaran untuk menjaga kebersihan diri dan lingkungan madrasah[cite: 16].</li>
-                        </ul>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">D. Metode dan Pendekatan Pembelajaran</h4>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-700">
-                            <li><b>Pendekatan:</b> Saintifik, Student Centered Learning, dan Deep Learning (KBC)[cite: 16].</li>
-                            <li><b>Metode:</b> Ceramah Interaktif, Demonstrasi/Praktik Langsung, Diskusi Kelompok, dan Peer Teaching (Tutor Sebaya)[cite: 16].</li>
-                        </ul>
-                    </div>
-                `;
-            } else if (currentMenuName.includes('Pemetaan CP & KBC')) {
-                html = `
-                    <div class="space-y-4">
-                        <div class="text-center pb-2 border-b">
-                            <h3 class="font-bold text-slate-900 text-sm">DOKUMEN PEMETAAN CAPAIAN PEMBELAJARAN (CP) DAN TEMA</h3>
-                        </div>
-                        <table class="w-full text-xs border-collapse">
-                            <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
-                            <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
-                            <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
-                            <tr><td class="font-semibold py-1">Materi Pokok</td><td>: <b>${selectionVal}</b></td></tr>
                         </table>
                     </div>
                 `;
@@ -723,7 +700,7 @@
             bodyContainer.innerHTML = html;
             closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
-            alert('Dokumen "' + currentMenuName + '" berhasil digenerate sesuai format referensi!');
+            alert('Dokumen "' + currentMenuName + '" berhasil digenerate sesuai format referensi ATP!');
         }
 
         function formatText(command) {
