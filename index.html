@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERANGKAT PEMBELAJARAN AI - PRO MODAL DOKUMEN</title>
+    <title>PERANGKAT PEMBELAJARAN AI - REVISI MENU CP</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -283,8 +283,8 @@
             <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
                 <div id="paperSheet" contenteditable="true" class="bg-white w-[850px] min-h-[1050px] p-12 shadow-md rounded-lg text-slate-900 text-sm leading-relaxed focus:outline-none border border-slate-200">
                     <div class="text-center space-y-1 mb-6 border-b pb-4">
-                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">MODUL AJAR FIKIH</h2>
-                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">KELAS 7 — Thaharah (Bersuci dari Hadas & Najis)</h3>
+                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">CAPAIAN PEMBELAJARAN FIKIH</h2>
+                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">KELAS VII (Tujuh) — Semester Ganjil / Full 1 Tahun</h3>
                         <p class="text-xs text-slate-600 font-semibold"><span id="previewSchool">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</span></p>
                     </div>
 
@@ -331,7 +331,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Mata Pelajaran *</label>
-                        <select id="paramMapel" onchange="updateTemaDropdown()" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                        <select id="paramMapel" onchange="updateDynamicOptions()" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                             <optgroup label="=== KELOMPOK MADRASAH (KMA 1503) ===">
                                 <option value="Fikih">Fikih</option>
                                 <option value="Aqidah Akhlak">Aqidah Akhlak</option>
@@ -374,15 +374,15 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Materi Pokok / Tema Pembelajaran Spesifik *</label>
-                    <select id="paramTema" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-bold text-emerald-800 focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                        <!-- Terisi otomatis via JS -->
+                    <label id="dynamicLabel" class="block text-xs font-bold uppercase text-slate-700 mb-1">Materi Pokok / Tema Pembelajaran Spesifik *</label>
+                    <select id="paramDynamicSelect" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-bold text-emerald-800 focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                        <!-- Terisi otomatis via JS berdasarkan menu -->
                     </select>
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Instruksi Tambahan (Opsional)</label>
-                    <input type="text" id="paramInstruksi" value="Gunakan pendekatan Problem Based Learning, alokasi waktu 2 JP dengan Deep Learning KBC." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    <input type="text" id="paramInstruksi" value="Gunakan pendekatan Deep Learning KBC (Mindful, Meaningful, Joyful)." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                 </div>
 
                 <!-- Bagian Penandatangan -->
@@ -429,7 +429,7 @@
 
     <!-- JavaScript Interaktif -->
     <script>
-        let currentMenuName = 'Modul Ajar';
+        let currentMenuName = 'Capaian Pembelajaran (CP)';
 
         const temaDatabase = {
             "Fikih": [
@@ -495,10 +495,16 @@
             ]
         };
 
+        const semesterOrFullDatabase = [
+            "Cakupan Semester Ganjil (Full Elemen)",
+            "Cakupan Semester Genap (Full Elemen)",
+            "Cakupan Full 1 Tahun / Seluruh Fase"
+        ];
+
         function openMenuModal(menuTitle) {
             currentMenuName = menuTitle;
             document.getElementById('activeMenuLabel').innerText = menuTitle;
-            updateTemaDropdown();
+            updateDynamicOptions();
             
             const modal = document.getElementById('formModal');
             modal.classList.remove('hidden');
@@ -511,26 +517,37 @@
             modal.classList.remove('flex');
         }
 
-        function updateTemaDropdown() {
+        function updateDynamicOptions() {
             const mapel = document.getElementById('paramMapel').value;
-            const selectTema = document.getElementById('paramTema');
-            selectTema.innerHTML = '';
+            const selectEl = document.getElementById('paramDynamicSelect');
+            const labelEl = document.getElementById('dynamicLabel');
+            selectEl.innerHTML = '';
 
-            let list = temaDatabase[mapel] || [
-                "Konsep Utama & Prinsip Dasar " + mapel,
-                "Penerapan & Studi Kasus Kontekstual"
-            ];
-
-            list.forEach(t => {
-                let opt = document.createElement('option');
-                opt.value = t;
-                opt.innerText = t;
-                selectTema.appendChild(opt);
-            });
+            if (currentMenuName.includes('Capaian Pembelajaran')) {
+                labelEl.innerText = "Cakupan Semester / Full 1 Tahun (Fase) *";
+                semesterOrFullDatabase.forEach(item => {
+                    let opt = document.createElement('option');
+                    opt.value = item;
+                    opt.innerText = item;
+                    selectEl.appendChild(opt);
+                });
+            } else {
+                labelEl.innerText = "Materi Pokok / Tema Pembelajaran Spesifik *";
+                let list = temaDatabase[mapel] || [
+                    "Konsep Utama & Prinsip Dasar " + mapel,
+                    "Penerapan & Studi Kasus Kontekstual"
+                ];
+                list.forEach(t => {
+                    let opt = document.createElement('option');
+                    opt.value = t;
+                    opt.innerText = t;
+                    selectEl.appendChild(opt);
+                });
+            }
         }
 
         window.onload = function() {
-            updateTemaDropdown();
+            updateDynamicOptions();
         };
 
         function generateDocument(e) {
@@ -540,7 +557,7 @@
             const mapel = document.getElementById('paramMapel').value;
             const tahun = document.getElementById('paramTahun').value;
             const fase = document.getElementById('paramFase').value;
-            const tema = document.getElementById('paramTema').value;
+            const selectionVal = document.getElementById('paramDynamicSelect').value;
             const instruksi = document.getElementById('paramInstruksi').value;
 
             // TTD
@@ -557,13 +574,42 @@
             }
 
             document.getElementById('previewTitle').innerText = (currentMenuName + " " + mapel).toUpperCase();
-            document.getElementById('previewSub').innerText = fase + " — " + tema;
+            document.getElementById('previewSub').innerText = fase + " — " + selectionVal;
             document.getElementById('previewSchool').innerText = sekolah;
 
             const bodyContainer = document.getElementById('previewBody');
             let html = '';
 
-            if (currentMenuName.includes('Modul Ajar')) {
+            if (currentMenuName.includes('Capaian Pembelajaran')) {
+                html = `
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">A. Identitas Dokumen Capaian Pembelajaran</h4>
+                        <table class="w-full text-xs border-collapse">
+                            <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
+                            <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
+                            <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
+                            <tr><td class="font-semibold py-1">Cakupan Waktu</td><td>: <b>${selectionVal}</b></td></tr>
+                            <tr><td class="font-semibold py-1">Tahun Pelajaran</td><td>: ${tahun}</td></tr>
+                        </table>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">B. Rasional & Karakteristik Mata Pelajaran ${mapel}</h4>
+                        <p class="leading-relaxed">Mata pelajaran ${mapel} di madrasah bertujuan membentuk peserta didik yang memiliki kedalaman ilmu keagamaan, penalaran kritis, serta pengamalan nilai-nilai luhur sesuai ketetapan KMA 1503 Tahun 2025.</p>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">C. Rumusan Capaian Pembelajaran (CP) Komprehensif</h4>
+                        <p class="leading-relaxed">Pada akhir ${fase} (${selectionVal}), peserta didik mampu menguasai seluruh elemen pembelajaran utama ${mapel}, mencakup pemahaman konsep mendalam, analisis kasus kontekstual, kemampuan bernalar kritis, serta pengintegrasian dimensi Profil Lulusan dan Pancacita KBC.</p>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">D. Elemen & Sub-Elemen Pembelajaran</h4>
+                        <table class="w-full border-collapse border border-slate-300 text-xs">
+                            <thead><tr class="bg-slate-100"><th class="border p-2 text-left w-1/3">Elemen Utama</th><th class="border p-2 text-left">Kompetensi yang Diharapkan (${selectionVal})</th></tr></thead>
+                            <tbody>
+                                <tr><td class="border p-2 font-bold">1. Pemahaman Konsep (${mapel})</td><td class="border p-2">Peserta didik memahami prinsip fundamental, kaidah, dan teori esensial dalam ${mapel}.</td></tr>
+                                <tr><td class="border p-2 font-bold">2. Keterampilan Proses & Analisis</td><td class="border p-2">Peserta didik mampu menerapkan teori dalam studi kasus nyata serta bernalar kritis.</td></tr>
+                                <tr><td class="border p-2 font-bold">3. Internalisasi Karakter (KBC)</td><td class="border p-2">Peserta didik menunjukkan kesadaran diri (mindfulness) dan kebermaknaan dalam keseharian.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } else if (currentMenuName.includes('Modul Ajar')) {
                 html = `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">A. Informasi Umum</h4>
@@ -571,39 +617,32 @@
                             <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
                             <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
                             <tr><td class="font-semibold py-1">Kelas / Semester</td><td>: ${fase}</td></tr>
-                            <tr><td class="font-semibold py-1">Alokasi Waktu</td><td>: 2 Jam Pelajaran (2 x 40 menit) — 1 Pertemuan</td></tr>
+                            <tr><td class="font-semibold py-1">Tema Spesifik</td><td>: <b>${selectionVal}</b></td></tr>
                             <tr><td class="font-semibold py-1">Model Pembelajaran</td><td>: <b>Deep Learning: Mindful, Meaningful, Joyful Learning berbasis KBC</b></td></tr>
-                            <tr><td class="font-semibold py-1">Catatan AI</td><td>: ${instruksi}</td></tr>
                         </table>
 
                         <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">B. Tujuan Pembelajaran</h4>
-                        <p class="leading-relaxed">Melalui pendekatan Knowledge-Based Construction (KBC), peserta didik mampu memahami, menganalisis, dan mempraktikkan konsep <b>${tema}</b> secara utuh dan bermakna.</p>
+                        <p class="leading-relaxed">Melalui pendekatan Knowledge-Based Construction (KBC), peserta didik mampu memahami, menganalisis, dan mempraktikkan materi <b>${selectionVal}</b> secara utuh dan bermakna.</p>
 
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">C. Materi Pembelajaran</h4>
-                        <p class="leading-relaxed">Materi esensial membahas definisi operasional, landasan normatif/teoritis, serta relevansi praktis <b>${tema}</b> dalam kehidupan sehari-hari.</p>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">D. Kegiatan Pembelajaran (Skenario Deep Learning)</h4>
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">C. Kegiatan Pembelajaran (Skenario Deep Learning)</h4>
                         <table class="w-full border-collapse border border-slate-300 text-xs">
                             <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Tahapan</th><th class="border p-2 text-left">Uraian Kegiatan KBC</th></tr></thead>
                             <tbody>
-                                <tr><td class="border p-2 font-bold text-emerald-800">Mindful Engagement <br>(15 Menit)</td><td class="border p-2">Membangun kesadaran diri santri, pengecekan kerapian, dan pertanyaan pemantik terkait tema.</td></tr>
+                                <tr><td class="border p-2 font-bold text-emerald-800">Mindful Engagement <br>(15 Menit)</td><td class="border p-2">Membangun kesadaran diri santri dan mengajukan pertanyaan pemantik terkait tema.</td></tr>
                                 <tr><td class="border p-2 font-bold text-emerald-800">Meaningful Construction <br>(50 Menit)</td><td class="border p-2">Investigasi kelompok, kajian referensi, rekonstruksi pemahaman, dan scaffolding guru.</td></tr>
-                                <tr><td class="border p-2 font-bold text-emerald-800">Joyful Reflection <br>(15 Menit)</td><td class="border p-2">Kuis interaktif ringan, refleksi kebermaknaan, dan kesimpulan hikmah pembelajaran.</td></tr>
+                                <tr><td class="border p-2 font-bold text-emerald-800">Joyful Reflection <br>(15 Menit)</td><td class="border p-2">Kuis interaktif ringan dan refleksi kebermaknaan pembelajaran.</td></tr>
                             </tbody>
                         </table>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">E. Asesmen Pembelajaran</h4>
-                        <p>Penilaian Sikap (Mindful), Pengetahuan (Meaningful), dan Keterampilan (Joyful) secara komprehensif.</p>
                     </div>
                 `;
             } else {
                 html = `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">DOKUMEN ${currentMenuName.toUpperCase()}</h4>
-                        <p class="leading-relaxed"><b>Mata Pelajaran:</b> ${mapel} | <b>Kelas:</b> ${fase} | <b>Tema:</b> ${tema}</p>
+                        <p class="leading-relaxed"><b>Mata Pelajaran:</b> ${mapel} | <b>Kelas:</b> ${fase} | <b>Cakupan:</b> ${selectionVal}</p>
                         <div class="p-4 bg-slate-50 border rounded-xl space-y-2">
                             <p class="font-bold text-emerald-800">Uraian Dokumen Administrasi:</p>
-                            <p class="leading-relaxed">Dokumen <b>${currentMenuName}</b> untuk satuan pendidikan <b>${sekolah}</b> telah berhasil disusun secara rinci dan profesional sesuai tahun ajaran <b>${tahun}</b>.</p>
+                            <p class="leading-relaxed">Dokumen <b>${currentMenuName}</b> untuk satuan pendidikan <b>${sekolah}</b> telah berhasil disusun secara komprehensif untuk tahun ajaran <b>${tahun}</b>.</p>
                             <p class="text-xs text-slate-500 italic">Catatan khusus: ${instruksi}</p>
                         </div>
                     </div>
