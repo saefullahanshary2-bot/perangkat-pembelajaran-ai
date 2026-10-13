@@ -283,7 +283,7 @@
             <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
                 <div id="paperSheet" contenteditable="true" class="bg-white w-[850px] min-h-[1050px] p-12 shadow-md rounded-lg text-slate-900 text-sm leading-relaxed focus:outline-none border border-slate-200">
                     <div class="text-center space-y-1 mb-6 border-b pb-4">
-                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">KRITERIA KETUNTASAN TUJUAN PEMBELAJARAN (KKTP)</h2>
+                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">RINCIAN PEKAN EFEKTIF (RPE)</h2>
                         <h3 id="previewSub" class="text-base font-bold text-emerald-800">Fase D / VII (Tujuh) — Thaharah</h3>
                         <p class="text-xs text-slate-600 font-semibold"><span id="previewSchool">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</span></p>
                     </div>
@@ -363,8 +363,7 @@
                     <div>
                         <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Fase / Kelas *</label>
                         <select id="paramFase" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                            <option value="Fase D / Kelas VII (Tujuh) / Ganjil">Fase D / Kelas VII (Tujuh) / Ganjil</option>
-                            <option value="Fase D / Kelas VII (Tujuh) / Genap">Fase D / Kelas VII (Tujuh) / Genap</option>
+                            <option value="Fase D / Kelas VII (Tujuh)">Fase D / Kelas VII (Tujuh)</option>
                             <option value="Fase D / Kelas VIII (Delapan)">Fase D / Kelas VIII (Delapan)</option>
                             <option value="Fase D / Kelas IX (Sembilan)">Fase D / Kelas IX (Sembilan)</option>
                         </select>
@@ -578,12 +577,12 @@
             const bodyContainer = document.getElementById('previewBody');
             let html = '';
 
-            if (currentMenuName.includes('Kriteria Ketuntasan (KKTP)')) {
-                // Format dokumen KKTP persis seperti file PDF yang diunggah
+            if (currentMenuName.includes('Rincian Pekan Efektif (RPE)')) {
+                // Format dokumen RPE persis seperti file PDF yang diunggah
                 html = `
                     <div class="space-y-4">
                         <div class="text-center pb-2 border-b">
-                            <h3 class="font-bold text-slate-900 text-sm">KRITERIA KETUNTASAN TUJUAN PEMBELAJARAN (KKTP) — ${mapel.toUpperCase()}</h3>
+                            <h3 class="font-bold text-slate-900 text-sm">RINCIAN PEKAN EFEKTIF (RPE) — ${mapel.toUpperCase()}</h3>
                         </div>
                         <table class="w-full text-xs border-collapse">
                             <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
@@ -593,100 +592,215 @@
                             <tr><td class="font-semibold py-1">Tahun Ajaran</td><td>: ${tahun}</td></tr>
                         </table>
 
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">Capaian Pembelajaran (CP)</h4>
-                        <p class="leading-relaxed text-slate-700">Peserta didik mampu menganalisis tata cara bersuci dari hadas dan najis untuk membangun pola hidup bersih dan sehat dalam konteks ibadah kepada Allah SWT, serta mampu mempraktikkan tata cara wudhu, tayamum, dan mandi wajib sesuai ketentuan syariat.</p>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">MATRIKS KRITERIA KETUNTASAN (KKTP)</h4>
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">I. Perhitungan Pekan Semester Ganjil</h4>
                         <table class="w-full border-collapse border border-slate-300 text-[10px] mt-2">
                             <thead>
                                 <tr class="bg-slate-100 text-slate-900 font-bold text-center">
-                                    <th class="border border-slate-300 p-2 w-8" rowspan="2">No[cite: 20]</th>
-                                    <th class="border border-slate-300 p-2 text-left" rowspan="2">Tujuan Pembelajaran (TP)[cite: 20]</th>
-                                    <th class="border border-slate-300 p-2" colspan="4">Interval Nilai & Kriteria[cite: 20]</th>
-                                    <th class="border border-slate-300 p-2 w-28" rowspan="2">Keterangan[cite: 20]</th>
-                                </tr>
-                                <tr class="bg-slate-50 text-slate-800 font-bold text-center text-[9px]">
-                                    <th class="border border-slate-300 p-1 w-12">0-40%[cite: 20]</th>
-                                    <th class="border border-slate-300 p-1 w-12">41-65%[cite: 20]</th>
-                                    <th class="border border-slate-300 p-1 w-12">66-85%[cite: 20]</th>
-                                    <th class="border border-slate-300 p-1 w-12">86-100%[cite: 20]</th>
+                                    <th class="border border-slate-300 p-2 w-8">No[cite: 22]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Bulan[cite: 22]</th>
+                                    <th class="border border-slate-300 p-2 w-16">Jumlah Pekan[cite: 22]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Pekan Tidak Efektif[cite: 22]</th>
+                                    <th class="border border-slate-300 p-2 w-16">Pekan Efektif[cite: 22]</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-semibold">1</td>
-                                    <td class="border border-slate-300 p-2 align-middle">Menjelaskan pengertian thaharah, dasar hukum, serta perbedaan antara najis dan hadas[cite: 20].</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-bold text-emerald-700">V[cite: 20]</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 align-middle font-medium">Mampu membedakan jenis najis dan hadas[cite: 20].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">1</td>
+                                    <td class="border border-slate-300 p-1.5">Juli 2026[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">5[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5">3 (Libur Semester & MPLS)[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">2[cite: 22]</td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-semibold">2</td>
-                                    <td class="border border-slate-300 p-2 align-middle">Menganalisis macam-macam najis (Mukhaffafah, Mutawassithah, Mughalladhah) dan tata cara menyucikannya[cite: 20].</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-bold text-emerald-700">V[cite: 20]</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 align-middle font-medium">Fokus pada praktik pencucian air[cite: 20].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">2</td>
+                                    <td class="border border-slate-300 p-1.5">Agustus 2026[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5">0[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4[cite: 22]</td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-semibold">3</td>
-                                    <td class="border border-slate-300 p-2 align-middle">Mendemonstrasikan tata cara wudhu secara tertib sesuai rukun dan sunnahnya[cite: 20].</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-bold text-emerald-700">V[cite: 20]</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 align-middle font-medium">Wajib mutqin dalam praktik[cite: 20].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">3</td>
+                                    <td class="border border-slate-300 p-1.5">September 2026[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5">1 (Asesmen Sumatif Tengah Semester)[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">3[cite: 22]</td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-semibold">4</td>
-                                    <td class="border border-slate-300 p-2 align-middle">Menganalisis sebab, syarat, dan mempraktikkan tata cara tayamum sebagai pengganti wudhu/mandi[cite: 20].</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-bold text-emerald-700">V[cite: 20]</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 align-middle font-medium">Perlu penguatan pada syarat tayamum[cite: 20].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">4</td>
+                                    <td class="border border-slate-300 p-1.5">Oktober 2026[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">5[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5">0[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">5[cite: 22]</td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-semibold">5</td>
-                                    <td class="border border-slate-300 p-2 align-middle">Menjelaskan tata cara mandi wajib (janabah) setelah hadas besar sesuai ketentuan fikih[cite: 20].</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-bold text-emerald-700">V[cite: 20]</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 align-middle font-medium">Memahami rukun mandi wajib[cite: 20].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">5</td>
+                                    <td class="border border-slate-300 p-1.5">November 2026[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5">0[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4[cite: 22]</td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-semibold">6</td>
-                                    <td class="border border-slate-300 p-2 align-middle">Membiasakan perilaku hidup bersih di lingkungan madrasah sebagai implementasi nilai thaharah[cite: 20, 21].</td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
-                                    <td class="border border-slate-300 p-2 text-center align-middle font-bold text-emerald-700">V</td>
-                                    <td class="border border-slate-300 p-2 align-middle font-medium">Observasi sikap harian.</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">6</td>
+                                    <td class="border border-slate-300 p-1.5">Desember 2026[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5">4 (ASAS, Pengolahan Nilai & Libur)[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">0[cite: 22]</td>
+                                </tr>
+                                <tr class="bg-slate-50 font-bold">
+                                    <td class="border border-slate-300 p-1.5 text-center" colspan="2">Jumlah[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">26[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5">8[cite: 22]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">18[cite: 22]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-[11px] font-medium text-slate-700 mt-1">Distribusi Jam Pelajaran (JP): Jumlah Pekan Efektif x Jam Pelajaran Per Pekan = $18 \text{ Pekan} \times 2 \text{ JP} = 36 \text{ JP}$[cite: 23]</p>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">II. Distribusi Alokasi Waktu (Materi ${selectionVal})</h4>
+                        <table class="w-full border-collapse border border-slate-300 text-[10px] mt-2">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-900 font-bold text-center">
+                                    <th class="border border-slate-300 p-2 w-8">No[cite: 23]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Tujuan Pembelajaran / Materi Pokok[cite: 23]</th>
+                                    <th class="border border-slate-300 p-2 w-16">Alokasi Waktu[cite: 23]</th>
+                                    <th class="border border-slate-300 p-2 text-left w-32">Keterangan[cite: 23]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">1</td>
+                                    <td class="border border-slate-300 p-1.5">Pengertian Thaharah, dalil naqli, dan pembagian alat-alat bersuci (Macam-macam air)[cite: 23].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 23]</td>
+                                    <td class="border border-slate-300 p-1.5">Pekan 1-2 Juli[cite: 23]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">2</td>
+                                    <td class="border border-slate-300 p-1.5">Najis: Pengertian, Macam-macam najis (Mukhaffafah, Mutawassithah, Mughalladhah) dan cara menyucikannya.</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">6 JP[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">Pekan 1-2 Agt[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">3</td>
+                                    <td class="border border-slate-300 p-1.5">Hadas: Pengertian, Macam-macam hadas (Kecil & Besar) dan cara menyucikannya[cite: 24].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">Pekan 3-4 Agt[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">4</td>
+                                    <td class="border border-slate-300 p-1.5">Wudhu: Syarat, Rukun, Sunnah, dan hal yang membatalkan (Teori & Praktik)[cite: 24].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">6 JP[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">Pekan 1-3 Sept[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">5</td>
+                                    <td class="border border-slate-300 p-1.5">Mandi Wajib: Sebab-sebab mandi wajib, rukun, dan tata cara mandi janabat[cite: 24].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">Pekan 1-2 Okt[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">6</td>
+                                    <td class="border border-slate-300 p-1.5">Tayammum: Syarat, Rukun, dan tata cara praktik tayammum sebagai rukhsah[cite: 24].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">Pekan 3-4 Okt[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">7</td>
+                                    <td class="border border-slate-300 p-1.5">Istinja: Adab buang air dan tata cara istinja menggunakan benda selain air[cite: 24].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">Pekan 5 Okt - 1 Nov[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">8</td>
+                                    <td class="border border-slate-300 p-1.5">Asesmen Sumatif Lingkup Materi (Harian) dan Remedial/Pengayaan[cite: 24].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">Pekan 2-3 Nov[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">9</td>
+                                    <td class="border border-slate-300 p-1.5">Cadangan Alokasi Waktu[cite: 24].</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">0 JP[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">-</td>
+                                </tr>
+                                <tr class="bg-slate-50 font-bold">
+                                    <td class="border border-slate-300 p-1.5 text-center" colspan="2">Total Alokasi Waktu[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">36 JP[cite: 24]</td>
+                                    <td>Semester Ganjil[cite: 24]</td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">Penjelasan Interval Kriteria</h4>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-700 text-xs">
-                            <li><b>0-40%:</b> Belum Mencapai Ketuntasan (Remedial di seluruh bagian)[cite: 21].</li>
-                            <li><b>41-65%:</b> Belum Mencapai Ketuntasan (Remedial di bagian yang diperlukan)[cite: 21].</li>
-                            <li><b>66-85%:</b> Sudah Mencapai Ketuntasan (Tidak perlu remedial)[cite: 21].</li>
-                            <li><b>86-100%:</b> Sudah Mencapai Ketuntasan (Perlu Pengayaan/Tantangan lebih)[cite: 21].</li>
-                        </ul>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">Catatan Akademik Madrasah</h4>
-                        <p class="leading-relaxed text-slate-700 text-xs">Ketuntasan Tujuan Pembelajaran pada materi Thaharah di MTs Persatuan Islam Kadipaten menekankan pada aspek kognitif (pemahaman dalil) dan psikomotorik (praktik ibadah). Peserta didik dinyatakan tuntas apabila mencapai minimal kriteria "Baik" (66-85%) pada poin-poin krusial ibadah harian seperti Wudhu dan Mandi Wajib[cite: 21].</p>
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">III. Perhitungan Pekan Semester Genap</h4>
+                        <table class="w-full border-collapse border border-slate-300 text-[10px] mt-2">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-900 font-bold text-center">
+                                    <th class="border border-slate-300 p-2 w-8">No[cite: 24]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Bulan[cite: 24]</th>
+                                    <th class="border border-slate-300 p-2 w-16">Jumlah Pekan[cite: 24]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Pekan Tidak Efektif[cite: 24]</th>
+                                    <th class="border border-slate-300 p-2 w-16">Pekan Efektif[cite: 24]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">1</td>
+                                    <td class="border border-slate-300 p-1.5">Januari 2027[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">1 (Libur Semester Ganjil)[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">3[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">2</td>
+                                    <td class="border border-slate-300 p-1.5">Februari 2027[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">0[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">3</td>
+                                    <td class="border border-slate-300 p-1.5">Maret 2027[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">5[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">2 (Libur Awal Ramadhan & STS)[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">3[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">4</td>
+                                    <td class="border border-slate-300 p-1.5">April 2027[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">2 (Libur Idul Fitri 1448 H)[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">2[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">5</td>
+                                    <td class="border border-slate-300 p-1.5">Mei 2027[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">0[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4[cite: 24]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-1.5 text-center">6</td>
+                                    <td class="border border-slate-300 p-1.5">Juni 2027[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">5[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">4 (ASAS & Libur Kelulusan)[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center font-bold">1[cite: 24]</td>
+                                </tr>
+                                <tr class="bg-slate-50 font-bold">
+                                    <td class="border border-slate-300 p-1.5 text-center" colspan="2">Jumlah[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">26[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5">9[cite: 24]</td>
+                                    <td class="border border-slate-300 p-1.5 text-center">17[cite: 24]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-[11px] font-medium text-slate-700 mt-1">Distribusi Jam Pelajaran (JP): Jumlah Pekan Efektif x Jam Pelajaran Per Pekan = $17 \text{ Pekan} \times 2 \text{ JP} = 34 \text{ JP}$[cite: 24]</p>
+                        
+                        <p class="text-[11px] italic text-slate-600 pt-1"><b>Catatan:</b> Materi Thaharah diselesaikan sepenuhnya pada Semester Ganjil sesuai alur tujuan pembelajaran Madrasah. Semester Genap dilanjutkan dengan materi Shalat Fardhu[cite: 24].</p>
                     </div>
                 `;
-            } else if (currentMenuName.includes('Alur Tujuan (ATP)')) {
+            } else if (currentMenuName.includes('Kriteria Ketuntasan (KKTP)')) {
                 html = `
                     <div class="space-y-4">
                         <div class="text-center pb-2 border-b">
-                            <h3 class="font-bold text-slate-900 text-sm">ALUR TUJUAN PEMBELAJARAN (ATP) — ${mapel.toUpperCase()}</h3>
+                            <h3 class="font-bold text-slate-900 text-sm">KRITERIA KETUNTASAN TUJUAN PEMBELAJARAN (KKTP) — ${mapel.toUpperCase()}</h3>
                         </div>
                     </div>
                 `;
@@ -706,7 +820,7 @@
             bodyContainer.innerHTML = html;
             closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
-            alert('Dokumen "' + currentMenuName + '" berhasil digenerate sesuai format referensi KKTP!');
+            alert('Dokumen "' + currentMenuName + '" berhasil digenerate sesuai format referensi RPE!');
         }
 
         function formatText(command) {
@@ -720,7 +834,7 @@
         }
 
         function downloadWordDoc() {
-            const html = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/200/REC-html40'><head><meta charset='utf-8'><title>Dokumen</title></head><body>" + document.getElementById('paperSheet').innerHTML + "</body></html>";
+            const html = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Dokumen</title></head><body>" + document.getElementById('paperSheet').innerHTML + "</body></html>";
             const blob = new Blob(['\ufeff' + html], { type: 'application/msword' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
