@@ -283,8 +283,8 @@
             <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
                 <div id="paperSheet" contenteditable="true" class="bg-white w-[850px] min-h-[1050px] p-12 shadow-md rounded-lg text-slate-900 text-sm leading-relaxed focus:outline-none border border-slate-200">
                     <div class="text-center space-y-1 mb-6 border-b pb-4">
-                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">RINCIAN PEKAN EFEKTIF (RPE)</h2>
-                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">Fase D / VII (Tujuh) — Thaharah</h3>
+                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">MODUL AJAR FIKIH</h2>
+                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">KELAS VII (Tujuh) — Thaharah</h3>
                         <p class="text-xs text-slate-600 font-semibold"><span id="previewSchool">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</span></p>
                     </div>
 
@@ -498,6 +498,15 @@
             "Cakupan Full 1 Tahun / Seluruh Fase"
         ];
 
+        const cpBakuDatabase = {
+            "Fikih": {
+                elemen1: "Fikih Ibadah",
+                cp1: "Pada akhir Fase D, peserta didik mampu memahami dalil dan istidlal fuqaha dalam permasalahan thaharah, haid, nifas, salat fardu, salat berjamaah, salat jamak dan qasar, serta ketentuan puasa.",
+                elemen2: "Fikih Muamalah",
+                cp2: "Peserta didik mampu memahami ketentuan muamalah mencakup kepemilikan, transaksi ekonomi syariah, dan kerja sama dalam Islam."
+            }
+        };
+
         function openMenuModal(menuTitle) {
             currentMenuName = menuTitle;
             document.getElementById('activeMenuLabel').innerText = menuTitle;
@@ -577,8 +586,205 @@
             const bodyContainer = document.getElementById('previewBody');
             let html = '';
 
-            if (currentMenuName.includes('Rincian Pekan Efektif (RPE)')) {
-                // Format dokumen RPE persis seperti file PDF yang diunggah
+            // 1. PEMETAAN CP & KBC
+            if (currentMenuName.includes('Pemetaan CP & KBC')) {
+                html = `
+                    <div class="space-y-4">
+                        <div class="text-center pb-2 border-b">
+                            <h3 class="font-bold text-slate-900 text-sm">DOKUMEN PEMETAAN CAPAIAN PEMBELAJARAN (CP) DAN TEMA</h3>
+                            <h3 class="font-bold text-emerald-800 text-xs">KURIKULUM BERBASIS CINTA (KBC) & DEEP LEARNING</h3>
+                        </div>
+                        <table class="w-full text-xs border-collapse">
+                            <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
+                            <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
+                            <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
+                            <tr><td class="font-semibold py-1">Materi Pokok</td><td>: <b>${selectionVal}</b></td></tr>
+                            <tr><td class="font-semibold py-1">Tahun Pelajaran</td><td>: ${tahun}</td></tr>
+                        </table>
+
+                        <table class="w-full border-collapse border border-slate-300 text-[11px] mt-4">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-900 font-bold">
+                                    <th class="border border-slate-300 p-2 text-left w-1/5">Elemen & Capaian Pembelajaran (CP)[cite: 14]</th>
+                                    <th class="border border-slate-300 p-2 text-left w-1/5">Tujuan Pembelajaran (TP)[cite: 14]</th>
+                                    <th class="border border-slate-300 p-2 text-left w-1/5">Indikator Ketercapaian[cite: 14]</th>
+                                    <th class="border border-slate-300 p-2 text-left w-1/5">Tema KBC (Pancacita)[cite: 14]</th>
+                                    <th class="border border-slate-300 p-2 text-left w-1/5">Dimensi Profil Pelajar (DPL/P5)[cite: 14]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 align-top font-semibold">
+                                        <b>${mapel} Ibadah / Esensial:</b><br>
+                                        Peserta didik mampu memahami dan menganalisis substansi dari materi <b>${selectionVal}</b>.
+                                    </td>
+                                    <td class="border border-slate-300 p-2 align-top">
+                                        Peserta didik dapat mengidentifikasi konsep dasar, kaidah normatif, dan mengaitkannya dengan praktik nyata.
+                                    </td>
+                                    <td class="border border-slate-300 p-2 align-top">
+                                        1. Menjelaskan pengertian dan dalil.<br>
+                                        2. Mengklasifikasikan jenis dan ketentuan.<br>
+                                        3. Mempraktikkan prosedur dengan tertib dan benar.
+                                    </td>
+                                    <td class="border border-slate-300 p-2 align-top">
+                                        <b>Cinta Allah & Rasul:</b><br>
+                                        Mewujudkan ketaatan melalui pemahaman nilai syariat dalam kehidupan sehari-hari[cite: 15].
+                                    </td>
+                                    <td class="border border-slate-300 p-2 align-top">
+                                        <b>Beriman & Bertaqwa (DPL)</b><br>
+                                        Qudwah/Keteladanan (P5RA)[cite: 15]
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }
+            // 2. TUJUAN PEMBELAJARAN (TP)
+            else if (currentMenuName.includes('Tujuan Pembelajaran (TP)')) {
+                html = `
+                    <div class="space-y-4">
+                        <div class="text-center pb-2 border-b">
+                            <h3 class="font-bold text-slate-900 text-sm">TUJUAN PEMBELAJARAN (TP) — ${mapel.toUpperCase()}</h3>
+                        </div>
+                        <table class="w-full text-xs border-collapse">
+                            <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
+                            <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
+                            <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
+                            <tr><td class="font-semibold py-1">Materi Pokok</td><td>: <b>${selectionVal}</b></td></tr>
+                            <tr><td class="font-semibold py-1">Tahun Ajaran</td><td>: ${tahun}</td></tr>
+                        </table>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">A. Capaian Pembelajaran (CP) Fase D</h4>
+                        <p class="leading-relaxed text-slate-700">Pada akhir Fase D, peserta didik mampu menganalisis tata cara ibadah dalam Islam, memahami ketentuan bersuci, serta mampu mempraktikkannya dalam kehidupan sehari-hari secara benar sesuai ketentuan syariat Islam untuk menumbuhkan ketaatan dan kedisiplinan[cite: 16].</p>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">B. Tujuan Pembelajaran (TP) Materi ${selectionVal}</h4>
+                        <table class="w-full border-collapse border border-slate-300 text-[11px] mt-2">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-900 font-bold">
+                                    <th class="border border-slate-300 p-2 text-center w-12">No[cite: 16]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Tujuan Pembelajaran (TP)[cite: 16]</th>
+                                    <th class="border border-slate-300 p-2 text-left w-1/3">Lingkup Materi[cite: 16]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">1</td>
+                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu menjelaskan pengertian thaharah, dalil naqli tentang kewajiban bersuci, serta perbedaan antara najis dan hadas dengan tepat[cite: 16].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Konsep Dasar Thaharah[cite: 16]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">2</td>
+                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu mengidentifikasi macam-macam air untuk bersuci serta alat-alat bersuci lainnya[cite: 16].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Sarana Bersuci[cite: 16]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">3</td>
+                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu menganalisis klasifikasi najis dan mendemonstrasikan tata cara menyucikannya secara benar[cite: 16].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Pengelolaan Najis[cite: 16]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">C. Kriteria Ketercapaian Tujuan Pembelajaran (KKTP)</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                            <li>Mampu menyebutkan pengertian thaharah menurut bahasa dan istilah[cite: 16].</li>
+                            <li>Mampu membedakan jenis-jenis air berdasarkan hukum penggunaannya[cite: 16].</li>
+                            <li>Dapat mendemonstrasikan gerakan wudhu, mandi, dan tayammum dengan urutan yang benar[cite: 16].</li>
+                        </ul>
+                    </div>
+                `;
+            }
+            // 3. ALUR TUJUAN (ATP)
+            else if (currentMenuName.includes('Alur Tujuan (ATP)')) {
+                html = `
+                    <div class="space-y-4">
+                        <div class="text-center pb-2 border-b">
+                            <h3 class="font-bold text-slate-900 text-sm">ALUR TUJUAN PEMBELAJARAN (ATP) — ${mapel.toUpperCase()}</h3>
+                        </div>
+                        <table class="w-full text-xs border-collapse">
+                            <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
+                            <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
+                            <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
+                            <tr><td class="font-semibold py-1">Tahun Ajaran</td><td>: ${tahun}</td></tr>
+                            <tr><td class="font-semibold py-1">Lingkup Materi</td><td>: <b>${selectionVal}</b></td></tr>
+                        </table>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">MATRIKS ALUR TUJUAN PEMBELAJARAN (ATP)</h4>
+                        <table class="w-full border-collapse border border-slate-300 text-[10px] mt-2">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-900 font-bold">
+                                    <th class="border border-slate-300 p-2 text-center w-8">No[cite: 17]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Tujuan Pembelajaran (TP)[cite: 17]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Kriteria Ketercapaian (KKTP)[cite: 17]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Materi / Lingkup[cite: 17]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Alur dan Tahapan[cite: 17]</th>
+                                    <th class="border border-slate-300 p-2 text-center w-12">Waktu[cite: 17]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">1</td>
+                                    <td class="border border-slate-300 p-2 align-top">Menganalisis konsep thaharah dan kedudukannya dalam ibadah[cite: 17].</td>
+                                    <td class="border border-slate-300 p-2 align-top">• Menjelaskan pengertian.<br>• Menunjukkan dalil naqli[cite: 17].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Pengantar Thaharah[cite: 18]</td>
+                                    <td class="border border-slate-300 p-2 align-top">1.1. Memahami urgensi thaharah.<br>1.2. Identifikasi alat bersuci[cite: 18].</td>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">2 JP[cite: 18]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mt-2 text-right text-xs font-bold text-slate-900">Total Alokasi Waktu Materi Thaharah: 18 JP[cite: 19]</div>
+                    </div>
+                `;
+            }
+            // 4. KRITERIA KETUNTASAN (KKTP)
+            else if (currentMenuName.includes('Kriteria Ketuntasan (KKTP)')) {
+                html = `
+                    <div class="space-y-4">
+                        <div class="text-center pb-2 border-b">
+                            <h3 class="font-bold text-slate-900 text-sm">KRITERIA KETUNTASAN TUJUAN PEMBELAJARAN (KKTP) — ${mapel.toUpperCase()}</h3>
+                        </div>
+                        <table class="w-full text-xs border-collapse">
+                            <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
+                            <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
+                            <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
+                            <tr><td class="font-semibold py-1">Materi Pokok</td><td>: <b>${selectionVal}</b></td></tr>
+                            <tr><td class="font-semibold py-1">Tahun Ajaran</td><td>: ${tahun}</td></tr>
+                        </table>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">MATRIKS KRITERIA KETUNTASAN (KKTP)</h4>
+                        <table class="w-full border-collapse border border-slate-300 text-[10px] mt-2">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-900 font-bold text-center">
+                                    <th class="border border-slate-300 p-2 w-8" rowspan="2">No[cite: 20]</th>
+                                    <th class="border border-slate-300 p-2 text-left" rowspan="2">Tujuan Pembelajaran (TP)[cite: 20]</th>
+                                    <th class="border border-slate-300 p-2" colspan="4">Interval Nilai & Kriteria[cite: 20]</th>
+                                    <th class="border border-slate-300 p-2 w-28" rowspan="2">Keterangan[cite: 20]</th>
+                                </tr>
+                                <tr class="bg-slate-50 text-slate-800 font-bold text-center text-[9px]">
+                                    <th class="border border-slate-300 p-1 w-12">0-40%[cite: 20]</th>
+                                    <th class="border border-slate-300 p-1 w-12">41-65%[cite: 20]</th>
+                                    <th class="border border-slate-300 p-1 w-12">66-85%[cite: 20]</th>
+                                    <th class="border border-slate-300 p-1 w-12">86-100%[cite: 20]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-middle font-semibold">1</td>
+                                    <td class="border border-slate-300 p-2 align-middle">Menjelaskan pengertian thaharah dan dasar hukum[cite: 20].</td>
+                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
+                                    <td class="border border-slate-300 p-2 text-center align-middle font-bold text-emerald-700">V[cite: 20]</td>
+                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
+                                    <td class="border border-slate-300 p-2 text-center align-middle"></td>
+                                    <td class="border border-slate-300 p-2 align-middle font-medium">Mampu membedakan najis & hadas[cite: 20].</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }
+            // 5. RINCIAN PEKAN EFEKTIF (RPE)
+            else if (currentMenuName.includes('Rincian Pekan Efektif (RPE)')) {
                 html = `
                     <div class="space-y-4">
                         <div class="text-center pb-2 border-b">
@@ -588,7 +794,6 @@
                             <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
                             <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
                             <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
-                            <tr><td class="font-semibold py-1">Materi Pokok</td><td>: <b>${selectionVal}</b></td></tr>
                             <tr><td class="font-semibold py-1">Tahun Ajaran</td><td>: ${tahun}</td></tr>
                         </table>
 
@@ -611,41 +816,6 @@
                                     <td class="border border-slate-300 p-1.5">3 (Libur Semester & MPLS)[cite: 22]</td>
                                     <td class="border border-slate-300 p-1.5 text-center font-bold">2[cite: 22]</td>
                                 </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">2</td>
-                                    <td class="border border-slate-300 p-1.5">Agustus 2026[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5">0[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4[cite: 22]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">3</td>
-                                    <td class="border border-slate-300 p-1.5">September 2026[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5">1 (Asesmen Sumatif Tengah Semester)[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">3[cite: 22]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">4</td>
-                                    <td class="border border-slate-300 p-1.5">Oktober 2026[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">5[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5">0[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">5[cite: 22]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">5</td>
-                                    <td class="border border-slate-300 p-1.5">November 2026[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5">0[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4[cite: 22]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">6</td>
-                                    <td class="border border-slate-300 p-1.5">Desember 2026[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5">4 (ASAS, Pengolahan Nilai & Libur)[cite: 22]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">0[cite: 22]</td>
-                                </tr>
                                 <tr class="bg-slate-50 font-bold">
                                     <td class="border border-slate-300 p-1.5 text-center" colspan="2">Jumlah[cite: 22]</td>
                                     <td class="border border-slate-300 p-1.5 text-center">26[cite: 22]</td>
@@ -654,154 +824,56 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="text-[11px] font-medium text-slate-700 mt-1">Distribusi Jam Pelajaran (JP): Jumlah Pekan Efektif x Jam Pelajaran Per Pekan = $18 \text{ Pekan} \times 2 \text{ JP} = 36 \text{ JP}$[cite: 23]</p>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">II. Distribusi Alokasi Waktu (Materi ${selectionVal})</h4>
-                        <table class="w-full border-collapse border border-slate-300 text-[10px] mt-2">
-                            <thead>
-                                <tr class="bg-slate-100 text-slate-900 font-bold text-center">
-                                    <th class="border border-slate-300 p-2 w-8">No[cite: 23]</th>
-                                    <th class="border border-slate-300 p-2 text-left">Tujuan Pembelajaran / Materi Pokok[cite: 23]</th>
-                                    <th class="border border-slate-300 p-2 w-16">Alokasi Waktu[cite: 23]</th>
-                                    <th class="border border-slate-300 p-2 text-left w-32">Keterangan[cite: 23]</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">1</td>
-                                    <td class="border border-slate-300 p-1.5">Pengertian Thaharah, dalil naqli, dan pembagian alat-alat bersuci (Macam-macam air)[cite: 23].</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 23]</td>
-                                    <td class="border border-slate-300 p-1.5">Pekan 1-2 Juli[cite: 23]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">2</td>
-                                    <td class="border border-slate-300 p-1.5">Najis: Pengertian, Macam-macam najis (Mukhaffafah, Mutawassithah, Mughalladhah) dan cara menyucikannya.</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">6 JP[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">Pekan 1-2 Agt[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">3</td>
-                                    <td class="border border-slate-300 p-1.5">Hadas: Pengertian, Macam-macam hadas (Kecil & Besar) dan cara menyucikannya[cite: 24].</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">Pekan 3-4 Agt[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">4</td>
-                                    <td class="border border-slate-300 p-1.5">Wudhu: Syarat, Rukun, Sunnah, dan hal yang membatalkan (Teori & Praktik)[cite: 24].</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">6 JP[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">Pekan 1-3 Sept[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">5</td>
-                                    <td class="border border-slate-300 p-1.5">Mandi Wajib: Sebab-sebab mandi wajib, rukun, dan tata cara mandi janabat[cite: 24].</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">Pekan 1-2 Okt[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">6</td>
-                                    <td class="border border-slate-300 p-1.5">Tayammum: Syarat, Rukun, dan tata cara praktik tayammum sebagai rukhsah[cite: 24].</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">Pekan 3-4 Okt[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">7</td>
-                                    <td class="border border-slate-300 p-1.5">Istinja: Adab buang air dan tata cara istinja menggunakan benda selain air[cite: 24].</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">Pekan 5 Okt - 1 Nov[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">8</td>
-                                    <td class="border border-slate-300 p-1.5">Asesmen Sumatif Lingkup Materi (Harian) dan Remedial/Pengayaan[cite: 24].</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4 JP[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">Pekan 2-3 Nov[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">9</td>
-                                    <td class="border border-slate-300 p-1.5">Cadangan Alokasi Waktu[cite: 24].</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">0 JP[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">-</td>
-                                </tr>
-                                <tr class="bg-slate-50 font-bold">
-                                    <td class="border border-slate-300 p-1.5 text-center" colspan="2">Total Alokasi Waktu[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">36 JP[cite: 24]</td>
-                                    <td>Semester Ganjil[cite: 24]</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">III. Perhitungan Pekan Semester Genap</h4>
-                        <table class="w-full border-collapse border border-slate-300 text-[10px] mt-2">
-                            <thead>
-                                <tr class="bg-slate-100 text-slate-900 font-bold text-center">
-                                    <th class="border border-slate-300 p-2 w-8">No[cite: 24]</th>
-                                    <th class="border border-slate-300 p-2 text-left">Bulan[cite: 24]</th>
-                                    <th class="border border-slate-300 p-2 w-16">Jumlah Pekan[cite: 24]</th>
-                                    <th class="border border-slate-300 p-2 text-left">Pekan Tidak Efektif[cite: 24]</th>
-                                    <th class="border border-slate-300 p-2 w-16">Pekan Efektif[cite: 24]</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">1</td>
-                                    <td class="border border-slate-300 p-1.5">Januari 2027[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">1 (Libur Semester Ganjil)[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">3[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">2</td>
-                                    <td class="border border-slate-300 p-1.5">Februari 2027[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">0[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">3</td>
-                                    <td class="border border-slate-300 p-1.5">Maret 2027[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">5[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">2 (Libur Awal Ramadhan & STS)[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">3[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">4</td>
-                                    <td class="border border-slate-300 p-1.5">April 2027[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">2 (Libur Idul Fitri 1448 H)[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">2[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">5</td>
-                                    <td class="border border-slate-300 p-1.5">Mei 2027[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">4[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">0[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">4[cite: 24]</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-slate-300 p-1.5 text-center">6</td>
-                                    <td class="border border-slate-300 p-1.5">Juni 2027[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">5[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">4 (ASAS & Libur Kelulusan)[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center font-bold">1[cite: 24]</td>
-                                </tr>
-                                <tr class="bg-slate-50 font-bold">
-                                    <td class="border border-slate-300 p-1.5 text-center" colspan="2">Jumlah[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">26[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5">9[cite: 24]</td>
-                                    <td class="border border-slate-300 p-1.5 text-center">17[cite: 24]</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p class="text-[11px] font-medium text-slate-700 mt-1">Distribusi Jam Pelajaran (JP): Jumlah Pekan Efektif x Jam Pelajaran Per Pekan = $17 \text{ Pekan} \times 2 \text{ JP} = 34 \text{ JP}$[cite: 24]</p>
-                        
-                        <p class="text-[11px] italic text-slate-600 pt-1"><b>Catatan:</b> Materi Thaharah diselesaikan sepenuhnya pada Semester Ganjil sesuai alur tujuan pembelajaran Madrasah. Semester Genap dilanjutkan dengan materi Shalat Fardhu[cite: 24].</p>
                     </div>
                 `;
-            } else if (currentMenuName.includes('Kriteria Ketuntasan (KKTP)')) {
+            }
+            // 6. MENU LAINNYA (CP, PROTA, MODUL AJAR, DSB)
+            else if (currentMenuName.includes('Capaian Pembelajaran')) {
+                let cpData = cpBakuDatabase[mapel] || {
+                    elemen1: "Pemahaman Konsep " + mapel,
+                    cp1: `Pada akhir ${fase}, peserta didik mampu memahami prinsip fundamental, kaidah, dan teori esensial dalam mata pelajaran ${mapel}.`,
+                    elemen2: "Keterampilan Penalaran & Penerapan",
+                    cp2: `Peserta didik mampu bernalar kritis dan menganalisis studi kasus nyata.`
+                };
+
                 html = `
                     <div class="space-y-4">
-                        <div class="text-center pb-2 border-b">
-                            <h3 class="font-bold text-slate-900 text-sm">KRITERIA KETUNTASAN TUJUAN PEMBELAJARAN (KKTP) — ${mapel.toUpperCase()}</h3>
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">A. Identitas Dokumen Capaian Pembelajaran</h4>
+                        <table class="w-full text-xs border-collapse">
+                            <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
+                            <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
+                            <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
+                            <tr><td class="font-semibold py-1">Cakupan Waktu</td><td>: <b>${selectionVal}</b></td></tr>
+                            <tr><td class="font-semibold py-1">Regulasi Acuan</td><td>: KMA Nomor 1503 Tahun 2025</td></tr>
+                        </table>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">B. Rumusan Baku Capaian Pembelajaran (CP) Pemerintah</h4>
+                        <div class="space-y-3 pt-1">
+                            <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                                <p class="font-bold text-emerald-900 text-xs">Elemen 1: ${cpData.elemen1}</p>
+                                <p class="leading-relaxed text-slate-800">${cpData.cp1}</p>
+                            </div>
+                            <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                                <p class="font-bold text-emerald-900 text-xs">Elemen 2: ${cpData.elemen2}</p>
+                                <p class="leading-relaxed text-slate-800">${cpData.cp2}</p>
+                            </div>
                         </div>
+                    </div>
+                `;
+            } else if (currentMenuName.includes('Modul Ajar')) {
+                html = `
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">A. Informasi Umum</h4>
+                        <table class="w-full text-xs border-collapse">
+                            <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
+                            <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
+                            <tr><td class="font-semibold py-1">Kelas / Semester</td><td>: ${fase}</td></tr>
+                            <tr><td class="font-semibold py-1">Tema Spesifik</td><td>: <b>${selectionVal}</b></td></tr>
+                            <tr><td class="font-semibold py-1">Model Pembelajaran</td><td>: <b>Deep Learning: Mindful, Meaningful, Joyful Learning berbasis KBC</b></td></tr>
+                        </table>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">B. Tujuan Pembelajaran</h4>
+                        <p class="leading-relaxed">Melalui pendekatan Knowledge-Based Construction (KBC), peserta didik mampu memahami dan mempraktikkan materi <b>${selectionVal}</b> secara utuh dan bermakna.</p>
                     </div>
                 `;
             } else {
@@ -811,7 +883,8 @@
                         <p class="leading-relaxed"><b>Mata Pelajaran:</b> ${mapel} | <b>Kelas:</b> ${fase} | <b>Materi:</b> ${selectionVal}</p>
                         <div class="p-4 bg-slate-50 border rounded-xl space-y-2">
                             <p class="font-bold text-emerald-800">Uraian Dokumen Administrasi:</p>
-                            <p class="leading-relaxed">Dokumen <b>${currentMenuName}</b> untuk satuan pendidikan <b>${sekolah}</b> telah berhasil disusun sesuai standar KMA 1503 Tahun 2025.</p>
+                            <p class="leading-relaxed">Dokumen <b>${currentMenuName}</b> untuk satuan pendidikan <b>${sekolah}</b> telah berhasil disusun secara komprehensif sesuai standar KMA 1503 Tahun 2025.</p>
+                            <p class="text-xs text-slate-500 italic">Catatan khusus: ${instruksi}</p>
                         </div>
                     </div>
                 `;
@@ -820,7 +893,7 @@
             bodyContainer.innerHTML = html;
             closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
-            alert('Dokumen "' + currentMenuName + '" berhasil digenerate sesuai format referensi RPE!');
+            alert('Dokumen "' + currentMenuName + '" berhasil digenerate dengan sukses!');
         }
 
         function formatText(command) {
