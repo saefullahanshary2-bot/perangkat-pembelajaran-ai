@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERANGKAT PEMBELAJARAN AI - PRO FULL MENU KMA 1503</title>
+    <title>PERANGKAT PEMBELAJARAN AI - PRO MODAL DOKUMEN</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -51,17 +51,17 @@
     <!-- Main Content Wrapper -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-12">
 
-        <!-- SECTION 1: PILIH MODUL DOKUMEN KURIKULUM MERDEKA / KMA 1503 -->
+        <!-- SECTION 1: PILIH MODUL DOKUMEN KURIKULUM MADRASAH & MERDEKA -->
         <section>
             <div class="flex items-center space-x-2.5 mb-2">
                 <i class="fa-solid fa-layer-group text-emerald-600 text-xl"></i>
                 <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">PILIH MODUL DOKUMEN KURIKULUM MADRASAH & MERDEKA</h2>
             </div>
-            <p class="text-slate-500 text-sm mb-6">Pilih modul yang ingin dibuat menggunakan AI <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i></p>
+            <p class="text-slate-500 text-sm mb-6">Klik modul yang ingin dibuat menggunakan AI <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i></p>
 
-            <!-- Grid 14 Menu Utama Lengkap Sesuai Permintaan -->
+            <!-- Grid 14 Menu Utama Lengkap -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div onclick="selectMenu('Capaian Pembelajaran (CP)', 'cp')" class="bg-white p-5 rounded-2xl border-2 border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Capaian Pembelajaran (CP)')" class="bg-white p-5 rounded-2xl border-2 border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-blue-600 text-white text-[10px] font-black px-2 py-0.5 rounded">CP</span>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Pemetaan CP & KBC', 'pemetaan')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Pemetaan CP & KBC')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-indigo-600 text-white text-[10px] font-black px-2 py-0.5 rounded">PEMETAAN</span>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Tujuan Pembelajaran (TP)', 'tp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Tujuan Pembelajaran (TP)')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-sky-600 text-white text-[10px] font-black px-2 py-0.5 rounded">TP</span>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Alur Tujuan (ATP)', 'atp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Alur Tujuan (ATP)')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-cyan-600 text-white text-[10px] font-black px-2 py-0.5 rounded">ATP</span>
@@ -105,7 +105,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Kriteria Ketuntasan (KKTP)', 'kktp')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Kriteria Ketuntasan (KKTP)')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-amber-600 text-white text-[10px] font-black px-2 py-0.5 rounded">KKTP</span>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Rincian Pekan Efektif (RPE)', 'rpe')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Rincian Pekan Efektif (RPE)')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded">RPE</span>
@@ -127,7 +127,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Program Tahunan (PROTA)', 'prota')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Program Tahunan (PROTA)')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-purple-600 text-white text-[10px] font-black px-2 py-0.5 rounded">PROTA</span>
@@ -138,7 +138,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Program Semester (PROMES)', 'promes')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Program Semester (PROMES)')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-fuchsia-600 text-white text-[10px] font-black px-2 py-0.5 rounded">PROMES</span>
@@ -149,7 +149,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Modul Ajar', 'modul_ajar')" class="bg-white p-5 rounded-2xl border-2 border-rose-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Modul Ajar')" class="bg-white p-5 rounded-2xl border-2 border-rose-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-rose-600 text-white text-[10px] font-black px-2 py-0.5 rounded">MODUL AJAR</span>
@@ -160,7 +160,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Bahan Ajar', 'bahan')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Bahan Ajar')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded">BAHAN</span>
@@ -171,7 +171,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Bank Soal (25 Butir)', 'soal')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Bank Soal (25 Butir)')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-orange-600 text-white text-[10px] font-black px-2 py-0.5 rounded">SOAL</span>
@@ -182,7 +182,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Lembar Kerja (LKPD)', 'lkpd')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Lembar Kerja (LKPD)')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-pink-600 text-white text-[10px] font-black px-2 py-0.5 rounded">LKPD</span>
@@ -193,7 +193,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Kisi-Kisi Soal', 'kisi')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Kisi-Kisi Soal')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-amber-500 text-white text-[10px] font-black px-2 py-0.5 rounded">KISI-KISI</span>
@@ -204,7 +204,7 @@
                     </div>
                 </div>
 
-                <div onclick="selectMenu('Analisis Soal', 'analisis')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                <div onclick="openMenuModal('Analisis Soal')" class="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="bg-purple-500 text-white text-[10px] font-black px-2 py-0.5 rounded">ANALISIS</span>
@@ -226,37 +226,37 @@
             <p class="text-slate-500 text-sm mb-6">Buat dokumen administrasi dengan data tabel asli dari file Excel Anda 📊</p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div onclick="selectMenu('Kalender Pendidikan', 'admin')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
+                <div onclick="openMenuModal('Kalender Pendidikan')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
                     <div class="flex items-center justify-between mb-3"><span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span><i class="fa-solid fa-calendar-days text-blue-600 text-2xl"></i></div>
                     <h3 class="font-bold text-slate-900 text-sm mb-1">Kalender Pendidikan</h3>
                     <p class="text-slate-500 text-xs">Matriks kegiatan akademik dan minggu efektif.</p>
                 </div>
-                <div onclick="selectMenu('Jadwal Mengajar', 'admin')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
+                <div onclick="openMenuModal('Jadwal Mengajar')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
                     <div class="flex items-center justify-between mb-3"><span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span><i class="fa-solid fa-chalkboard-user text-blue-600 text-2xl"></i></div>
                     <h3 class="font-bold text-slate-900 text-sm mb-1">Jadwal Mengajar</h3>
                     <p class="text-slate-500 text-xs">Tabel roster jadwal tatap muka di kelas.</p>
                 </div>
-                <div onclick="selectMenu('Daftar Nilai', 'admin')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
+                <div onclick="openMenuModal('Daftar Nilai')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
                     <div class="flex items-center justify-between mb-3"><span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span><i class="fa-solid fa-list-ol text-blue-600 text-2xl"></i></div>
                     <h3 class="font-bold text-slate-900 text-sm mb-1">Daftar Nilai</h3>
                     <p class="text-slate-500 text-xs">Rekapitulasi nilai formatif, sumatif, dan akhir.</p>
                 </div>
-                <div onclick="selectMenu('Buku Pedoman Guru', 'admin')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
+                <div onclick="openMenuModal('Buku Pedoman Guru')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
                     <div class="flex items-center justify-between mb-3"><span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span><i class="fa-solid fa-book text-blue-600 text-2xl"></i></div>
                     <h3 class="font-bold text-slate-900 text-sm mb-1">Buku Pedoman Guru</h3>
                     <p class="text-slate-500 text-xs">Dokumen pedoman pelaksanaan kerja tahunan.</p>
                 </div>
-                <div onclick="selectMenu('Analisis Hasil Belajar', 'admin')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
+                <div onclick="openMenuModal('Analisis Hasil Belajar')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
                     <div class="flex items-center justify-between mb-3"><span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span><i class="fa-solid fa-chart-line text-blue-600 text-2xl"></i></div>
                     <h3 class="font-bold text-slate-900 text-sm mb-1">Analisis Hasil Belajar</h3>
                     <p class="text-slate-500 text-xs">Ketuntasan klasikal dan program perbaikan/pengayaan.</p>
                 </div>
-                <div onclick="selectMenu('Absensi Siswa', 'admin')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
+                <div onclick="openMenuModal('Absensi Siswa')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
                     <div class="flex items-center justify-between mb-3"><span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">ADMIN</span><i class="fa-solid fa-id-card text-blue-600 text-2xl"></i></div>
                     <h3 class="font-bold text-slate-900 text-sm mb-1">Absensi Siswa</h3>
                     <p class="text-slate-500 text-xs">Format daftar kehadiran (presensi) peserta didik.</p>
                 </div>
-                <div onclick="selectMenu('Jurnal Mindset KBC', 'admin')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
+                <div onclick="openMenuModal('Jurnal Mindset KBC')" class="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition cursor-pointer">
                     <div class="flex items-center justify-between mb-3"><span class="bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">JURNAL KBC</span><i class="fa-solid fa-heart-circle-check text-emerald-600 text-2xl"></i></div>
                     <h3 class="font-bold text-slate-900 text-sm mb-1">Jurnal Mindset KBC</h3>
                     <p class="text-slate-500 text-xs">Jurnal harian Guru Madrasah dengan 25 Mindset KBC.</p>
@@ -264,9 +264,58 @@
             </div>
         </section>
 
-        <!-- SECTION 3: FORM DETAIL & PARAMETER PERANGKAT AJAR -->
-        <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
-            <div class="flex items-center justify-between border-b pb-4">
+        <!-- SECTION 3: WORD EDITOR & PREVIEW DOKUMEN -->
+        <section id="editorSection" class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between pb-4 mb-6 border-b border-slate-200 gap-4">
+                <div class="flex items-center space-x-1 sm:space-x-2 bg-slate-50 p-1.5 rounded-xl border border-slate-200">
+                    <button type="button" onclick="formatText('bold')" class="w-8 h-8 rounded-lg hover:bg-white text-slate-700 font-bold transition"><i class="fa-solid fa-bold text-xs"></i></button>
+                    <button type="button" onclick="formatText('italic')" class="w-8 h-8 rounded-lg hover:bg-white text-slate-700 italic transition"><i class="fa-solid fa-italic text-xs"></i></button>
+                    <button type="button" onclick="formatText('underline')" class="w-8 h-8 rounded-lg hover:bg-white text-slate-700 underline transition"><i class="fa-solid fa-underline text-xs"></i></button>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button onclick="copyDocContent()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-slate-200"><i class="fa-solid fa-copy mr-1"></i> Copy Text</button>
+                    <button onclick="window.print()" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-slate-200"><i class="fa-solid fa-print mr-1"></i> Print</button>
+                    <button onclick="downloadWordDoc()" class="bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-2 rounded-xl text-xs font-semibold transition shadow-sm flex items-center space-x-1.5"><i class="fa-solid fa-file-word"></i><span>Download Word</span></button>
+                </div>
+            </div>
+
+            <!-- Tampilan Kertas Dokumen Real-Time -->
+            <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
+                <div id="paperSheet" contenteditable="true" class="bg-white w-[850px] min-h-[1050px] p-12 shadow-md rounded-lg text-slate-900 text-sm leading-relaxed focus:outline-none border border-slate-200">
+                    <div class="text-center space-y-1 mb-6 border-b pb-4">
+                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">MODUL AJAR FIKIH</h2>
+                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">KELAS 7 — Thaharah (Bersuci dari Hadas & Najis)</h3>
+                        <p class="text-xs text-slate-600 font-semibold"><span id="previewSchool">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</span></p>
+                    </div>
+
+                    <div id="previewBody" class="space-y-6 text-xs text-slate-800">
+                        <p class="text-center text-slate-400 py-12 italic">Silakan klik salah satu menu di atas untuk membuka form parameter dan membuat dokumen.</p>
+                    </div>
+
+                    <div id="previewTtdContainer" class="mt-16 pt-8 flex justify-between text-xs border-t border-slate-200">
+                        <div class="text-center space-y-12">
+                            <p id="pTextJabatan1">Mengetahui,<br>Kepala Madrasah</p>
+                            <p id="pTextNama1" class="font-bold underline">Itang Iskandar, S.Pd.I</p>
+                        </div>
+                        <div class="text-center space-y-12">
+                            <p id="pTextTgl">Tasikmalaya, September 2026<br><span id="pTextJabatan2">Guru Mata Pelajaran</span></p>
+                            <p id="pTextNama2" class="font-bold underline">M. Jihad Fakhrul Islam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL POP-UP FORM DETAIL PERANGKAT AJAR -->
+    <div id="formModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-slate-100">
+            <button type="button" onclick="closeMenuModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="flex items-center justify-between border-b pb-4 mb-6">
                 <div>
                     <h3 class="text-lg font-bold text-slate-900">Detail Perangkat Ajar</h3>
                     <p class="text-xs text-slate-500">Lengkapi parameter di bawah ini untuk menyusun dokumen [<span id="activeMenuLabel" class="font-bold text-emerald-600">Modul Ajar</span>].</p>
@@ -360,58 +409,16 @@
                     </div>
                 </div>
 
-                <div class="pt-4 flex justify-end">
+                <div class="pt-4 flex justify-end space-x-3">
+                    <button type="button" onclick="closeMenuModal()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition">Batal</button>
                     <button type="submit" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-600/25 transition flex items-center space-x-2">
                         <i class="fa-solid fa-bolt"></i>
                         <span>Buat Dokumen Sekarang</span>
                     </button>
                 </div>
             </form>
-        </section>
-
-        <!-- SECTION 4: WORD EDITOR & PREVIEW DOKUMEN -->
-        <section id="editorSection" class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
-            <div class="flex flex-wrap items-center justify-between pb-4 mb-6 border-b border-slate-200 gap-4">
-                <div class="flex items-center space-x-1 sm:space-x-2 bg-slate-50 p-1.5 rounded-xl border border-slate-200">
-                    <button type="button" onclick="formatText('bold')" class="w-8 h-8 rounded-lg hover:bg-white text-slate-700 font-bold transition"><i class="fa-solid fa-bold text-xs"></i></button>
-                    <button type="button" onclick="formatText('italic')" class="w-8 h-8 rounded-lg hover:bg-white text-slate-700 italic transition"><i class="fa-solid fa-italic text-xs"></i></button>
-                    <button type="button" onclick="formatText('underline')" class="w-8 h-8 rounded-lg hover:bg-white text-slate-700 underline transition"><i class="fa-solid fa-underline text-xs"></i></button>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <button onclick="copyDocContent()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-slate-200"><i class="fa-solid fa-copy mr-1"></i> Copy Text</button>
-                    <button onclick="window.print()" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-slate-200"><i class="fa-solid fa-print mr-1"></i> Print</button>
-                    <button onclick="downloadWordDoc()" class="bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-2 rounded-xl text-xs font-semibold transition shadow-sm flex items-center space-x-1.5"><i class="fa-solid fa-file-word"></i><span>Download Word</span></button>
-                </div>
-            </div>
-
-            <!-- Tampilan Kertas Dokumen Real-Time -->
-            <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
-                <div id="paperSheet" contenteditable="true" class="bg-white w-[850px] min-h-[1050px] p-12 shadow-md rounded-lg text-slate-900 text-sm leading-relaxed focus:outline-none border border-slate-200">
-                    <div class="text-center space-y-1 mb-6 border-b pb-4">
-                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">MODUL AJAR FIKIH</h2>
-                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">KELAS 7 — Thaharah (Bersuci dari Hadas & Najis)</h3>
-                        <p class="text-xs text-slate-600 font-semibold"><span id="previewSchool">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</span></p>
-                    </div>
-
-                    <div id="previewBody" class="space-y-6 text-xs text-slate-800">
-                        <p class="text-center text-slate-400 py-12 italic">Silakan lengkapi parameter di atas lalu klik tombol "Buat Dokumen Sekarang".</p>
-                    </div>
-
-                    <div id="previewTtdContainer" class="mt-16 pt-8 flex justify-between text-xs border-t border-slate-200">
-                        <div class="text-center space-y-12">
-                            <p id="pTextJabatan1">Mengetahui,<br>Kepala Madrasah</p>
-                            <p id="pTextNama1" class="font-bold underline">Itang Iskandar, S.Pd.I</p>
-                        </div>
-                        <div class="text-center space-y-12">
-                            <p id="pTextTgl">Tasikmalaya, September 2026<br><span id="pTextJabatan2">Guru Mata Pelajaran</span></p>
-                            <p id="pTextNama2" class="font-bold underline">M. Jihad Fakhrul Islam</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 mt-12 py-6">
@@ -488,11 +495,20 @@
             ]
         };
 
-        function selectMenu(menuTitle, code) {
+        function openMenuModal(menuTitle) {
             currentMenuName = menuTitle;
             document.getElementById('activeMenuLabel').innerText = menuTitle;
-            window.scrollTo({ top: document.getElementById('editorSection').offsetTop - 100, behavior: 'smooth' });
-            alert('Menu "' + menuTitle + '" dipilih. Silakan klik "Buat Dokumen Sekarang" di bawah.');
+            updateTemaDropdown();
+            
+            const modal = document.getElementById('formModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeMenuModal() {
+            const modal = document.getElementById('formModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
         }
 
         function updateTemaDropdown() {
@@ -513,9 +529,7 @@
             });
         }
 
-        // Inisialisasi awal
         window.onload = function() {
-            updateTemaOptions = updateTemaDropdown;
             updateTemaDropdown();
         };
 
@@ -597,6 +611,7 @@
             }
 
             bodyContainer.innerHTML = html;
+            closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
             alert('Dokumen "' + currentMenuName + '" berhasil digenerate!');
         }
