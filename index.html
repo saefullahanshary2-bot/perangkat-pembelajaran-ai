@@ -283,8 +283,8 @@
             <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
                 <div id="paperSheet" contenteditable="true" class="bg-white w-[850px] min-h-[1050px] p-12 shadow-md rounded-lg text-slate-900 text-sm leading-relaxed focus:outline-none border border-slate-200">
                     <div class="text-center space-y-1 mb-6 border-b pb-4">
-                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">MODUL AJAR FIKIH</h2>
-                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">KELAS VII (Tujuh) — Thaharah</h3>
+                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">TUJUAN PEMBELAJARAN (TP)</h2>
+                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">Fase D / VII (Tujuh) — Thaharah</h3>
                         <p class="text-xs text-slate-600 font-semibold"><span id="previewSchool">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</span></p>
                     </div>
 
@@ -379,7 +379,7 @@
 
                 <div>
                     <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Instruksi Tambahan (Opsional)</label>
-                    <input type="text" id="paramInstruksi" value="Gunakan standar baku Kurikulum Berbasis Cinta (KBC) dan Deep Learning." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    <input type="text" id="paramInstruksi" value="Gunakan standar baku Kurikulum KMA 1503 Tahun 2025." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                 </div>
 
                 <!-- Bagian Penandatangan -->
@@ -610,135 +610,100 @@
             const bodyContainer = document.getElementById('previewBody');
             let html = '';
 
-            if (currentMenuName.includes('Pemetaan CP & KBC')) {
-                // Format tabel matriks persis seperti contoh PDF Pemetaan KBC
+            if (currentMenuName.includes('Tujuan Pembelajaran (TP)')) {
+                // Format dokumen Tujuan Pembelajaran persis seperti file PDF yang diunggah
                 html = `
                     <div class="space-y-4">
                         <div class="text-center pb-2 border-b">
-                            <h3 class="font-bold text-slate-900 text-sm">DOKUMEN PEMETAAN CAPAIAN PEMBELAJARAN (CP) DAN TEMA</h3>
-                            <h3 class="font-bold text-emerald-800 text-xs">KURIKULUM BERBASIS CINTA (KBC) & DEEP LEARNING</h3>
+                            <h3 class="font-bold text-slate-900 text-sm">TUJUAN PEMBELAJARAN (TP) — ${mapel.toUpperCase()}</h3>
                         </div>
                         <table class="w-full text-xs border-collapse">
                             <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
                             <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
                             <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
                             <tr><td class="font-semibold py-1">Materi Pokok</td><td>: <b>${selectionVal}</b></td></tr>
-                            <tr><td class="font-semibold py-1">Tahun Pelajaran</td><td>: ${tahun}</td></tr>
+                            <tr><td class="font-semibold py-1">Tahun Ajaran</td><td>: ${tahun}</td></tr>
                         </table>
 
-                        <table class="w-full border-collapse border border-slate-300 text-[11px] mt-4">
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">A. Capaian Pembelajaran (CP) Fase D</h4>
+                        <p class="leading-relaxed text-slate-700">Pada akhir Fase D, peserta didik mampu menganalisis tata cara ibadah dalam Islam, memahami ketentuan bersuci, serta mampu mempraktikkannya dalam kehidupan sehari-hari secara benar sesuai ketentuan syariat Islam untuk menumbuhkan ketaatan dan kedisiplinan.</p>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">B. Tujuan Pembelajaran (TP) Materi ${selectionVal}</h4>
+                        <table class="w-full border-collapse border border-slate-300 text-[11px] mt-2">
                             <thead>
                                 <tr class="bg-slate-100 text-slate-900 font-bold">
-                                    <th class="border border-slate-300 p-2 text-left w-1/5">Elemen & Capaian Pembelajaran (CP)[cite: 14]</th>
-                                    <th class="border border-slate-300 p-2 text-left w-1/5">Tujuan Pembelajaran (TP)[cite: 14]</th>
-                                    <th class="border border-slate-300 p-2 text-left w-1/5">Indikator Ketercapaian[cite: 14]</th>
-                                    <th class="border border-slate-300 p-2 text-left w-1/5">Tema KBC (Pancacita)[cite: 14]</th>
-                                    <th class="border border-slate-300 p-2 text-left w-1/5">Dimensi Profil Pelajar (DPL/P5)[cite: 14]</th>
+                                    <th class="border border-slate-300 p-2 text-center w-12">No[cite: 16]</th>
+                                    <th class="border border-slate-300 p-2 text-left">Tujuan Pembelajaran (TP)[cite: 16]</th>
+                                    <th class="border border-slate-300 p-2 text-left w-1/3">Lingkup Materi[cite: 16]</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="border border-slate-300 p-2 align-top font-semibold">
-                                        <b>${mapel} Ibadah / Esensial:</b><br>
-                                        Peserta didik mampu memahami dan menganalisis substansi dari materi <b>${selectionVal}</b>.
-                                    </td>
-                                    <td class="border border-slate-300 p-2 align-top">
-                                        Peserta didik dapat mengidentifikasi konsep dasar, kaidah normatif, dan mengaitkannya dengan praktik nyata.
-                                    </td>
-                                    <td class="border border-slate-300 p-2 align-top">
-                                        1. Menjelaskan pengertian dan dalil.<br>
-                                        2. Mengklasifikasikan jenis dan ketentuan.<br>
-                                        3. Mempraktikkan prosedur dengan tertib dan benar.
-                                    </td>
-                                    <td class="border border-slate-300 p-2 align-top">
-                                        <b>Cinta Allah & Rasul:</b><br>
-                                        Mewujudkan ketaatan melalui pemahaman nilai syariat dalam kehidupan sehari-hari[cite: 15].
-                                    </td>
-                                    <td class="border border-slate-300 p-2 align-top">
-                                        <b>Beriman & Bertaqwa (DPL)</b><br>
-                                        Qudwah/Keteladanan (P5RA)[cite: 15]
-                                    </td>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">1</td>
+                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu menjelaskan pengertian thaharah, dalil naqli tentang kewajiban bersuci, serta perbedaan antara najis dan hadas dengan tepat[cite: 16].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Konsep Dasar Thaharah[cite: 16]</td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-slate-300 p-2 align-top font-semibold">
-                                        <b>Integrasi Kontekstual:</b><br>
-                                        Peserta didik mampu menerapkan perilaku luhur dan menjaga kesehatan/kelestarian lingkungan.
-                                    </td>
-                                    <td class="border border-slate-300 p-2 align-top">
-                                        Peserta didik mampu mengintegrasikan hikmah materi ke dalam pembiasaan hidup bersih dan disiplin.
-                                    </td>
-                                    <td class="border border-slate-300 p-2 align-top">
-                                        1. Menunjukkan sikap tanggung jawab.<br>
-                                        2. Mengkampanyekan kebaikan di lingkungan madrasah.
-                                    </td>
-                                    <td class="border border-slate-300 p-2 align-top">
-                                        <b>Cinta Diri & Sesama:</b><br>
-                                        Menjaga kesucian dan kesehatan fisik sebagai bentuk penghargaan atas amanah[cite: 15].
-                                    </td>
-                                    <td class="border border-slate-300 p-2 align-top">
-                                        <b>Mandiri & Bernalar Kritis (DPL)</b><br>
-                                        Ishlah/Perbaikan (P5RA)[cite: 15]
-                                    </td>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">2</td>
+                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu mengidentifikasi macam-macam air untuk bersuci (air mutlak, musyammas, musta'mal, dan mutanajjis) serta alat-alat bersuci lainnya[cite: 16].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Sarana Bersuci[cite: 16]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">3</td>
+                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu menganalisis klasifikasi najis (mukhaffafah, mutawassithah, mughalladhah) dan mendemonstrasikan tata cara menyucikannya secara benar[cite: 16].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Pengelolaan Najis[cite: 16]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">4</td>
+                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu memerinci rukun, sunnah, dan pembatal wudhu serta mempraktikkan prosedur wudhu secara tertib dan sempurna[cite: 16].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Wudhu[cite: 16]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">5</td>
+                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu menjelaskan ketentuan mandi wajib (janabah) dan mendemonstrasikan tata caranya sesuai tuntunan syariat[cite: 16].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Mandi Wajib[cite: 16]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">6</td>
+                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu menganalisis sebab-sebab dan ketentuan tayammum serta mempraktikkannya sebagai alternatif bersuci dalam kondisi darurat[cite: 16].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Tayammum[cite: 16]</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-slate-300 p-2 text-center align-top font-semibold">7</td>
+                                    <td class="border border-slate-300 p-2 align-top">Peserta didik mampu membiasakan perilaku hidup bersih dan sehat sebagai implementasi dari nilai-nilai thaharah dalam kehidupan sehari-hari[cite: 16].</td>
+                                    <td class="border border-slate-300 p-2 align-top font-medium">Internalisasi Nilai[cite: 16]</td>
                                 </tr>
                             </tbody>
                         </table>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">C. Kriteria Ketercapaian Tujuan Pembelajaran (KKTP)</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                            <li>Mampu menyebutkan pengertian thaharah menurut bahasa dan istilah[cite: 16].</li>
+                            <li>Mampu membedakan jenis-jenis air berdasarkan hukum penggunaannya[cite: 16].</li>
+                            <li>Dapat mempraktikkan cara menyucikan najis sesuai dengan tingkatannya (ringan, sedang, berat)[cite: 16].</li>
+                            <li>Dapat menghafal doa sebelum dan sesudah wudhu[cite: 16].</li>
+                            <li>Dapat mendemonstrasikan gerakan wudhu, mandi, dan tayammum dengan urutan yang benar (tertib)[cite: 16].</li>
+                            <li>Memiliki kesadaran untuk menjaga kebersihan diri dan lingkungan madrasah[cite: 16].</li>
+                        </ul>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">D. Metode dan Pendekatan Pembelajaran</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                            <li><b>Pendekatan:</b> Saintifik, Student Centered Learning, dan Deep Learning (KBC)[cite: 16].</li>
+                            <li><b>Metode:</b> Ceramah Interaktif, Demonstrasi/Praktik Langsung, Diskusi Kelompok, dan Peer Teaching (Tutor Sebaya)[cite: 16].</li>
+                        </ul>
                     </div>
                 `;
-            } else if (currentMenuName.includes('Capaian Pembelajaran')) {
-                let cpData = cpBakuDatabase[mapel] || {
-                    elemen1: "Pemahaman Konsep " + mapel,
-                    cp1: `Pada akhir ${fase}, peserta didik mampu memahami prinsip fundamental, kaidah, dan teori esensial dalam mata pelajaran ${mapel}.`,
-                    elemen2: "Keterampilan Penalaran & Penerapan",
-                    cp2: `Peserta didik mampu bernalar kritis dan menganalisis studi kasus nyata.`
-                };
-
+            } else if (currentMenuName.includes('Pemetaan CP & KBC')) {
                 html = `
                     <div class="space-y-4">
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">A. Identitas Dokumen Capaian Pembelajaran</h4>
+                        <div class="text-center pb-2 border-b">
+                            <h3 class="font-bold text-slate-900 text-sm">DOKUMEN PEMETAAN CAPAIAN PEMBELAJARAN (CP) DAN TEMA</h3>
+                        </div>
                         <table class="w-full text-xs border-collapse">
                             <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
                             <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
                             <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
-                            <tr><td class="font-semibold py-1">Cakupan Waktu</td><td>: <b>${selectionVal}</b></td></tr>
-                            <tr><td class="font-semibold py-1">Regulasi Acuan</td><td>: KMA Nomor 1503 Tahun 2025</td></tr>
-                        </table>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">B. Rumusan Baku Capaian Pembelajaran (CP) Pemerintah</h4>
-                        <div class="space-y-3 pt-1">
-                            <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-                                <p class="font-bold text-emerald-900 text-xs">Elemen 1: ${cpData.elemen1}</p>
-                                <p class="leading-relaxed text-slate-800">${cpData.cp1}</p>
-                            </div>
-                            <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-                                <p class="font-bold text-emerald-900 text-xs">Elemen 2: ${cpData.elemen2}</p>
-                                <p class="leading-relaxed text-slate-800">${cpData.cp2}</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            } else if (currentMenuName.includes('Modul Ajar')) {
-                html = `
-                    <div class="space-y-4">
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">A. Informasi Umum</h4>
-                        <table class="w-full text-xs border-collapse">
-                            <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
-                            <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
-                            <tr><td class="font-semibold py-1">Kelas / Semester</td><td>: ${fase}</td></tr>
-                            <tr><td class="font-semibold py-1">Tema Spesifik</td><td>: <b>${selectionVal}</b></td></tr>
-                            <tr><td class="font-semibold py-1">Model Pembelajaran</td><td>: <b>Deep Learning: Mindful, Meaningful, Joyful Learning berbasis KBC</b></td></tr>
-                        </table>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">B. Tujuan Pembelajaran</h4>
-                        <p class="leading-relaxed">Melalui pendekatan Knowledge-Based Construction (KBC), peserta didik mampu memahami dan mempraktikkan materi <b>${selectionVal}</b> secara utuh dan bermakna.</p>
-
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">C. Kegiatan Pembelajaran (Skenario Deep Learning)</h4>
-                        <table class="w-full border-collapse border border-slate-300 text-xs">
-                            <thead><tr class="bg-slate-100"><th class="border p-2 text-left">Tahapan</th><th class="border p-2 text-left">Uraian Kegiatan KBC</th></tr></thead>
-                            <tbody>
-                                <tr><td class="border p-2 font-bold text-emerald-800">Mindful Engagement <br>(15 Menit)</td><td class="border p-2">Membangun kesadaran diri santri dan mengajukan pertanyaan pemantik.</td></tr>
-                                <tr><td class="border p-2 font-bold text-emerald-800">Meaningful Construction <br>(50 Menit)</td><td class="border p-2">Investigasi kelompok, kajian referensi, dan scaffolding guru.</td></tr>
-                                <tr><td class="border p-2 font-bold text-emerald-800">Joyful Reflection <br>(15 Menit)</td><td class="border p-2">Kuis interaktif ringan dan refleksi kebermaknaan pembelajaran.</td></tr>
-                            </tbody>
+                            <tr><td class="font-semibold py-1">Materi Pokok</td><td>: <b>${selectionVal}</b></td></tr>
                         </table>
                     </div>
                 `;
@@ -749,8 +714,7 @@
                         <p class="leading-relaxed"><b>Mata Pelajaran:</b> ${mapel} | <b>Kelas:</b> ${fase} | <b>Materi:</b> ${selectionVal}</p>
                         <div class="p-4 bg-slate-50 border rounded-xl space-y-2">
                             <p class="font-bold text-emerald-800">Uraian Dokumen Administrasi:</p>
-                            <p class="leading-relaxed">Dokumen <b>${currentMenuName}</b> untuk satuan pendidikan <b>${sekolah}</b> telah berhasil disusun secara komprehensif sesuai standar KMA 1503 Tahun 2025.</p>
-                            <p class="text-xs text-slate-500 italic">Catatan khusus: ${instruksi}</p>
+                            <p class="leading-relaxed">Dokumen <b>${currentMenuName}</b> untuk satuan pendidikan <b>${sekolah}</b> telah berhasil disusun sesuai standar KMA 1503 Tahun 2025.</p>
                         </div>
                     </div>
                 `;
@@ -759,7 +723,7 @@
             bodyContainer.innerHTML = html;
             closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
-            alert('Dokumen "' + currentMenuName + '" berhasil digenerate sesuai format matriks KBC!');
+            alert('Dokumen "' + currentMenuName + '" berhasil digenerate sesuai format referensi!');
         }
 
         function formatText(command) {
