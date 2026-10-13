@@ -880,36 +880,75 @@
                     </div>
                 `;
             }
-            // 6. MENU LAINNYA (CP, MODUL AJAR, ADMINISTRASI)
-            else if (currentMenuName.includes('Capaian Pembelajaran')) {
-                let cpData = cpBakuDatabase[mapel] || {
-                    elemen1: "Pemahaman Konsep " + mapel,
-                    cp1: `Pada akhir ${fase}, peserta didik mampu memahami prinsip fundamental, kaidah, dan teori esensial dalam mata pelajaran ${mapel}.`,
-                    elemen2: "Keterampilan Penalaran & Penerapan",
-                    cp2: `Peserta didik mampu bernalar kritis dan menganalisis studi kasus nyata.`
-                };
-
+            // 6. MODUL AJAR LENGKAP
+            else if (currentMenuName.includes('Modul Ajar')) {
                 html = `
-                    <div class="space-y-4">
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">A. Identitas Dokumen Capaian Pembelajaran</h4>
+                    <div class="space-y-4 text-xs text-slate-800">
+                        <div class="text-center pb-2 border-b">
+                            <h3 class="font-bold text-slate-900 text-sm uppercase">MODUL AJAR / RENCANA PELAKSANAAN PEMBELAJARAN (RPP)</h3>
+                            <h3 class="font-bold text-emerald-800 text-xs">MATA PELAJARAN ${mapel.toUpperCase()} — KURIKULUM KMA 1503</h3>
+                        </div>
+
                         <table class="w-full text-xs border-collapse">
                             <tr><td class="w-1/3 font-semibold py-1">Satuan Pendidikan</td><td>: ${sekolah}</td></tr>
                             <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
-                            <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
-                            <tr><td class="font-semibold py-1">Cakupan Waktu</td><td>: <b>${selectionVal}</b></td></tr>
-                            <tr><td class="font-semibold py-1">Regulasi Acuan</td><td>: KMA Nomor 1503 Tahun 2025</td></tr>
+                            <tr><td class="font-semibold py-1">Fase / Kelas / Semester</td><td>: ${fase} / Ganjil</td></tr>
+                            <tr><td class="font-semibold py-1">Materi Pokok / Tema</td><td>: <b>${selectionVal}</b></td></tr>
+                            <tr><td class="font-semibold py-1">Alokasi Waktu</td><td>: 2 Pertemuan (6 JP $\times$ 40 Menit)</td></tr>
                         </table>
 
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">B. Rumusan Baku Capaian Pembelajaran (CP) Pemerintah</h4>
-                        <div class="space-y-3 pt-1">
-                            <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-                                <p class="font-bold text-emerald-900 text-xs">Elemen 1: ${cpData.elemen1}</p>
-                                <p class="leading-relaxed text-slate-800">${cpData.cp1}</p>
-                            </div>
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">A. INFORMASI UMUM</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                            <li><b>Kompetensi Awal:</b> Peserta didik telah mengenal kebersihan fisik dalam kehidupan sehari-hari secara konvensional.</li>
+                            <li><b>Profil Pelajar Pancasila & Pelajar Rahmatan Lil 'Alamin (KBC):</b> Beriman, bertaqwa kepada Tuhan YME, berakhlak mulia, bernalar kritis, serta menginternalisasikan nilai Cinta Kebersihan (Pancacita).</li>
+                            <li><b>Sarana dan Prasarana:</b> Buku teks Fikih Kelas VII, proyektor, video tata cara wudhu/tayamum, air bersih, debu suci/kendil.</li>
+                            <li><b>Target Peserta Didik:</b> Peserta didik reguler/tipikal (fasih dalam pemahaman kognitif dan praktik ibadah dasar).</li>
+                            <li><b>Model Pembelajaran:</b> Tatap muka dengan pendekatan <i>Deep Learning</i> (Mindful, Meaningful, Joyful Learning) berbasis Kurikulum Berbasis Cinta (KBC).</li>
+                        </ul>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">B. KOMPONEN INTI</h4>
+                        <p class="font-bold text-emerald-800 pt-1">1. Tujuan Pembelajaran</p>
+                        <p class="leading-relaxed text-slate-700">Peserta didik mampu menganalisis konsep dasar thaharah, membedakan najis dan hadas, serta mendemonstrasikan tata cara bersuci (wudhu, mandi wajib, dan tayamum) dengan benar dan tertib sesuai tuntunan syariat Islam.</p>
+
+                        <p class="font-bold text-emerald-800 pt-2">2. Pemahaman Bermakna</p>
+                        <p class="leading-relaxed text-slate-700">Kebersihan fisik merupakan cerminan keimanan seseorang dan prasyarat utama diterimanya ibadah harian kepada Allah SWT.</p>
+
+                        <p class="font-bold text-emerald-800 pt-2">3. Pertanyaan Pemantik</p>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                            <li>Mengapa pakaian yang terkena kencing bayi laki-laki berbeda cara mencucinya dengan kencing orang dewasa?</li>
+                            <li>Bagaimana cara kita bersuci ketika tidak ada air sama sekali di sekitar kita?</li>
+                        </ul>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">C. KEGIATAN PEMBELAJARAN (LANGKAH-LANGKAH)</h4>
+                        <div class="space-y-2 pt-1">
+                            <p><b>Pendahuluan (15 Menit):</b></p>
+                            <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                                <li>Guru membuka kelas dengan salam, doa bersama, dan memeriksa kehadiran siswa (Nilai KBC: Kedisiplinan & Cinta Kasih).</li>
+                                <li>Guru memberikan apersepsi dan mengajukan pertanyaan pemantik mengenai pentingnya bersuci sebelum salat.</li>
+                            </ul>
+
+                            <p class="pt-2"><b>Kegiatan Inti (90 Menit) - Deep Learning & KBC:</b></p>
+                            <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                                <li><b>Mindful Learning:</b> Peserta didik mengamati demonstrasi atau video visual mengenai macam-macam air dan bentuk najis.</li>
+                                <li><b>Meaningful Learning:</b> Siswa berdiskusi kelompok mengklasifikasikan najis (Mukhaffafah, Mutawassitah, Mughallazah) dan cara menyucikannya.</li>
+                                <li><b>Joyful Learning:</b> Simulasi praktik langsung tata cara wudhu dan tayamum secara berpasangan di halaman madrasah.</li>
+                            </ul>
+
+                            <p class="pt-2"><b>Penutup (15 Menit):</b></p>
+                            <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                                <li>Guru bersama peserta didik menyimpulkan materi pembelajaran hari ini.</li>
+                                <li>Refleksi ketercapaian belajar dan penutup dengan doa kafaratul majelis.</li>
+                            </ul>
                         </div>
+
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-3">D. ASESMEN / PENILAIAN</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                            <li><b>Asesmen Formatif:</b> Penilaian keaktifan diskusi kelompok dan lembar kerja peserta didik (LKPD).</li>
+                            <li><b>Asesmen Sumatif:</b> Tes tertulis pilihan ganda/uraian serta unjuk kerja (praktik langsung wudhu dan tayammum).</li>
+                        </ul>
                     </div>
                 `;
-            } else if (currentMenuName.includes('Modul Ajar')) {
+            }            } else if (currentMenuName.includes('Modul Ajar')) {
                 html = `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">A. Informasi Umum</h4>
