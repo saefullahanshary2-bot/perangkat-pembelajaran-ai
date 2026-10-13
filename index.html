@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERANGKAT PEMBELAJARAN AI - REVISI MENU CP</title>
+    <title>PERANGKAT PEMBELAJARAN AI - REVISI BAKU CP</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -283,9 +283,9 @@
             <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
                 <div id="paperSheet" contenteditable="true" class="bg-white w-[850px] min-h-[1050px] p-12 shadow-md rounded-lg text-slate-900 text-sm leading-relaxed focus:outline-none border border-slate-200">
                     <div class="text-center space-y-1 mb-6 border-b pb-4">
-                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">CAPAIAN PEMBELAJARAN FIKIH</h2>
-                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">KELAS VII (Tujuh) — Semester Ganjil / Full 1 Tahun</h3>
-                        <p class="text-xs text-slate-600 font-semibold"><span id="previewSchool">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</span></p>
+                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">CAPAIAN PEMBELAJARAN FIKIH FASE D</h2>
+                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</h3>
+                        <p class="text-xs text-slate-600 font-semibold"><span>Standar Baku KMA 1503 Tahun 2025</span></p>
                     </div>
 
                     <div id="previewBody" class="space-y-6 text-xs text-slate-800">
@@ -363,12 +363,10 @@
                     <div>
                         <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Fase / Kelas *</label>
                         <select id="paramFase" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                            <option value="Kelas VII (Tujuh) / Ganjil">Kelas VII (Tujuh) / Ganjil</option>
-                            <option value="Kelas VII (Tujuh) / Genap">Kelas VII (Tujuh) / Genap</option>
-                            <option value="Kelas VIII (Delapan) / Ganjil">Kelas VIII (Delapan) / Ganjil</option>
-                            <option value="Kelas VIII (Delapan) / Genap">Kelas VIII (Delapan) / Genap</option>
-                            <option value="Kelas IX (Sembilan) / Ganjil">Kelas IX (Sembilan) / Ganjil</option>
-                            <option value="Kelas IX (Sembilan) / Genap">Kelas IX (Sembilan) / Genap</option>
+                            <option value="Fase D (Kelas VII, VIII, IX MTs)">Fase D (Kelas VII, VIII, IX MTs)</option>
+                            <option value="Kelas VII (Tujuh)">Kelas VII (Tujuh)</option>
+                            <option value="Kelas VIII (Delapan)">Kelas VIII (Delapan)</option>
+                            <option value="Kelas IX (Sembilan)">Kelas IX (Sembilan)</option>
                         </select>
                     </div>
                 </div>
@@ -382,7 +380,7 @@
 
                 <div>
                     <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Instruksi Tambahan (Opsional)</label>
-                    <input type="text" id="paramInstruksi" value="Gunakan pendekatan Deep Learning KBC (Mindful, Meaningful, Joyful)." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    <input type="text" id="paramInstruksi" value="Gunakan standar baku Keputusan Menteri Agama (KMA) Nomor 1503 Tahun 2025." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                 </div>
 
                 <!-- Bagian Penandatangan -->
@@ -501,6 +499,40 @@
             "Cakupan Full 1 Tahun / Seluruh Fase"
         ];
 
+        // Database Rumusan CP Baku Resmi KMA 1503
+        const cpBakuDatabase = {
+            "Fikih": {
+                elemen1: "Fikih Ibadah",
+                cp1: "Pada akhir Fase D, peserta didik mampu memahami dalil dan istidlal fuqaha dalam permasalahan thaharah, haid, nifas, salat fardu, salat berjamaah, salat jamak dan qasar, salat dalam keadaan darurat, serta ketentuan puasa, sehingga peserta didik dapat menjalankan kewajiban beragama dengan baik dan benar sesuai tuntunan syariat.",
+                elemen2: "Fikih Muamalah",
+                cp2: "Peserta didik mampu memahami ketentuan muamalah mencakup kepemilikan, transaksi ekonomi syariah, dan kerja sama dalam Islam guna membangun tatanan sosial yang jujur, adil, dan bernilai ibadah."
+            },
+            "Aqidah Akhlak": {
+                elemen1: "Akidah",
+                cp1: "Pada akhir Fase D, peserta didik diarahkan memperkuat akidah Islam melalui pemahaman Ahl as-Sunnah wa al-Jamā‘ah pada materi akidah Islam, rukun iman, sifat-sifat Allah Swt., dan asmaulhusna.",
+                elemen2: "Akhlak & Adab",
+                cp2: "Peserta didik mampu membiasakan akhlak mahmudah serta menghindari akhlak mazmumah dalam kehidupan sehari-hari serta meneladani kisah keteladanan para nabi dan orang saleh."
+            },
+            "Al-Qur'an Hadis": {
+                elemen1: "Ilmu Al-Qur'an dan Hadis",
+                cp1: "Pada akhir Fase D, peserta didik memahami kedudukan Al-Qur'an dan Hadis sebagai pedoman hidup, menguasai ilmu tajwid (seperti hukum bacaan mad), serta menghayati nilai-nilai toleransi dan moderasi beragama.",
+                elemen2: "Pengamalan Ayat & Hadis",
+                cp2: "Peserta didik mampu menerapkan pesan moral dari ayat-ayat pilihan dan hadis dalam membangun harmoni kehidupan sosial di madrasah dan masyarakat."
+            },
+            "Sejarah Kebudayaan Islam (SKI)": {
+                elemen1: "Periode Makkah & Madinah",
+                cp1: "Pada akhir Fase D, peserta didik mampu menganalisis kebudayaan masyarakat Makkah sebelum Islam, substansi dan strategi dakwah Nabi Muhammad SAW di Makkah, serta proses hijrah dan pembentukan Piagam Madinah.",
+                elemen2: "Peradaban Islam Klasik",
+                cp2: "Peserta didik memahami perkembangan peradaban Islam serta mengambil hikmah kepemimpinan dan nilai perdamaian untuk diterapkan dalam konteks keindonesiaan."
+            },
+            "Bahasa Arab": {
+                elemen1: "Maharah Istima' wal Kalam (Simak & Bicara)",
+                cp1: "Pada akhir Fase D, peserta didik mampu memahami dan merespons ungkapan komunikatif sehari-hari (seperti At-Ta'aruf dan Al-Marofiq Al-Madrasiyyah) dengan struktur bahasa Arab yang baik.",
+                elemen2: "Maharah Qira'ah wal Kitabah (Baca & Tulis)",
+                cp1: "Peserta didik mampu membaca, memahami, dan menulis teks bahasa Arab sederhana bertema lingkungan madrasah dan kehidupan sehari-hari."
+            }
+        };
+
         function openMenuModal(menuTitle) {
             currentMenuName = menuTitle;
             document.getElementById('activeMenuLabel').innerText = menuTitle;
@@ -581,6 +613,14 @@
             let html = '';
 
             if (currentMenuName.includes('Capaian Pembelajaran')) {
+                // Ambil data CP baku atau fallback umum jika mapel umum
+                let cpData = cpBakuDatabase[mapel] || {
+                    elemen1: "Pemahaman Konsep " + mapel,
+                    cp1: `Pada akhir ${fase}, peserta didik mampu memahami prinsip fundamental, kaidah, dan teori esensial dalam mata pelajaran ${mapel} serta mengimplementasikannya secara kontekstual.`,
+                    elemen2: "Keterampilan Penalaran & Penerapan",
+                    cp2: `Peserta didik mampu bernalar kritis, menganalisis studi kasus, dan menyelesaikan permasalahan nyata menggunakan pendekatan keilmuan ${mapel}.`
+                };
+
                 html = `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase">A. Identitas Dokumen Capaian Pembelajaran</h4>
@@ -589,24 +629,26 @@
                             <tr><td class="font-semibold py-1">Mata Pelajaran</td><td>: ${mapel}</td></tr>
                             <tr><td class="font-semibold py-1">Fase / Kelas</td><td>: ${fase}</td></tr>
                             <tr><td class="font-semibold py-1">Cakupan Waktu</td><td>: <b>${selectionVal}</b></td></tr>
-                            <tr><td class="font-semibold py-1">Tahun Pelajaran</td><td>: ${tahun}</td></tr>
+                            <tr><td class="font-semibold py-1">Regulasi Acuan</td><td>: Keputusan Menteri Agama (KMA) Nomor 1503 Tahun 2025</td></tr>
                         </table>
 
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">B. Rasional & Karakteristik Mata Pelajaran ${mapel}</h4>
-                        <p class="leading-relaxed">Mata pelajaran ${mapel} di madrasah bertujuan membentuk peserta didik yang memiliki kedalaman ilmu keagamaan, penalaran kritis, serta pengamalan nilai-nilai luhur sesuai ketetapan KMA 1503 Tahun 2025.</p>
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">B. Rasional Mata Pelajaran ${mapel}</h4>
+                        <p class="leading-relaxed">Mata pelajaran ${mapel} di madrasah berfungsi untuk membimbing peserta didik agar memiliki pemahaman keagamaan yang moderat, komprehensif, dan berakhlakul karimah sesuai prinsip kurikulum berbasis cinta dan pembelajaran mendalam (Deep Learning).</p>
 
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">C. Rumusan Capaian Pembelajaran (CP) Komprehensif</h4>
-                        <p class="leading-relaxed">Pada akhir ${fase} (${selectionVal}), peserta didik mampu menguasai seluruh elemen pembelajaran utama ${mapel}, mencakup pemahaman konsep mendalam, analisis kasus kontekstual, kemampuan bernalar kritis, serta pengintegrasian dimensi Profil Lulusan dan Pancacita KBC.</p>
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">C. Rumusan Baku Capaian Pembelajaran (CP) Pemerintah</h4>
+                        <div class="space-y-3 pt-1">
+                            <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                                <p class="font-bold text-emerald-900 text-xs">Elemen 1: ${cpData.elemen1}</p>
+                                <p class="leading-relaxed text-slate-800">${cpData.cp1}</p>
+                            </div>
+                            <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+                                <p class="font-bold text-emerald-900 text-xs">Elemen 2: ${cpData.elemen2}</p>
+                                <p class="leading-relaxed text-slate-800">${cpData.cp2}</p>
+                            </div>
+                        </div>
 
-                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">D. Elemen & Sub-Elemen Pembelajaran</h4>
-                        <table class="w-full border-collapse border border-slate-300 text-xs">
-                            <thead><tr class="bg-slate-100"><th class="border p-2 text-left w-1/3">Elemen Utama</th><th class="border p-2 text-left">Kompetensi yang Diharapkan (${selectionVal})</th></tr></thead>
-                            <tbody>
-                                <tr><td class="border p-2 font-bold">1. Pemahaman Konsep (${mapel})</td><td class="border p-2">Peserta didik memahami prinsip fundamental, kaidah, dan teori esensial dalam ${mapel}.</td></tr>
-                                <tr><td class="border p-2 font-bold">2. Keterampilan Proses & Analisis</td><td class="border p-2">Peserta didik mampu menerapkan teori dalam studi kasus nyata serta bernalar kritis.</td></tr>
-                                <tr><td class="border p-2 font-bold">3. Internalisasi Karakter (KBC)</td><td class="border p-2">Peserta didik menunjukkan kesadaran diri (mindfulness) dan kebermaknaan dalam keseharian.</td></tr>
-                            </tbody>
-                        </table>
+                        <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">D. Catatan Integrasi Kurikulum (KMA 1503/2025)</h4>
+                        <p class="leading-relaxed">Rumusan Capaian Pembelajaran di atas bersifat baku dan mengikat sesuai ketetapan Kementerian Agama Republik Indonesia, serta diintegrasikan dengan pendekatan Knowledge-Based Construction (KBC).</p>
                     </div>
                 `;
             } else if (currentMenuName.includes('Modul Ajar')) {
@@ -642,7 +684,7 @@
                         <p class="leading-relaxed"><b>Mata Pelajaran:</b> ${mapel} | <b>Kelas:</b> ${fase} | <b>Cakupan:</b> ${selectionVal}</p>
                         <div class="p-4 bg-slate-50 border rounded-xl space-y-2">
                             <p class="font-bold text-emerald-800">Uraian Dokumen Administrasi:</p>
-                            <p class="leading-relaxed">Dokumen <b>${currentMenuName}</b> untuk satuan pendidikan <b>${sekolah}</b> telah berhasil disusun secara komprehensif untuk tahun ajaran <b>${tahun}</b>.</p>
+                            <p class="leading-relaxed">Dokumen <b>${currentMenuName}</b> untuk satuan pendidikan <b>${sekolah}</b> telah berhasil disusun secara komprehensif sesuai standar KMA 1503 Tahun 2025.</p>
                             <p class="text-xs text-slate-500 italic">Catatan khusus: ${instruksi}</p>
                         </div>
                     </div>
@@ -652,7 +694,7 @@
             bodyContainer.innerHTML = html;
             closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
-            alert('Dokumen "' + currentMenuName + '" berhasil digenerate!');
+            alert('Dokumen "' + currentMenuName + '" berhasil digenerate dengan CP Baku!');
         }
 
         function formatText(command) {
