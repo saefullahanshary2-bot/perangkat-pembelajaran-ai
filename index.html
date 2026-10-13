@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERANGKAT PEMBELAJARAN AI - REVISI BAKU CP</title>
+    <title>PERANGKAT PEMBELAJARAN AI - KMA 1503 PRO</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -51,7 +51,7 @@
     <!-- Main Content Wrapper -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-12">
 
-        <!-- SECTION 1: PILIH MODUL DOKUMEN KURIKULUM MADRASAH & MERDEKA -->
+        <!-- SECTION 1: PILIH MODUL DOKUMEN -->
         <section>
             <div class="flex items-center space-x-2.5 mb-2">
                 <i class="fa-solid fa-layer-group text-emerald-600 text-xl"></i>
@@ -59,7 +59,7 @@
             </div>
             <p class="text-slate-500 text-sm mb-6">Klik modul yang ingin dibuat menggunakan AI <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i></p>
 
-            <!-- Grid 14 Menu Utama Lengkap -->
+            <!-- Grid 14 Menu Utama -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div onclick="openMenuModal('Capaian Pembelajaran (CP)')" class="bg-white p-5 rounded-2xl border-2 border-emerald-500 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
                     <div>
@@ -68,7 +68,7 @@
                             <i class="fa-solid fa-bullseye text-blue-600 text-2xl"></i>
                         </div>
                         <h3 class="font-bold text-slate-900 text-sm mb-1">Capaian Pembelajaran (CP)</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Uraikan kompetensi dan karakter yang ingin dicapai setelah menyelesaikan fase.</p>
+                        <p class="text-slate-500 text-xs leading-relaxed">Uraikan kompetensi dan karakter baku sesuai KMA 1503.</p>
                     </div>
                 </div>
 
@@ -79,7 +79,7 @@
                             <i class="fa-solid fa-network-wired text-indigo-600 text-2xl"></i>
                         </div>
                         <h3 class="font-bold text-slate-900 text-sm mb-1">Pemetaan CP & KBC</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Petakan CP dengan dimensi Profil Lulusan dan Pancacita KBC.</p>
+                        <p class="text-slate-500 text-xs leading-relaxed">Petakan CP dengan dimensi Profil Lulusan dan KBC.</p>
                     </div>
                 </div>
 
@@ -217,7 +217,7 @@
             </div>
         </section>
 
-        <!-- SECTION 2: ADMINISTRASI GURU & AKADEMIK (DATA REAL) -->
+        <!-- SECTION 2: ADMINISTRASI GURU & AKADEMIK -->
         <section class="pt-6 border-t border-slate-200">
             <div class="flex items-center space-x-2.5 mb-2">
                 <i class="fa-solid fa-folder-open text-blue-600 text-xl"></i>
@@ -283,9 +283,9 @@
             <div class="bg-slate-100 p-4 sm:p-8 rounded-2xl flex justify-center overflow-x-auto">
                 <div id="paperSheet" contenteditable="true" class="bg-white w-[850px] min-h-[1050px] p-12 shadow-md rounded-lg text-slate-900 text-sm leading-relaxed focus:outline-none border border-slate-200">
                     <div class="text-center space-y-1 mb-6 border-b pb-4">
-                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">CAPAIAN PEMBELAJARAN FIKIH FASE D</h2>
-                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</h3>
-                        <p class="text-xs text-slate-600 font-semibold"><span>Standar Baku KMA 1503 Tahun 2025</span></p>
+                        <h2 id="previewTitle" class="text-xl font-bold uppercase tracking-wide text-slate-900">MODUL AJAR FIKIH</h2>
+                        <h3 id="previewSub" class="text-base font-bold text-emerald-800">KELAS VII (Tujuh) — Thaharah</h3>
+                        <p class="text-xs text-slate-600 font-semibold"><span id="previewSchool">MTs Persatuan Islam Kadipaten, Kab. Tasikmalaya</span></p>
                     </div>
 
                     <div id="previewBody" class="space-y-6 text-xs text-slate-800">
@@ -308,7 +308,7 @@
 
     </main>
 
-    <!-- MODAL POP-UP FORM DETAIL PERANGKAT AJAR -->
+    <!-- MODAL POP-UP FORM DETAIL -->
     <div id="formModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4 overflow-y-auto">
         <div class="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-slate-100">
             <button type="button" onclick="closeMenuModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
@@ -318,12 +318,12 @@
             <div class="flex items-center justify-between border-b pb-4 mb-6">
                 <div>
                     <h3 class="text-lg font-bold text-slate-900">Detail Perangkat Ajar</h3>
-                    <p class="text-xs text-slate-500">Lengkapi parameter di bawah ini untuk menyusun dokumen [<span id="activeMenuLabel" class="font-bold text-emerald-600">Modul Ajar</span>].</p>
+                    <p class="text-xs text-slate-500">Lengkapi parameter untuk menyusun dokumen [<span id="activeMenuLabel" class="font-bold text-emerald-600">Modul Ajar</span>].</p>
                 </div>
                 <i class="fa-solid fa-robot text-2xl text-emerald-600"></i>
             </div>
 
-            <form onsubmit="generateDocument(event)" class="space-y-4">
+            <form id="docForm" onsubmit="generateDocument(event)" class="space-y-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Nama Madrasah / Satuan Pendidikan *</label>
@@ -363,10 +363,12 @@
                     <div>
                         <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Fase / Kelas *</label>
                         <select id="paramFase" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                            <option value="Fase D (Kelas VII, VIII, IX MTs)">Fase D (Kelas VII, VIII, IX MTs)</option>
-                            <option value="Kelas VII (Tujuh)">Kelas VII (Tujuh)</option>
-                            <option value="Kelas VIII (Delapan)">Kelas VIII (Delapan)</option>
-                            <option value="Kelas IX (Sembilan)">Kelas IX (Sembilan)</option>
+                            <option value="Kelas VII (Tujuh) / Ganjil">Kelas VII (Tujuh) / Ganjil</option>
+                            <option value="Kelas VII (Tujuh) / Genap">Kelas VII (Tujuh) / Genap</option>
+                            <option value="Kelas VIII (Delapan) / Ganjil">Kelas VIII (Delapan) / Ganjil</option>
+                            <option value="Kelas VIII (Delapan) / Genap">Kelas VIII (Delapan) / Genap</option>
+                            <option value="Kelas IX (Sembilan) / Ganjil">Kelas IX (Sembilan) / Ganjil</option>
+                            <option value="Kelas IX (Sembilan) / Genap">Kelas IX (Sembilan) / Genap</option>
                         </select>
                     </div>
                 </div>
@@ -374,13 +376,13 @@
                 <div>
                     <label id="dynamicLabel" class="block text-xs font-bold uppercase text-slate-700 mb-1">Materi Pokok / Tema Pembelajaran Spesifik *</label>
                     <select id="paramDynamicSelect" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-bold text-emerald-800 focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                        <!-- Terisi otomatis via JS berdasarkan menu -->
+                        <!-- Terisi via JS -->
                     </select>
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Instruksi Tambahan (Opsional)</label>
-                    <input type="text" id="paramInstruksi" value="Gunakan standar baku Keputusan Menteri Agama (KMA) Nomor 1503 Tahun 2025." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    <input type="text" id="paramInstruksi" value="Gunakan standar baku KMA 1503 Tahun 2025." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-semibold focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                 </div>
 
                 <!-- Bagian Penandatangan -->
@@ -421,7 +423,7 @@
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 mt-12 py-6">
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">
-            <p>&copy; 2026 PERANGKAT PEMBELAJARAN AI - PRO KMA 1503 TAHUN 2025. Hak cipta dilindungi undang-undang.</p>
+            <p>&copy; 2026 PERANGKAT PEMBELAJARAN AI - KMA 1503 TAHUN 2025. Hak cipta dilindungi undang-undang.</p>
         </div>
     </footer>
 
@@ -527,9 +529,9 @@
             },
             "Bahasa Arab": {
                 elemen1: "Maharah Istima' wal Kalam (Simak & Bicara)",
-                cp1: "Pada akhir Fase D, peserta didik mampu memahami dan merespons ungkapan komunikatif sehari-hari (seperti At-Ta'aruf dan Al-Marofiq Al-Madrasiyyah) dengan struktur bahasa Arab yang baik.",
+                cp1: "Pada akhir Fase D, peserta didik mampu memahami dan merespons ungkapan komunikatif sehari-hari dengan struktur bahasa Arab yang baik.",
                 elemen2: "Maharah Qira'ah wal Kitabah (Baca & Tulis)",
-                cp1: "Peserta didik mampu membaca, memahami, dan menulis teks bahasa Arab sederhana bertema lingkungan madrasah dan kehidupan sehari-hari."
+                cp2: "Peserta didik mampu membaca, memahami, dan menulis teks bahasa Arab sederhana bertema lingkungan madrasah dan kehidupan sehari-hari."
             }
         };
 
@@ -582,8 +584,8 @@
             updateDynamicOptions();
         };
 
-        function generateDocument(e) {
-            e.preventDefault();
+        function generateDocument(event) {
+            event.preventDefault();
 
             const sekolah = document.getElementById('paramSekolah').value;
             const mapel = document.getElementById('paramMapel').value;
@@ -613,7 +615,6 @@
             let html = '';
 
             if (currentMenuName.includes('Capaian Pembelajaran')) {
-                // Ambil data CP baku atau fallback umum jika mapel umum
                 let cpData = cpBakuDatabase[mapel] || {
                     elemen1: "Pemahaman Konsep " + mapel,
                     cp1: `Pada akhir ${fase}, peserta didik mampu memahami prinsip fundamental, kaidah, dan teori esensial dalam mata pelajaran ${mapel} serta mengimplementasikannya secara kontekstual.`,
@@ -633,7 +634,7 @@
                         </table>
 
                         <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">B. Rasional Mata Pelajaran ${mapel}</h4>
-                        <p class="leading-relaxed">Mata pelajaran ${mapel} di madrasah berfungsi untuk membimbing peserta didik agar memiliki pemahaman keagamaan yang moderat, komprehensif, dan berakhlakul karimah sesuai prinsip kurikulum berbasis cinta dan pembelajaran mendalam (Deep Learning).</p>
+                        <p class="leading-relaxed">Mata pelajaran ${mapel} di madrasah berfungsi membimbing peserta didik agar memiliki pemahaman keagamaan yang moderat, komprehensif, dan berakhlakul karimah sesuai prinsip kurikulum berbasis Deep Learning.</p>
 
                         <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">C. Rumusan Baku Capaian Pembelajaran (CP) Pemerintah</h4>
                         <div class="space-y-3 pt-1">
@@ -648,7 +649,7 @@
                         </div>
 
                         <h4 class="font-bold text-slate-900 border-b border-slate-300 pb-1 text-sm uppercase pt-2">D. Catatan Integrasi Kurikulum (KMA 1503/2025)</h4>
-                        <p class="leading-relaxed">Rumusan Capaian Pembelajaran di atas bersifat baku dan mengikat sesuai ketetapan Kementerian Agama Republik Indonesia, serta diintegrasikan dengan pendekatan Knowledge-Based Construction (KBC).</p>
+                        <p class="leading-relaxed">Rumusan Capaian Pembelajaran di atas bersifat baku dan mengikat sesuai ketetapan Kementerian Agama Republik Indonesia.</p>
                     </div>
                 `;
             } else if (currentMenuName.includes('Modul Ajar')) {
@@ -694,7 +695,7 @@
             bodyContainer.innerHTML = html;
             closeMenuModal();
             document.getElementById('editorSection').scrollIntoView({ behavior: 'smooth' });
-            alert('Dokumen "' + currentMenuName + '" berhasil digenerate dengan CP Baku!');
+            alert('Dokumen "' + currentMenuName + '" berhasil digenerate!');
         }
 
         function formatText(command) {
