@@ -4,46 +4,21 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'/>
 <title>Aplikasi Pembelajaran AI Madrasah</title>
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
-<!-- Chrome, Firefox OS and Opera -->
-<meta content='' name='theme-color'/>
-<!-- Windows Phone -->
-<meta content='' name='msapplication-navbutton-color'/>
-<meta content='blogger' name='generator'/>
 <link href='https://www.okeeman.com/favicon.ico' rel='icon' type='image/x-icon'/>
 <link href='https://www.okeeman.com/2026/09/aplikasi-pembelajaran-ai.html' rel='canonical'/>
-<link rel="alternate" type="application/atom+xml" title="Aplikasi Digital - Atom" href="https://www.okeeman.com/feeds/posts/default" />
-<link rel="alternate" type="application/rss+xml" title="Aplikasi Digital - RSS" href="https://www.okeeman.com/feeds/posts/default?alt=rss" />
-<link rel="service.post" type="application/atom+xml" title="Aplikasi Digital - Atom" href="https://www.blogger.com/feeds/1979777114655326139/posts/default" />
 
-<link rel="alternate" type="application/atom+xml" title="Aplikasi Digital - Atom" href="https://www.okeeman.com/feeds/315391122970431711/comments/default" />
-<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
-<link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4Kz-Jzrkg2xZdXR9ER0Yh4yhBIGYFEZRsGB-RqkbFGf0LoPaZ49IoJosgMAFac3jfwDFXA1WWg5LjGlByT7Qfdw5hSqGZNbl1xfPZtG_v2DhVb_OlRUCKCPzjD8hktjo0Hcu9zooNKX-I__60MEC6TLHROGoDhx5HFZrw6Nio-dICbo3vcmEYUr8O2c5Z/s400/Cuplikan%20layar%202026-09-15%20045517.png' rel='image_src'/>
-<meta content='https://www.okeeman.com/2026/09/aplikasi-pembelajaran-ai.html' property='og:url'/>
-<meta content='Aplikasi Pembelajaran AI Madrasah' property='og:title'/>
-<meta content='' property='og:description'/>
-<meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4Kz-Jzrkg2xZdXR9ER0Yh4yhBIGYFEZRsGB-RqkbFGf0LoPaZ49IoJosgMAFac3jfwDFXA1WWg5LjGlByT7Qfdw5hSqGZNbl1xfPZtG_v2DhVb_OlRUCKCPzjD8hktjo0Hcu9zooNKX-I__60MEC6TLHROGoDhx5HFZrw6Nio-dICbo3vcmEYUr8O2c5Z/w1200-h630-p-k-no-nu/Cuplikan%20layar%202026-09-15%20045517.png' property='og:image'/>
-<!-- Fonts & Icons -->
+<!-- Fonts, Tailwind CSS & FontAwesome Icons -->
 <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap' rel='stylesheet'/>
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
-<!-- PENGATURAN 4 POSTINGAN PER HALAMAN -->
-<script type='text/javascript'>
-  //<![CDATA[
-  (function () {
-    try {
-      var path = window.location.pathname;
-      var isFeedPage = path === '/' || path === '/index.html' || path.indexOf('/search') === 0;
-      if (!isFeedPage) return;
-      var url = new URL(window.location.href);
-      if (url.searchParams.get('max-results') !== '4') {
-        url.searchParams.set('max-results', '4');
-        window.location.replace(url.href);
-      }
-    } catch (e) {}
-  })();
-  //]]>
-  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- External Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+
 <style id='page-skin-1' type='text/css'><!--
-/* STREAMING_CHUNK: Tema Modern, Elegan, dan Futuristik Menyeluruh */
 :root {
 --th-primary: #2563eb;
 --th-primary-hover: #1d4ed8;
@@ -52,166 +27,87 @@
 --th-text: #0f172a;
 --th-text-muted: #64748b;
 --th-border: #e2e8f0;
---th-accent: #38bdf8;
 --th-radius: 18px;
 --th-radius-sm: 12px;
---th-shadow: 0 10px 30px -5px rgb(0 0 0 / 0.04), 0 5px 15px -5px rgb(0 0 0 / 0.02);
---th-shadow-hover: 0 20px 40px -10px rgb(37 99 235 / 0.12), 0 10px 20px -10px rgb(0 0 0 / 0.04);
---th-transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+--th-shadow: 0 10px 30px -5px rgb(0 0 0 / 0.04);
 --th-font: 'Inter', sans-serif;
 }
-/* Dark Theme Colors */
-[data-theme='dark'] {
---th-bg: #0b1120;
---th-surface: #131c31;
---th-text: #f8fafc;
---th-text-muted: #94a3b8;
---th-border: #1e293b;
---th-shadow: 0 10px 30px -5px rgb(0 0 0 / 0.4);
+
+body { margin: 0; padding: 0; font-family: var(--th-font); background-color: #f8fafc; color: #0f172a; line-height: 1.6; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+/* Document Canvas (A4 format) */
+.doc-canvas {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    padding: 20mm;
+    box-sizing: border-box;
+    border-radius: 4px;
 }
-/* GLOBAL RESET */
-html { box-sizing: border-box; scroll-behavior: smooth; }
-*, *:before, *:after { box-sizing: inherit; }
-body { margin: 0; padding: 0; font-family: var(--th-font); background-color: var(--th-bg); color: var(--th-text); line-height: 1.6; }
-a { text-decoration: none; color: var(--th-primary); transition: var(--th-transition); }
-a:hover { color: var(--th-primary-hover); }
-/* HEADER & NAVIGASI FUTURISTIK */
-.th-header { background: var(--th-surface); backdrop-filter: blur(12px); background-color: rgba(255, 255, 255, 0.85); border-bottom: 1px solid var(--th-border); position: sticky; top: 0; z-index: 1000; padding: 16px 0; transition: var(--th-transition); }
-[data-theme='dark'] .th-header { background-color: rgba(19, 28, 49, 0.85); }
-.th-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.th-header-inner { display: flex; justify-content: space-between; align-items: center; }
-.th-brand { display: flex; align-items: center; gap: 12px; }
-.th-brand i { background: linear-gradient(135deg, #2563eb, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 32px !important; }
-.th-brand h1, .th-brand .title { margin: 0; font-size: 1.35rem; font-weight: 800; color: var(--th-text); letter-spacing: -0.5px; }
-.th-brand p { margin: 0; font-size: 0.75rem; color: var(--th-text-muted); font-weight: 500; display: none; }
-@media (min-width: 768px) { .th-brand p { display: block; } }
-.th-nav { display: flex; align-items: center; gap: 24px; }
-.th-menu { list-style: none; padding: 0; margin: 0; display: flex; gap: 24px; }
-.th-menu li a { color: var(--th-text-muted); font-weight: 600; font-size: 0.92rem; position: relative; padding: 6px 0; }
-.th-menu li a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--th-primary); border-radius: 2px; transition: var(--th-transition); }
-.th-menu li a:hover { color: var(--th-primary); }
-.th-menu li a:hover::after { width: 100%; }
-.th-btn-icon { background: var(--th-bg); border: 1px solid var(--th-border); color: var(--th-text); font-size: 1.25rem; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; transition: var(--th-transition); }
-.th-btn-icon:hover { background: var(--th-primary); color: white; border-color: var(--th-primary); transform: rotate(15deg); }
-.th-mobile-toggle { display: none; }
-@media (max-width: 768px) {
-.th-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--th-surface); flex-direction: column; padding: 24px; border-bottom: 1px solid var(--th-border); box-shadow: var(--th-shadow); gap: 16px; }
-.th-menu.active { display: flex; }
-.th-mobile-toggle { display: block; }
+.doc-canvas.landscape-mode {
+    width: 297mm;
+    min-height: 210mm;
 }
-/* LAYOUT UTAMA */
-.th-main-wrapper { display: flex; gap: 32px; margin-bottom: 60px; flex-wrap: wrap; margin-top: 30px; }
-.th-content { flex: 1; min-width: 0; }
-.th-sidebar { width: 340px; display: flex; flex-direction: column; gap: 24px; }
-@media (max-width: 992px) { .th-sidebar { width: 100%; } }
-/* KATALOG APLIKASI */
-.th-card { background: var(--th-surface); border: 1px solid var(--th-border); border-radius: var(--th-radius); padding: 24px; transition: var(--th-transition); display: flex; flex-direction: column; height: 100%; box-shadow: var(--th-shadow); position: relative; overflow: hidden; }
-.th-card:hover { transform: translateY(-8px); box-shadow: var(--th-shadow-hover); border-color: var(--th-primary); }
-/* HALAMAN POSTINGAN (APLIKASI) */
-.th-post-body { font-size: 1.05rem; color: var(--th-text); line-height: 1.8; }
-.th-post-body img { max-width: 100%; border-radius: var(--th-radius-sm); }
-.embed-app-container {
-background: var(--th-surface);
-border: 1px solid var(--th-border);
-border-radius: var(--th-radius);
-overflow: hidden;
-margin: 24px 0;
-position: relative;
-box-shadow: var(--th-shadow);
+
+/* Editor Content Styles */
+.editor-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #000;
 }
-.embed-app-container iframe {
-width: 100%;
-height: 650px;
-border: none;
-display: block;
+.editor-content h1 { font-size: 14pt; text-align: center; text-transform: uppercase; font-weight: bold; margin-bottom: 0.5em; }
+.editor-content h2 { font-size: 12pt; font-weight: bold; }
+.editor-content h3 { font-size: 11pt; font-weight: bold; }
+.editor-content p { margin-bottom: 1em; text-align: justify; }
+.editor-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    font-size: 10pt;
 }
-.th-app-toolbar {
-background: var(--th-bg);
-border-bottom: 1px solid var(--th-border);
-padding: 14px 22px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+.editor-content th, .editor-content td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
 }
-.th-app-toolbar-title { font-size: 0.9rem; font-weight: 700; color: var(--th-text-muted); display: flex; align-items: center; gap: 8px;}
-.th-btn-fullscreen {
-background: var(--th-primary);
-color: white;
-border: none;
-padding: 8px 18px;
-border-radius: var(--th-radius-sm);
-font-size: 0.85rem;
-font-weight: 700;
-cursor: pointer;
-display: flex;
-align-items: center;
-gap: 6px;
-transition: var(--th-transition);
+.editor-content th { background-color: #f1f5f9; font-weight: bold; text-align: center; }
+
+/* Spinner Loading */
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
 }
-.th-btn-fullscreen:hover { background: var(--th-primary-hover); transform: translateY(-1px); }
-/* FOOTER ELEGAN */
-.th-footer { background: var(--th-surface); border-top: 1px solid var(--th-border); padding: 70px 0 28px 0; margin-top: 70px; }
-.th-copyright-wrapper { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; border-top: 1px solid var(--th-border); color: var(--th-text-muted); font-size: 0.9rem; font-weight: 600; flex-wrap: wrap; gap: 15px; }
-.th-footer-social { display: flex; gap: 15px; align-items: center; }
-.th-footer-social a { color: var(--th-text-muted); font-size: 1.3rem; transition: var(--th-transition); display: flex; align-items: center; gap: 6px; }
-.th-footer-social a:hover { color: var(--th-primary); }
-.th-admin-link { font-size: 0.9rem !important; margin-left: 10px; cursor: pointer; }
-/* TOMBOL WHATSAPP MELAYANG */
-.th-wa-float {
-position: fixed;
-bottom: 30px;
-right: 30px;
-background-color: #25d366;
-color: #ffffff;
-padding: 12px 24px;
-border-radius: 50px;
-display: flex;
-align-items: center;
-gap: 10px;
-font-size: 0.95rem;
-font-weight: 700;
-box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-z-index: 9990;
-transition: var(--th-transition);
-text-decoration: none;
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media print {
+    .no-print { display: none !important; }
+    .doc-canvas { box-shadow: none; margin: 0; width: 100% !important; }
 }
-.th-wa-float i { font-size: 1.5rem; }
-.th-wa-float:hover {
-background-color: #128c7e;
-color: #ffffff;
-transform: translateY(-4px);
-box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
-}
-/* ADMIN PANEL & MODAL */
-.th-admin-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
-.th-admin-modal.active { display: flex; }
-.th-admin-modal-content { background: var(--th-surface); padding: 30px; border-radius: var(--th-radius); width: 90%; max-width: 400px; box-shadow: var(--th-shadow-hover); border: 1px solid var(--th-border); }
-.th-form-group { margin-bottom: 15px; }
-.th-form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; color: var(--th-text); }
-.th-form-group input { width: 100%; padding: 12px 15px; border: 1px solid var(--th-border); border-radius: var(--th-radius-sm); background: var(--th-bg); color: var(--th-text); font-family: var(--th-font); font-size: 0.95rem; outline: none; }
-.th-admin-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 25px; }
-.th-admin-panel { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0f172a; z-index: 11000; overflow-y: auto; color: #f8fafc; font-family: var(--th-font); padding: 40px 20px; }
-.th-admin-panel.active { display: block; }
-.th-admin-container { max-width: 1200px; margin: 0 auto; }
-.th-admin-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }
-.th-admin-header h1 { font-size: 2.2rem; margin: 0; font-weight: 800; }
-.th-btn-danger { background: #e11d48; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
-.th-btn-success { background: #10b981; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; }
 --></style>
-<link href='https://www.blogger.com/dyncss/1979777114655326139/authorization.css?zx=a3d552d7-b6b8-4c7d-bdaa-59a4e3dd7314' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyncss/1979777114655326139/authorization.css?zx=a3d552d7-b6b8-4c7d-bdaa-59a4e3dd7314' rel='stylesheet'/></noscript>
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
 </head>
 <body class="antialiased min-h-screen">
 
     <!-- Kontainer Pembungkus Utama -->
     <div id="app-wrapper" class="fixed inset-0 w-full h-full z-[999999] bg-slate-50 overflow-y-auto font-sans text-slate-800">
 
-        <!-- LAYER LOGIN DIHILANGKAN / DISEMBUNYIKAN SECARA PERMANEN -->
+        <!-- LAYER LOGIN (DIHILANGKAN SECARA PERMANEN) -->
         <div id="loginScreen" style="display: none !important;"></div>
 
         <!-- APLIKASI UTAMA (LANGSUNG TAMPIL TANPA LOGIN) -->
         <div id="mainApp" class="flex flex-col w-full max-w-screen-2xl mx-auto relative px-4 md:px-8">
+            
             <!-- Navbar -->
             <nav class="bg-white border-b border-slate-200 sticky top-0 z-40 no-print shadow-sm w-full rounded-b-xl mb-6">
                 <div class="w-full px-4 sm:px-6 lg:px-8">
@@ -235,8 +131,9 @@ box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
                 </div>
             </nav>
 
-            <!-- Konten Utama (Form Generator & Editor Dokumen AI) -->
+            <!-- Konten Utama -->
             <main class="w-full pb-12">
+                
                 <!-- SEKSI 1: MODUL KURIKULUM (AI) -->
                 <div class="mb-8 w-full no-print">
                     <div class="flex items-center gap-2 mb-4">
@@ -269,21 +166,45 @@ box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
                         </div>
                     </div>
                 </div>
+
+                <!-- AREA FORM INPUT -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm relative no-print w-full mb-8">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Detail Perangkat Ajar</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
+                        <div>
+                            <label class="text-sm font-semibold text-slate-700">Nama Madrasah / Satuan Pendidikan</label>
+                            <input type="text" id="schoolName" placeholder="Contoh: MTsN 3 Ciamis" class="w-full mt-1 p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="text-sm font-semibold text-slate-700">Mata Pelajaran</label>
+                            <input type="text" id="subject" placeholder="Contoh: Bahasa Arab" class="w-full mt-1 p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EDITOR KANVAS A4 (Hasil) -->
+                <div id="editorContainer" class="bg-slate-200/50 rounded-2xl p-4 md:p-8 border border-slate-200 relative w-full">
+                    <div id="printArea" class="doc-canvas relative bg-white">
+                        <div id="editorContent" class="editor-content w-full min-h-[500px]" contenteditable="true">
+                            <p class="text-slate-400 text-center mt-20">Dokumen yang diproses akan tampil di sini...</p>
+                        </div>
+                    </div>
+                </div>
+
             </main>
         </div>
     </div>
 
-    <!-- SCRIPT UTAMA (Bypass Login Aktif) -->
+    <!-- SCRIPT UTAMA -->
     <script>
         let currentDocType = 'CP';
-        let currentDocTitle = 'Capaian Pembelajaran (CP)';
-        let uploadedAdminData = null;
 
-        // Otomatis bypass login saat halaman dimuat
         document.addEventListener('DOMContentLoaded', () => {
+            // Sembunyikan login
             const loginScreen = document.getElementById('loginScreen');
             if (loginScreen) loginScreen.style.display = 'none';
             
+            // Tampilkan aplikasi utama
             const mainApp = document.getElementById('mainApp');
             if (mainApp) {
                 mainApp.classList.remove('hidden');
@@ -291,8 +212,18 @@ box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
             }
         });
 
-        function handleLogin(e) {
-            e.preventDefault();
+        function selectDocType(type) {
+            currentDocType = type;
+            document.querySelectorAll('.doc-card').forEach(card => {
+                const ring = card.querySelector('.active-ring');
+                if (card.dataset.type === type) {
+                    card.classList.add('border-emerald-500');
+                    if (ring) ring.classList.remove('opacity-0');
+                } else {
+                    card.classList.remove('border-emerald-500');
+                    if (ring) ring.classList.add('opacity-0');
+                }
+            });
         }
     </script>
 </body>
